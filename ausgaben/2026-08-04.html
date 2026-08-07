@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neues aus Sachsen-Anhalt — 04.08.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f4f3f0;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --border:         rgba(11,11,11,0.10);
+    --cat-politik:    #2a78d6;
+    --cat-wirtschaft: #1baf7a;
+    --cat-verkehr:    #eda100;
+    --cat-energie:    #008300;
+    --cat-digital:    #4a3aa7;
+    --cat-bildung:    #e34948;
+    --cat-gesellschaft: #e87ba4;
+    --cat-justiz:     #eb6834;
+    --font-headline:  'Fraunces', Georgia, serif;
+    --font-body:      'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1:      #232322;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --border:         rgba(255,255,255,0.10);
+      --cat-politik:    #3987e5;
+      --cat-wirtschaft: #199e70;
+      --cat-verkehr:    #c98500;
+      --cat-energie:    #008300;
+      --cat-digital:    #9085e9;
+      --cat-bildung:    #e66767;
+      --cat-gesellschaft: #d55181;
+      --cat-justiz:     #d95926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding-bottom: 60px; }
+
+  header.top {
+    background: var(--surface-1);
+    padding: 18px 16px 0;
+    border-bottom: 1px solid var(--gridline);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  header.top h1 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    line-height: 1.1;
+  }
+  header.top h1 em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  header.top .sub {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  nav.filters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+  }
+  nav.filters a {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    background: var(--page-plane);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+  nav.filters a .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+  @media (min-width: 680px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .body { padding: 16px 16px 18px; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 9px;
+  }
+  .badge .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .card h3 {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 21px;
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  .card .date { font-size: 11.5px; color: var(--text-muted); margin-bottom: 9px; }
+  .card p.zusammenfassung {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    margin: 0 0 10px;
+  }
+  .warum {
+    display: flex;
+    gap: 8px;
+    background: var(--page-plane);
+    border-radius: 8px;
+    padding: 9px 11px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    color: var(--text-primary);
+  }
+  .warum .icon { flex: none; }
+  .warum strong {
+    display: block;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  details.einordnung {
+    background: var(--page-plane);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  details.einordnung summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 12.5px;
+  }
+  details.einordnung .src-line { margin-top: 6px; color: var(--text-secondary); }
+  .linkrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .linkrow a {
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--text-primary);
+    background: var(--page-plane);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 10px;
+  }
+  .linkrow a:hover { border-color: var(--text-muted); }
+
+  .section-label {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-secondary);
+    padding: 20px 16px 4px;
+  }
+  footer.quellen {
+    margin: 24px 16px 0;
+    padding: 14px 16px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+  }
+  footer.quellen h2 {
+    font-family: var(--font-headline);
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--text-primary);
+  }
+  footer.quellen p { margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>🏛️ Sachsen-Anhalt <em>News</em></h1>
+    <div class="sub">Dienstag, 4. August 2026 · Zeitraum 28.07.–04.08. · MDR · Landesregierung · Landtag</div>
+    <nav class="filters">
+      <a href="#politik"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</a>
+      <a href="#wirtschaft"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</a>
+      <a href="#verkehr"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</a>
+      <a href="#energie"><span class="dot" style="background:var(--cat-energie)"></span>Energie/Umwelt</a>
+      <a href="#bildung"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</a>
+      <a href="#gesellschaft"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</a>
+      <a href="#justiz"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</a>
+    </nav>
+  </header>
+
+  <div class="section-label" id="politik">Landespolitik &amp; Personalien</div>
+  <div class="grid">
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>Landesregierung zieht Bilanz — Schulze will mit der Koalition weitermachen</h3>
+      <div class="date">29.07.2026, 08:47 Uhr (erstmals 27.07.)</div>
+      <p class="zusammenfassung">Die Koalition aus CDU, SPD und FDP zog in Magdeburg eine positive Bilanz ihrer fünf Regierungsjahre. Schulze nannte die Ansiedlung von Daimler Truck in Halberstadt als Erfolg, die Demografie als größte Herausforderung; Hüskens verwies auf 900 Kilometer sanierte Landesstraßen, Willingmann auf das Drohnen-Erprobungszentrum Cochstedt. Die Opposition widersprach: Siegmund (AfD) sprach von „Verwaltung des Niedergangs", von Angern (Linke) von gefährdeten Chemie-Arbeitsplätzen, Sziborra-Seidlitz (Grüne) vergab die Schulnote „4-".</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der amtierende Regierungschef legt sich sechs Wochen vor der Wahl auf eine Fortsetzung fest, obwohl die Umfragen der Koalition die Mehrheit absprechen.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/news-wirtschaft-infrastruktur-energie-landtagswahl-wahl-schulze,landesregierung-bilanz-koalition-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>Sachsen-Anhalt-Trend: CDU fällt weiter zurück, AfD stabil bei 41 Prozent</h3>
+      <div class="date">31.07.2026, 14:06 Uhr (erstmals 30.07.)</div>
+      <p class="zusammenfassung">In der Infratest-dimap-Umfrage (23.–28. Juli, 1.149 Wahlberechtigte) bleibt die AfD bei 41 Prozent, die CDU verliert zwei Punkte auf 24, die Linke gewinnt einen auf 13, SPD 7, Grüne 5, BSW 4, FDP unter fünf. Bei der Regierungsführung liegen AfD (44 %) und CDU (43 %) fast gleichauf; mit der Landesregierung sind nur noch 29 Prozent zufrieden. Eine CDU-AfD-Koalition lehnen 60 Prozent aller Wahlberechtigten und 82 Prozent der CDU-Anhänger ab.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zentrale Referenzumfrage des Wahlkampfs — Halbierung der CDU gegenüber 2021 (37,1 %), Verdopplung der AfD (20,8 %).</div></div>
+      <details class="einordnung">
+        <summary>Einordnung — 2 Quellen zum gleichen Thema</summary>
+        <div class="src-line">📰 MDR (31.07.): Umfragewerte und Koalitionspräferenzen.</div>
+        <div class="src-line">📰 MDR-Kommentar (31.07.): Die AfD hat sich bei 41 Prozent zementiert, wächst aber nicht weiter — die Alleinregierung bleibt außer Reichweite, entscheiden werden „die Kleinen".</div>
+      </details>
+      <div class="linkrow">
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/news-ergebnisse-landtagswahl-afd-cdu-wahlumfrage-schulze-siegmund-,wahl-umfrage-100.html">📰 Umfrage</a>
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/news-infratest-dimap-afd-cdu-wahl-,umfrage-kommentar-100.html">📰 Kommentar</a>
+      </div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>IWH Halle: AfD-Wahlprogramm ist nicht finanzierbar</h3>
+      <div class="date">28.07.2026, 14:18 Uhr</div>
+      <p class="zusammenfassung">Das Leibniz-Institut für Wirtschaftsforschung Halle identifizierte im AfD-Programm 41 kostenverursachende Vorhaben; nur zehn ließen sich wegen ihrer Vagheit beziffern — allein diese kosten 913 Millionen Euro jährlich. Bei 15,6 Milliarden Landeshaushalt und bereits rund einer Milliarde Neuverschuldung stiege das Defizit auf 1,9 Milliarden. Die genannten Einsparungen brächten höchstens 200 Millionen. IWH-Präsident Reint Gropp hält die Pläne für „illusorisch".</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Erste unabhängige Durchrechnung des Programms der in Umfragen führenden Partei.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/wahlprogramm-landtagswahl-sachsen-anhalt-schulden,afd-1190.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>„Kein Rückenwind": CDU-Politiker im Land kritisieren Kanzler Merz</h3>
+      <div class="date">30.07.2026, 13:42 Uhr (erstmals 28.07.)</div>
+      <p class="zusammenfassung">CDU-Kandidaten beklagen, dass die Bundespolitik die Landesthemen verdrängt. Landtagskandidat Nico Elsner nennt den Personalumbau des Kanzlers kommunikativ „grottenschlecht umgesetzt"; Schulze sagte im Deutschlandfunk, an den Wahlkampfständen sei es „schwer oder unmöglich", über Landespolitik zu sprechen. Marco Tullner kritisiert besonders die Ablösung von Tino Sorge als Parlamentarischer Staatssekretär, von der dieser aus der Presse erfuhr.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Kanzler ist im eigenen Landesverband als Wahlkampfhilfe unerwünscht.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/news-probleme-kritik-wahlkampf-kanzler-minister-,cdu-merz-personalumbau-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>Grünen-Spitzenkandidatin fordert regionale Strompreiszonen</h3>
+      <div class="date">04.08.2026, 05:00 Uhr</div>
+      <p class="zusammenfassung">Susan Sziborra-Seidlitz schlägt eine gemeinsame Strompreiszone mit Brandenburg, Mecklenburg-Vorpommern und Niedersachsen vor — regelbar sei das nicht auf Landesebene, das Land müsse es aber anstoßen. Sie verteidigt das Ziel, Sachsen-Anhalt bis 2035 klimaneutral zu machen, zehn Jahre früher als der Bund. Abschiebungen hält sie nicht für das zentrale Migrationsthema; das Land brauche Fachkräfte.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Teil der MDR-Interviewreihe mit allen Spitzenkandidaten — die Grünen kämpfen um den Wiedereinzug.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/gruene-susann-sziborra-seidlitz-interview,landtagswahl-akt-104.html">📰 MDR-Interview</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>MDRfragt: Zwei Drittel halten die Spitzenkandidaten für wahlentscheidend</h3>
+      <div class="date">31.07.2026, 13:09 Uhr</div>
+      <p class="zusammenfassung">An der vierten „Frage der Woche" beteiligten sich 5.654 Menschen aus Sachsen-Anhalt (nicht repräsentativ); 69 Prozent halten die Spitzenkandidaten für wichtig oder eher wichtig. Gefragt sind vor allem Glaubwürdigkeit (78 %), Kompetenz (74 %) und das offene Benennen von Problemen (73 %) — das Aussehen nennen zwei Prozent. Am 6. September können rund 1,7 Millionen Menschen wählen.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Belegt die starke Personalisierung des Duells Schulze gegen Siegmund bei einer Wahl über Parteilisten.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtagswahl-spitzenkandidaten-sachsen-anhalt,mdrfragt-ergebnisse-landtagswahl-spitzenkandidaten-wichtig-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>Die „Wahl-Checker": Polarisierung wird stärker wahrgenommen als erlebt</h3>
+      <div class="date">04.08.2026, 05:00 Uhr</div>
+      <p class="zusammenfassung">MDR AKTUELL begleitet vier Wahlberechtigte durch den Wahlkampf. Erstwähler Konstantin Schmelz aus Köthen sorgt sich um die „ganz große Polarisierung", seine Mutter beobachtet eine neue Aggressivität bis in den Bundestag. Erstwähler Tim Hoffmann berichtet von Mobbing im Netz, findet den Zusammenhalt vor Ort aber unverändert. Er will eigentlich AfD wählen, lehnt aber die im Programm stehende Abschaffung der Schulpflicht ab.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die wahrgenommene Spaltung speist sich stärker aus Medien und Parteienstreit als aus dem lokalen Alltag.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/polarisierung-gesellschaftlicher-zusammenhalt-,wahl-checker-akt-110.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>Erinnerungskultur: Gedenkstätten starten Kampagne gegen das Vergessen</h3>
+      <div class="date">29.07.2026, 10:36 Uhr (erstmals 28.07.)</div>
+      <p class="zusammenfassung">Im ehemaligen Stasi-Gefängnis am Moritzhof Magdeburg stellten die Gedenkstätten des Landes die Kampagne „Vergiss es – wir erinnern" vor. Stiftungsdirektor Kai Langer weist den Vorwurf eines „Schuldkults" zurück und kritisiert das öffentliche Singen der DDR-Nationalhymne als Beleidigung der SED-Opfer. Pia Heine widerspricht Vergleichen mit einer „DDR 2.0": Meinungsfreiheit bedeute „nicht Widerspruchslosigkeit"; zugleich räumt sie Defizite in der Aufarbeitung ein.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Erinnerungspolitik ist im Wahlkampf zum Konfliktfeld geworden.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/DDR-meinungsfreiheit-diktatur-demokratie,erinnerungskultur-gedenkstaetten-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+      <h3>Kabinettsbericht: Frauenanteil in Führungspositionen steigt, Parität fehlt</h3>
+      <div class="date">28.07.2026 · PM 425/2026</div>
+      <p class="zusammenfassung">Das „Führungskräftemonitoring 2025" zeigt einen Anstieg des Frauenanteils in gehobenen Führungsfunktionen der Landesverwaltung von 31,2 Prozent (2012) auf 43,8 Prozent (2025, ohne Schulleitungen). Gleichstellungsministerin Grimm-Benne wertet das als Beleg wirksamer Maßnahmen, räumt aber ein, dass das Ziel geschlechterparitätischer Besetzung nicht erreicht ist.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Bilanzzahl der zu Ende gehenden Wahlperiode, kurz vor dem Wahlkampf-Endspurt vorgelegt.</div></div>
+      <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/kabinettsbericht-mehr-frauen-in-fuehrungspositionen-der-landesverwaltung-ziel-der-geschlechterparitaet-noch-nicht-erreicht">🏛️ PM Nr. 425/2026</a></div>
+    </div></div>
+
+  </div>
+
+  <div class="section-label" id="wirtschaft">Wirtschaft, Infrastruktur &amp; Strukturwandel</div>
+  <div class="grid">
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+      <h3>Strukturwandel-Gipfel am Geiseltalsee — elf Millionen Euro für Leuna</h3>
+      <div class="date">30.07.2026 · PM 427/2026 und 429/2026 · MDR 03.08.</div>
+      <p class="zusammenfassung">Die Ministerpräsidenten von Sachsen-Anhalt, Sachsen und Thüringen trafen sich am Geiseltalsee zu einem Strukturwandel-Gipfel und verabschiedeten eine gemeinsame Erklärung zu Sozialreformen. Besucht wurden unter anderem der mit rund 45 Millionen Euro aus dem Just Transition Fund geförderte Bildungscampus Naumburg. Schulze übergab der Stadt Leuna einen Förderbescheid über knapp elf Millionen Euro: Auf rund 15.200 Quadratmetern nahe dem Chemiepark entsteht eine erschlossene Fläche für Forschungs- und Technologieunternehmen.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Kohleausstiegs-Strukturgeld in konkreter Verwendung — Leuna als Testfall, ob Fördermittel tatsächlich Ansiedlungen erzeugen.</div></div>
+      <details class="einordnung">
+        <summary>Einordnung — 3 Quellen zum gleichen Vorgang</summary>
+        <div class="src-line">🏛️ Landesregierung Nr. 427/2026: Gipfel und Erklärung zu Sozialreformen.</div>
+        <div class="src-line">🏛️ Landesregierung Nr. 429/2026: Fördermittelbescheid Leuna.</div>
+        <div class="src-line">📰 MDR (03.08.): Bürgermeister Bedla zur geplanten Ansiedlung; Transparenzhinweis zu einer korrigierten Ortsangabe.</div>
+      </details>
+      <div class="linkrow">
+        <a href="https://sachsen-anhalt.de/pressemitteilung/ministerpraesidenten-von-sachsenanhalt-sachsen-und-thueringen-setzen-gemeinsames-zeichen-fuer-ein-starkes-mitteldeutschland-und-verabschieden-erklaerung-zu-sozialreformen">🏛️ PM Nr. 427/2026</a>
+        <a href="https://sachsen-anhalt.de/pressemitteilung/ministerpraesident-sven-schulze-uebergibt-knapp-11-millionen-euro-fuer-neuen-forschungs-und-entwicklungsstandort-in-leuna">🏛️ PM Nr. 429/2026</a>
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/forschung-entwicklung,leuna-investition-100.html">📰 MDR-Artikel</a>
+      </div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+      <h3>39 Millionen Euro für die Algenforschung — Zentrum in Köthen, Award nach Klötze</h3>
+      <div class="date">04.08.2026, 14:05 Uhr · PM 134/2026 vom 03.08.</div>
+      <p class="zusammenfassung">Die Hochschule Anhalt in Köthen erhielt Förderzusagen über 39 Millionen Euro. 32 Millionen fließen in das Mitteldeutsche Algenzentrum — knapp 2.000 Quadratmeter, Baustart Sommer 2028, Fertigstellung 2030 — finanziert aus dem Infrastruktur-Sondervermögen des Bundes. Zwei weitere Projekte werden mit gut sieben Millionen Euro aus EU-Mitteln gefördert. Wenige Tage zuvor zeichnete Minister Willingmann die Knufmann GmbH aus Klötze mit dem „AURA-Award 2026" aus.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Größter Wissenschaftsstandort-Ausbau in Anhalt seit Jahren — und ein Beispiel, wohin das Bundes-Sondervermögen im Land fließt.</div></div>
+      <details class="einordnung">
+        <summary>Einordnung — 2 Quellen, ein Themenfeld</summary>
+        <div class="src-line">📰 MDR (04.08.): Fördersummen und Bauzeitplan des Algenzentrums.</div>
+        <div class="src-line">🏛️ Landesregierung Nr. 134/2026: Auszeichnung eines Algen-Unternehmens aus der Altmark durch denselben Minister.</div>
+      </details>
+      <div class="linkrow">
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/anhalt/algen-algenzentrum-forschung-102,hochschule-126.html">📰 MDR-Artikel</a>
+        <a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-zeichnet-knufmann-gmbh-aus-kloetze-mit-auraaward-2026-aus-algen-sind-klimafreundliche-alleskoenner">🏛️ PM Nr. 134/2026</a>
+      </div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+      <h3>Kleine Anfrage: Wo das Sondervermögen Infrastruktur bislang landet</h3>
+      <div class="date">28.07.2026 · Drucksache 8/7286 (KA 8/3845)</div>
+      <p class="zusammenfassung">Auf die Anfrage von Kristin Heiß (Die Linke) legt die Landesregierung den Stand des seit 1. Januar 2026 geltenden Sondervermögens „Infrastruktur" offen: 2,614 Milliarden Euro, davon 1,045 Milliarden Landesarm und 1,568 Milliarden Kommunalarm. Bis zum 30. Juni gab es sieben Förderaufrufe, der größte für Schulbau (83,9 Millionen Euro ausgelobt, 115 Anträge), gefolgt von Jugendarbeit (15,45 Millionen) und Gewässerunterhaltung (10 Millionen). Genehmigt wurde ein einziger Mittelvorgriff: 25 Millionen Euro für Landesstraßen. Mittelübertragungen in Folgejahre gab es nicht.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die erste reguläre Unterrichtung des Landtags ist erst zum 31. März 2027 fällig — also nach dem Ende dieser Wahlperiode. Die Anfrage holt die Transparenz über 2,6 Milliarden Euro in die laufende Legislatur zurück.</div></div>
+      <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/files/drs/wp8/drs/d7286dak.pdf">📋 Drs. 8/7286 (PDF)</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+      <h3>Mäc-Geiz-Insolvenz: rund 50 Filialen vor dem Aus</h3>
+      <div class="date">04.08.2026, 14:10 Uhr (erstmals 03.08.)</div>
+      <p class="zusammenfassung">Der insolvente Haushaltsdiscounter mit Sitz in Landsberg (Saalekreis) muss rund 50 seiner bundesweit 183 Filialen schließen; welche Standorte betroffen sind, soll spätestens im Herbst feststehen. Etwa 40 Filialen liegen in Sachsen-Anhalt, bundesweit beschäftigt das Unternehmen 1.175 Menschen. Das Amtsgericht Halle eröffnete Anfang August ein Eigenverwaltungsverfahren; seit dem Insolvenzantrag im Mai wurden 71 Beschäftigte entlassen.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Größter Einzelhandels-Arbeitsplatzabbau des Sommers mit Hauptsitz im Land — trifft Kleinstädte, in denen Mäc-Geiz oft Nahversorger ist.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/filialen-schliessung-102,maec-geiz-insolvenz-102.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+      <h3>Ausbildungsstart 2026: stabile Zahlen, alte Hürden</h3>
+      <div class="date">04.08.2026, 16:04 Uhr</div>
+      <p class="zusammenfassung">Zum Ausbildungsjahr melden die IHKs bislang 4.871 neue Verträge, die HWK Halle 1.126 und der Bezirk Magdeburg 958 Azubis; der Trend ist stabil bis leicht steigend (IHK Magdeburg +8,5 Prozent). Der Frauenanteil bleibt niedrig, der Anteil von Azubis mit Migrationshintergrund liegt bei 14 bis 16 Prozent. Die IHK Halle-Dessau fordert bezahlbaren Wohnraum und besseren Nahverkehr, weil jeder achte Jugendliche eine Ausbildung wegen der Entfernung ablehnt.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Fachkräftemangel und Erreichbarkeit der Berufsschulen sind Kernthemen der Landeswirtschaftspolitik — die Kammern adressieren ihre Forderungen direkt an die Politik.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/faq-berufswahl-azubi-101,ausbildungsstart-120.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+      <h3>Weinbau wächst gegen den Trend, Brauereizahl steigt leicht</h3>
+      <div class="date">04.08.2026, 05:00 und 16:08 Uhr</div>
+      <p class="zusammenfassung">Die bestockte Rebfläche wuchs binnen zehn Jahren von 668 auf 756 Hektar; 712 Hektar liegen im Anbaugebiet Saale-Unstrut, davon 557 Hektar Weißwein. 2025 wurden rund 5,16 Millionen Liter Weinmost produziert — die zweithöchste Ernte in 27 Jahren. Parallel stieg die Zahl der Braustätten von 22 auf 23, während sie bundesweit von 1.468 auf 1.415 sank; im Juli 2026 wurde allerdings für die Colbitzer Heide-Brauerei ein Insolvenzantrag gestellt.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zwei kleine Landesbranchen im Umbruch — Wachstum im Weinbau, Zuwachs bei Kleinbrauereien trotz bundesweiter Bierkrise.</div></div>
+      <div class="linkrow">
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/saale-unstrut-winzer-100,wein-anbau-110.html">📰 Weinbau</a>
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/bier-statistik-,brauereien-126.html">📰 Brauereien</a>
+      </div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+      <h3>Quedlinburg ist Deutschlands schönste Altstadt für Kurztrips</h3>
+      <div class="date">31.07.2026, 09:26 Uhr (erstmals 27.07.)</div>
+      <p class="zusammenfassung">In einem Ranking des Onlineportals kurzurlaub.de belegt Quedlinburg Platz 1 unter Deutschlands Altstädten für Kurzurlaube; bewertet wurden 97 historische Stadtkerne nach Kriterien wie historisches Erlebnis, Hotelangebot, Aufenthaltsqualität und Online-Bewertungen. Wernigerode landete auf Platz 13.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Werbewirksames Signal für den Harz-Tourismus — allerdings ein Portal-Eigenranking, kein unabhängiger Vergleich.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/quedlinburg-wernigerode-urlaub-ranking-tourismus-,beste-altstadt-kurzurlaub-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+  </div>
+
+  <div class="section-label" id="verkehr">Verkehr &amp; Mobilität</div>
+  <div class="grid">
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+      <h3>Oberleitungsschäden behoben — Fernverkehr wieder planmäßig</h3>
+      <div class="date">01.08.2026, 14:53 Uhr (zuerst 31.07.)</div>
+      <p class="zusammenfassung">Zwei Oberleitungsschäden in Niedersachsen, die auch in Sachsen-Anhalt Verspätungen verursacht hatten, sind seit Freitagnachmittag behoben. Am Freitag waren IC-Züge zwischen Magdeburg und Hannover in beiden Richtungen umgeleitet worden und rund 30 Minuten länger unterwegs, auch Reisende Richtung Halle mussten mehr Zeit einplanen. Die Ursache teilte die Bahn nicht mit.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zeigt, wie stark die Fernverkehrsanbindung des Landes von Störungen außerhalb seiner Grenzen abhängt.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/oberleitung-schaeden-hannover-hamburg-102,bahn-stoerung-120.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+      <h3>Landesweite Geschwindigkeitskontrollwoche vom 3. bis 9. August</h3>
+      <div class="date">30.07.2026 · PM 99/2026</div>
+      <p class="zusammenfassung">Die Landespolizei beteiligt sich an der zweiten ROADPOL-Geschwindigkeitskontrollwoche des Jahres. Innenministerin Zieschang kündigte an, die Einhaltung der zulässigen Geschwindigkeiten werde besonders engmaschig überwacht; eingesetzt werden Hand- und Großmessgeräte sowie landesweit Enforcement-Trailer.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Landesweite Maßnahme mit unmittelbarer Alltagsrelevanz für alle Autofahrenden.</div></div>
+      <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/landespolizei-sachsenanhalt-beteiligt-sich-an-europaweiten-geschwindigkeitskontrollen">🏛️ PM Nr. 99/2026</a></div>
+    </div></div>
+
+  </div>
+
+  <div class="section-label" id="energie">Energie &amp; Umwelt</div>
+  <div class="grid">
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+      <h3>Elbe auf Rekord-Tiefstwert in Wittenberg und Magdeburg</h3>
+      <div class="date">04.08.2026, 15:28 Uhr</div>
+      <p class="zusammenfassung">Die Elbe hat in Wittenberg mit 58 Zentimetern den niedrigsten je gemessenen Wasserstand erreicht — der bisherige Rekord von 2019 lag bei 67 Zentimetern, beim Jahrhunderthochwasser 2002 standen dort über sieben Meter. Am Pegel Magdeburg-Strombrücke sank der Wert laut ELWIS erneut auf den historischen Tiefstwert von 45 Zentimetern. Schätzungen zufolge könnte der Stand bis Freitag auf 40 Zentimeter fallen.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Rekord-Niedrigwasser trifft Schifffahrt, Ökologie und Wasserversorgung — das Klimathema des Sommers im Land.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/wittenberg-magdeburg-100,elbe-niedrigwasser-128.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+      <h3>Waldbrandstufe 4, Brände in der Altmark, Löschflugzeuge zurück aus Frankreich</h3>
+      <div class="date">29.07. (PM) · MDR 31.07. und 03.08.2026</div>
+      <p class="zusammenfassung">Das Landeszentrum Wald rief am 29. Juli zu besonderer Wachsamkeit auf: In weiten Teilen des Landes galt die zweithöchste Waldbrandgefahrenstufe 4. Zwei Tage später brannte es landesweit — im Lödderitzer Forst bei Barby standen rund zwei Hektar Wald in Flammen, 135 Feuerwehrleute waren im Einsatz; in der Altmark gingen zwei Mähdrescher in Flammen auf, bei Vahrholz brannten vier Hektar Weizen ab. Die Harzer Löschflugzeuge „Hexe 1" und „Hexe 2" kehrten aus der Region Bordeaux zurück, ohne gelöscht zu haben.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Belastungsprobe für die überwiegend freiwilligen Feuerwehren im dünn besiedelten Norden — und der Harz erstmals als Exporteur von Katastrophenhilfe.</div></div>
+      <details class="einordnung">
+        <summary>Einordnung — 3 Quellen, ein Wettergeschehen</summary>
+        <div class="src-line">🏛️ Landesregierung (29.07.): Warnstufe 4, Rauch- und Feuerverbot nach § 29 Landeswaldgesetz.</div>
+        <div class="src-line">📰 MDR (31.07.): Einsatzbilanz der Brände in sechs Landkreisen.</div>
+        <div class="src-line">📰 MDR (03.08.): Rückkehr der Löschflugzeuge, Harz als einzige Kommune Deutschlands mit eigenem Flugzeug.</div>
+      </details>
+      <div class="linkrow">
+        <a href="https://sachsen-anhalt.de/pressemitteilung/warnung-vor-waldbraenden-in-sachsenanhalt">🏛️ Waldbrandwarnung</a>
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/altmark-braende-feuer,maehdrescher-felder-buesche-100.html">📰 Brände</a>
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/news-waldbraende-frankreich-kein-einsatz,loeschflugzeug-hexe-zurueck-im-harz-100.html">📰 Löschflugzeuge</a>
+      </div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+      <h3>Kleine Anfrage: Kein einziger beschlossener Hitzeaktionsplan im Land</h3>
+      <div class="date">30.07.2026 · Drucksache 8/7296 (KA 8/3849)</div>
+      <p class="zusammenfassung">Auf die Anfrage von Cornelia Lüddemann (Grüne) antwortet die Landesregierung, dass ihr keine Landkreise oder kreisfreien Städte mit einem beschlossenen Hitzeaktionsplan bekannt sind; eine Berichtspflicht besteht nicht. In Arbeit sind Pläne in Dessau-Roßlau, Halle (Saale), im Burgenlandkreis und in Magdeburg. Mindeststandards gibt das Land nicht vor. Gefördert wurden aus KLIMA III bislang zwei Vorhaben: Haldensleben (133.104 Euro) und der Burgenlandkreis (63.000 Euro), beide im Mai 2025.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Im heißesten Sommer der jüngeren Landesgeschichte hat noch keine einzige Kommune einen verbindlichen Hitzeaktionsplan — und das Land macht bewusst keine Vorgaben.</div></div>
+      <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/files/drs/wp8/drs/d7296gak.pdf">📋 Drs. 8/7296 (PDF)</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+      <h3>Klimaanpassung auf dem Acker: Sortenprüfung in Beetzendorf</h3>
+      <div class="date">03.08.2026, 13:22 Uhr (erstmals 02.08.)</div>
+      <p class="zusammenfassung">Die Versuchsstation Beetzendorf prüft über drei Jahre Getreidesorten auf Hitze- und Krankheitsresistenz, bevor die Landesanstalt für Landwirtschaft und Gartenbau sie den Landwirten empfiehlt. Von fünf Versuchsstationen im Land ist Beetzendorf die einzige, die auch Sorten für den Öko-Landbau testet. Jede Sorte bekommt exakt 13,5 Quadratmeter unter identischen Bedingungen; Stationsleiter Cedric Fehseke nennt die Einrichtung „flapsig 'Stiftung Warentest' für landwirtschaftliche Sorten".</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Konkrete Klimaanpassung in der Landwirtschaft — die Altmark als Testlabor für hitzetaugliches Getreide.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/stendal/salzwedel/klimawandel-roggen-102,forschung-getreide-hitze-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+      <h3>Gottesanbeterin über 8.000-mal gemeldet — neuer Rekord</h3>
+      <div class="date">30.07.2026, 19:37 Uhr</div>
+      <p class="zusammenfassung">Das Landesamt für Umweltschutz meldet für das vergangene Jahr fast 8.100 Beobachtungen — nach knapp 400 Sichtungen 2021 und rund 5.400 im Jahr 2024. Das Insekt kommt vor allem im Süden und in der Mitte des Landes vor und breitet sich nach Norden aus; erstmals gesichtet wurde es 1991, erste stabile Vorkommen gibt es seit 2004 am Geiseltalsee. Als Grund nennt das Amt klimatische Veränderungen seit den 1990er-Jahren.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Sichtbarster Alltagsindikator der Klimaerwärmung im Land — und ein Bürgerwissenschaftsprojekt mit hoher Beteiligung.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/ausbreitung-rekord,gottesanbeterin-152.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+  </div>
+
+  <div class="section-label" id="bildung">Bildung, Jugend &amp; Soziales</div>
+  <div class="grid">
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>378 Lehrerstellen ausgeschrieben, Schulstart am 17. August</h3>
+      <div class="date">04.08.2026, 16:45 Uhr</div>
+      <p class="zusammenfassung">Knapp zwei Wochen vor Schuljahresbeginn hat das Bildungsministerium 378 Lehrerstellen ausgeschrieben — gesucht werden ausgebildete Lehrkräfte wie Seiteneinsteiger. Der Bedarf ist an Förderschulen am größten (96 Stellen), gefolgt von Grundschulen (93) und Sekundarschulen (76). Zum Vergleich: Im August 2025 wurden 923 Lehrer neu eingestellt, dennoch blieben 330 Stellen offen.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Chronischer Lehrermangel als Dauerthema im Wahljahr — die Zahlen liefern Munition für die bildungspolitische Debatte.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/lehrermangel-stellenausschreibung-bildungsministerium-100,lehrer-schuljahr-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>Schultrakt in Salzwedel einsturzgefährdet</h3>
+      <div class="date">04.08.2026, 14:30 Uhr</div>
+      <p class="zusammenfassung">An der Ganztags- und Gemeinschaftsschule „G. E. Lessing" ist ein kompletter Gebäudetrakt einsturzgefährdet; die Standfestigkeit ist laut Schulleitung nicht mehr gegeben. Das Gebäude wurde unbemerkt unterspült, der Hausmeister stieß vor den Sommerferien darauf. Der Altmarkkreis suchte in einer Krisensitzung nach einer Lösung. Verschärfend wächst der neunte Jahrgang von drei auf vier Klassen; der betroffene Trakt war jahrzehntelang ein Provisorium.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Konkreter Fall von Schulbau-Investitionsstau in der strukturschwachen Altmark, akut zum Schuljahresstart.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/stendal/salzwedel/gebaeude-einsturzgefaehrdet-100,lessing-sekundarschule-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>Burg Giebichenstein: Spatenstich für 42-Millionen-Euro-Neubau in Halle</h3>
+      <div class="date">03.08.2026, 20:07 Uhr</div>
+      <p class="zusammenfassung">An der Kunsthochschule war am Montag der symbolische Spatenstich für einen rund 42 Millionen Euro teuren Neubau in der Seebener Straße. Bis 2030 entstehen auf über 3.000 Quadratmetern Ateliers, Werkstätten, ein audiovisuelles Studio und eine Hochschulgalerie; den Großteil zahlt das Land. Die regulären Bauarbeiten beginnen erst Herbst 2027 — die Fertigstellung kommt damit drei Jahre später als ursprünglich geplant.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Landesinvestition in den Hochschulstandort Halle, zugleich ein Lehrstück über Planungsverzögerungen bei Landesbauten.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/spatenstich-102,burg-giebichenstein-neubau-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>Ärztemangel: Was die Parteien vorhaben</h3>
+      <div class="date">28.07.2026, 16:10 Uhr</div>
+      <p class="zusammenfassung">Rund 240 Haus- und Facharztstellen sind unbesetzt, bis 2030 könnte sich die Zahl verdoppeln; Salzwedel und Sangerhausen gelten bereits als unterversorgt. CDU und FDP wollen Praxisgründungen erleichtern und mobile Angebote schaffen, die Linke setzt auf Arbeitsbedingungen in Kliniken, SPD und Grüne auf Schulgeldfreiheit, AfD und BSW auf Landarzt-Stipendien. Der entscheidende Unterschied liegt bei den Krankenhäusern: AfD, Linke, SPD und Grüne wollen Kliniken notfalls öffentlich absichern, CDU und FDP setzen auf Reformen im bestehenden System.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Gesundheitsversorgung im ländlichen Raum ist eines der Kernthemen, an denen sich die Rollenverteilung Staat gegen Markt konkret zeigt.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/parteien-vorhaben-gesundheit-versorgung-aerzte-kliniken-arzt-termin,newsletter-entscheidung-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>Grimm-Benne: Pakt für den Öffentlichen Gesundheitsdienst braucht Verstetigung</h3>
+      <div class="date">29.07.2026 · PM 118/2026</div>
+      <p class="zusammenfassung">Zwischen 2021 und 2026 konnte das Land rund 69 Millionen Euro aus dem Bundesprogramm in Gesundheits- und Landesämter investieren, 138 neue Mitarbeitende wurden eingestellt und eine Digitalisierungsoffensive angestoßen. Die Leiterin des Dessau-Roßlauer Gesundheitsamtes spricht von einem Modernisierungsschub; die Ministerin fordert, das auslaufende Programm zu verstetigen.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Ohne Anschlussfinanzierung stünden 138 Stellen im öffentlichen Gesundheitsdienst zur Disposition — eine Forderung an den Bund, kurz vor der Landtagswahl formuliert.</div></div>
+      <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/ministerin-grimmbenne-pakt-fuer-den-oeffentlichen-gesundheitsdienst-braucht-dringend-verstetigung">🏛️ PM Nr. 118/2026</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>Kabinett beschließt Aktionsplan gegen sexualisierte Gewalt an Kindern</h3>
+      <div class="date">28.07.2026 · PM 423/2026</div>
+      <p class="zusammenfassung">Das Kabinett hat einen ressortübergreifenden Aktionsplan beschlossen. Präventions- und Hilfsangebote sollen gestärkt und bekannter gemacht, Schutzkonzepte in Einrichtungen ausgebaut sowie Fachkräfte und Ehrenamtliche qualifiziert werden. Erarbeitet wurde der Plan interministeriell unter Verantwortung des Kinder- und Jugendbeauftragten Holger Paech, gemeinsam mit Sport- und Jugendverbänden.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Erster ressortübergreifender Aktionsplan dieser Art im Land — und die politische Antwort auf eine Reihe von Kinderschutzfällen.</div></div>
+      <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/kabinett-beschliesst-aktionsplan-zum-besseren-schutz-von-kindern-und-jugendlichen-vor-sexualisierter-gewalt">🏛️ PM Nr. 423/2026</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>Fall Alicia: Dessauer Jugendamtsleiter verliert die Zuständigkeit für den Kinderschutz</h3>
+      <div class="date">30.07.2026, 16:02 Uhr (erstmals 29.07.)</div>
+      <p class="zusammenfassung">Nach dem Tod der sechsjährigen Alicia im Osternienburger Land hat die Stadtverwaltung Dessau-Roßlau dem Leiter des Jugendamtes die Zuständigkeit für den Allgemeinen Sozialen Dienst vorübergehend entzogen. Hilfegesuche der Mutter und der Kindertagesstätte waren im stillgelegten Mail-Account eines ausgeschiedenen Mitarbeiters gelandet und nie weiterverfolgt worden. Das Mädchen starb am 9. Juni; der 27-jährige Lebensgefährte der Mutter sitzt in Untersuchungshaft.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Behördenversagen im Kinderschutz mit personellen Konsequenzen — Musterfall für die Debatte um Ausstattung und Kontrolle kommunaler Jugendämter.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/anhalt/leiter-kinderschutz-osternienburg,getoetetes-kind-alicia-jugendamt-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>Kleine Anfrage: 2,5 Monate in der ZASt — und keine Schulpflicht für Kinder</h3>
+      <div class="date">29.07.2026 · Drucksache 8/7290 (KA 8/3866)</div>
+      <p class="zusammenfassung">Auf die Anfrage von Henriette Quade (fraktionslos) beziffert die Landesregierung die durchschnittliche Aufenthaltsdauer in der Zentralen Anlaufstelle für Asylbewerber im ersten Halbjahr 2026 auf 2,5 Monate. Von den Personen, die zum Stichtag länger als sechs Monate dort lebten, waren zwei minderjährig, 59 waren Dublin-Fälle. Für Kinder und Jugendliche besteht während des Aufenthalts in einer Erstaufnahmeeinrichtung nach dem Erlass vom 5. August 2025 keine Schulpflicht.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Landeseigene Zahlen zur Unterbringungsdauer — und der ausdrückliche Befund, dass Kinder in der Erstaufnahme keinem Schulbesuch unterliegen.</div></div>
+      <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/files/drs/wp8/drs/d7290zak.pdf">📋 Drs. 8/7290 (PDF)</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+      <h3>30 Jahre Flüchtlingsfrauenhaus in Halle</h3>
+      <div class="date">31.07.2026, 12:54 Uhr (erstmals 29.07.)</div>
+      <p class="zusammenfassung">Das AWO-Flüchtlingsfrauenhaus — eines von 19 Frauenhäusern im Land — besteht seit 30 Jahren und bietet zehn Plätze für traumatisierte, alleinreisende Asylbewerberinnen und ihre Kinder. Die Adresse bleibt geheim, es gibt nur ein Postfach, weil viele Bewohnerinnen vor Zuhältern geflohen sind; im Schnitt bleiben die Frauen etwa ein Jahr. Laut Innenministerium wurden dort über 300 Frauen aus mehr als 30 Ländern untergebracht; finanziert wird die Einrichtung vom Land.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Landesfinanzierter Gewaltschutz für Geflüchtete — ein Posten, der in Haushalts- und Migrationsdebatten schnell unter Druck gerät.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/news-fluechtlingsfrauenhaus-fluechtlinge-30-jahre,frauenhaus-gefluechtete-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+  </div>
+
+  <div class="section-label" id="gesellschaft">Gesellschaft &amp; Demografie</div>
+  <div class="grid">
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+      <h3>Sachsen-Anhalt wird älter und kleiner — und die Parteien antworten unterschiedlich</h3>
+      <div class="date">31.07.2026, 10:15 und 15:51 Uhr</div>
+      <p class="zusammenfassung">Mit einem Durchschnittsalter von 48,3 Jahren ist Sachsen-Anhalt das älteste Bundesland; seit der Wiedervereinigung hat es rund ein Viertel seiner Bevölkerung verloren. Besonders junge, gut gebildete Frauen wandern ab. CDU, SPD, FDP und BSW setzen auf Erleichterungen beim Wohneigentum, Linke, Grüne und BSW auf Kinderbetreuung und soziale Infrastruktur. Die AfD schlägt Baby-Begrüßungsgeld und landeseigenes Kindergeld vor, sagt laut MDR-Wahlexperte Jens Hänisch aber nicht, woher das Geld kommen soll.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der demografische Schwund ist das strukturelle Grundproblem des Landes — hier trennt sich die AfD am deutlichsten von allen anderen Parteien.</div></div>
+      <details class="einordnung">
+        <summary>Einordnung — 2 Darstellungsformen desselben Themas</summary>
+        <div class="src-line">📰 MDR (31.07.): Parteienvergleich der Maßnahmen gegen den Bevölkerungsschwund.</div>
+        <div class="src-line">📰 MDR (31.07.): Interview mit dem Wahlexperten, liefert die Kennzahl 48,3 Jahre.</div>
+      </details>
+      <div class="linkrow">
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/abwanderung-ueberalterung-geburten-rueckgang-massnahmen-parteien-afd-cdu-spd-,newsletter-entscheidung-106.html">📰 Parteienvergleich</a>
+        <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/ueberalterung-afd-maenner-frauen-bildung-geburten-rueckgang-alte-demografie,newsletter-entscheidung-104.html">📰 Interview</a>
+      </div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+      <h3>Asylzugänge auf dem Niveau der Jahre 2011/2012</h3>
+      <div class="date">04.08.2026 · PM 102/2026</div>
+      <p class="zusammenfassung">Im Juli 2026 wurden 134 Asylzugänge registriert — fast 39 Prozent weniger als im Juli 2025 und knapp 72 Prozent weniger als im Juli 2024. Insgesamt kamen bis zum 31. Juli 1.148 Asylsuchende ins Land, ein Rückgang um fast 34 Prozent gegenüber dem Vorjahreszeitraum. Hochgerechnet ergibt sich ein Jahrestrend von etwa 1.950 Zugängen; weniger als 2.000 gab es zuletzt 2011.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Landeseigene Zahlen zum meistdiskutierten Wahlkampfthema — vorgelegt vom Innenministerium fünf Wochen vor der Wahl.</div></div>
+      <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/asylzugaenge-in-sachsenanhalt-auf-dem-niveau-der-jahre-20112012">🏛️ PM Nr. 102/2026</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+      <h3>Bildhauer Marc Fromm warnt vor politischen Eingriffen in die Kultur</h3>
+      <div class="date">03.08.2026, 13:45 Uhr</div>
+      <p class="zusammenfassung">Der seit dem Studium an der Burg Giebichenstein in Halle verwurzelte Bildhauer spricht im Werkstattbesuch über Heimat, Identität und Kunstfreiheit. Bekannt wurde er mit überlebensgroßen Holzfiguren; seine neue „Soldatin" reagiert auf eine Bundeswehr-Postkarte an seine Tochter. Er sieht sich nicht als politischer Künstler, blickt aber mit Sorge auf AfD-Bestrebungen, Kultur zu reglementieren — zugleich wünscht er sich, dass die Menschen im Land sich nicht in einer Opferrolle sehen.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Teil der MDR-Reihe zur Landtagswahl; Kunstfreiheit als Konfliktfeld bei einer möglichen AfD-Regierungsbeteiligung.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/landtagswahl-afd-kunst-freiheit-,fromm-ltw-hausbesuch-kultur-news-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+      <h3>Moritzburg zeigt erstmals eine große Kesting-Schau</h3>
+      <div class="date">02.08.2026, 03:00 Uhr</div>
+      <p class="zusammenfassung">Das Kunstmuseum Moritzburg in Halle zeigt die erste umfangreiche Einzelschau zum 1892 geborenen Maler, Grafiker und Fotografen Edmund Kesting, dessen Werk von den Nationalsozialisten als „entartet" diffamiert und in der DDR in der Formalismusdebatte abgelehnt wurde. Museumsdirektor Thomas Bauer-Friedrich spürte mehr als 200 Arbeiten überwiegend bei privaten Sammlern auf. Die Schau läuft bis 25. Oktober 2026.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Museale Aufarbeitung doppelter Diktaturerfahrung in der Kunst — passt zur laufenden Debatte um politische Vorgaben für Kultur.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/ausstellung-moritzburg-avantgarde-ddr-ns,kesting-kultur-news-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+      <h3>Adelsgräber des 11. Jahrhunderts am Naumburger Dom entdeckt</h3>
+      <div class="date">03.08.2026, 10:46 Uhr</div>
+      <p class="zusammenfassung">Bei Bauarbeiten haben Archäologen 13 Bestattungen von Adeligen aus dem 11. Jahrhundert freigelegt. Die Gräber liegen zwischen zwei Sakralbauten unmittelbar vor dem historischen Hauptzugang — eine Lage, die im Mittelalter Stiftern und Adel vorbehalten war; fünf Verstorbene wurden in gemauerten Steinkisten bestattet. Die Skelette sollen am Max-Planck-Institut in Leipzig per DNA-Analyse untersucht werden.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Archäologischer Fund am UNESCO-Welterbe, Forschungsarbeit des Landesamtes für Denkmalpflege.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/burgenland/adel-friedhof-naumburger-dom-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+  </div>
+
+  <div class="section-label" id="justiz">Justiz, Inneres &amp; Sicherheit</div>
+  <div class="grid">
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+      <h3>Hasskriminalität im Netz: Verfahrenszahl mehr als verdoppelt</h3>
+      <div class="date">03.08.2026, 12:58 Uhr (erstmals 02.08.)</div>
+      <p class="zusammenfassung">Die Zentralstelle bei der Staatsanwaltschaft Halle leitete 2025 insgesamt 727 Verfahren gegen bekannte Tatverdächtige ein — 2024 waren es 312. Angeklagt wird jeder fünfte Fall, überdurchschnittlich viel; meist geht es um Beleidigung und Volksverhetzung über anonyme Accounts. Von rund 350 abgeschlossenen Verfahren endeten 50 mit Geldstrafe, 170 wurden mangels hinreichenden Tatverdachts eingestellt. Wegen des Einstellungsstopps 2025/26 ist eine IT-Forensiker-Stelle unbesetzt.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zeigt, wie die Haushaltssperre des Landes direkt die Strafverfolgungskapazität bei Online-Hetze beschneidet.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/fallzahlen-verdoppelt-102,hasskriminalitaet-internet-102.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+      <h3>28 Drohnenvorfälle im ersten Halbjahr</h3>
+      <div class="date">04.08.2026, 13:14 Uhr</div>
+      <p class="zusammenfassung">Das Landesinnenministerium meldet für das erste Halbjahr 2026 insgesamt 28 Drohnenvorfälle — betroffen waren private Grundstücke, Industrieanlagen und Militäreinrichtungen. Die Motive lassen sich nicht pauschal benennen, grundsätzlich seien Spionage und Sabotage möglich. Durch das angepasste Polizeigesetz darf die Polizei Drohnen inzwischen auch zerstören. Beim Schutz kritischer Infrastruktur sieht das Ministerium vor allem den Bund in der Pflicht.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Verknüpft das umstrittene neue Polizeigesetz mit hybrider Bedrohungslage und einer Zuständigkeitsverschiebung Richtung Bund.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/innenministerium-polizei-bundeswehr-100,drohnen-spionage-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+      <h3>Land stimmt Staatsvertrag zur elektronischen Fußfessel zu</h3>
+      <div class="date">28.07.2026 · PM 416/2026</div>
+      <p class="zusammenfassung">Die Landesregierung hat dem Entwurf eines Staatsvertrags über die Durchführung der elektronischen Aufenthaltsüberwachung zugestimmt; er wird nun dem Landtag zugeleitet und soll anschließend vom Ministerpräsidenten unterzeichnet werden. Grundlage ist die Änderung des Gewaltschutzgesetzes, mit der künftig auch Familiengerichte in Hochrisikofällen eine Fußfessel anordnen können.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Konkreter Vollzugsschritt beim Schutz vor häuslicher Gewalt — der Landtag muss noch zustimmen.</div></div>
+      <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/sachsenanhalt-unterstuetzt-neuen-staatsvertrag-zur-ausweitung-des-einsatzes-der-elektronischen-fussfessel-besserer-schutz-vor-gewalt">🏛️ PM Nr. 416/2026</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+      <h3>Circus Krone in Magdeburg: alte Debatte um Wildtiere</h3>
+      <div class="date">04.08.2026, 13:56 Uhr (zuerst 03.08.)</div>
+      <p class="zusammenfassung">Der Circus Krone gastiert mit 82 Tieren und 230 Mitarbeitenden in Magdeburg. Peta prangert „knallende Peitschen, verängstigte Großkatzen" an, der Deutsche Tierschutzbund fordert ein Verbot von Wildtieren im Zirkus und hält Tierschutzgesetz und Zirkusleitlinien für unzureichend kontrollierbar. Krone verweist auf Freigehege, klimatisierte Wagen und unangekündigte Kontrollen der Veterinärämter. Elefanten reisen nicht mehr mit.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das Wildtierverbot im Zirkus ist eine offene bundes- wie landespolitische Regelungslücke, hier am konkreten Gastspiel durchdekliniert.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/magdeburg/circus-krone-stendal-tiere-gesetze-102,zirkus-tierschutz-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+    <div class="card"><div class="body">
+      <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+      <h3>Zehnjährige stürzt in Halle-Neustadt vom Balkon</h3>
+      <div class="date">04.08.2026, 08:01 Uhr (zuerst 03.08.)</div>
+      <p class="zusammenfassung">Ein zehnjähriges Mädchen ist am späten Sonntagabend vom Balkon der sechsten Etage eines Mehrfamilienhauses gestürzt und schwer verletzt worden. Die Polizei sieht keine Hinweise auf eine Straftat, die Ursache ist weiterhin unklar. Anfang Dezember war in Halle-Neustadt bereits ein siebenjähriges Mädchen aus dem dritten Stock gestürzt und wenige Wochen später an seinen Verletzungen gestorben.</p>
+      <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zweiter Kindersturz in Halle-Neustadt binnen acht Monaten — wegen des Halle-Bezugs trotz Polizeimeldungs-Charakter aufgenommen.</div></div>
+      <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/schwer-verletzt-102,neustadt-kind-fenster-sturz-100.html">📰 MDR-Artikel</a></div>
+    </div></div>
+
+  </div>
+
+  <footer class="quellen">
+    <h2>Quellen und Zeitraum</h2>
+    <p><strong>MDR Sachsen-Anhalt</strong> — 28.07.–04.08.2026, 38 Artikel geladen, 37 aufgenommen. Alle Adressen zentral auf HTTP 200 geprüft.</p>
+    <p><strong>Landesregierung</strong> — 28.07.–04.08.2026, 19 Pressemitteilungen, 10 aufgenommen. Neue Adresse nach dem Portal-Relaunch: <code>sachsen-anhalt.de/services-dienste/page/pressemitteilungen</code>; die bisherige Adresse liefert HTTP 404.</p>
+    <p><strong>PADOKA Drucksachen</strong> — 0 Treffer im Zeitraum, parlamentarische Sommerpause. Quelle entfällt.</p>
+    <p><strong>PADOKA Kleine Anfragen</strong> — 9 Treffer, die drei relevantesten ausgewertet, alle PDFs gelesen. PADOKA Gesetze wurde auf Wunsch nicht abgefragt.</p>
+    <p>Vollständiges Filter-Log mit allen 66 Einzelentscheidungen: <a href="2026-08-04-filter.md">2026-08-04-filter.md</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

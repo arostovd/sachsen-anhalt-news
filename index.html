@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neues aus Sachsen-Anhalt</title>
+<meta name="description" content="Wöchentliche Nachrichtenübersicht für Sachsen-Anhalt mit Schwerpunkt Halle (Saale), aus öffentlichen Quellen zusammengestellt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --surface:    #fcfcfb;
+    --plane:      #f4f3f0;
+    --text:       #0b0b0b;
+    --secondary:  #52514e;
+    --muted:      #898781;
+    --border:     rgba(11,11,11,0.10);
+    --accent:     #2a78d6;
+    --font-head:  'Fraunces', Georgia, serif;
+    --font-body:  'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface:   #16161a;
+      --plane:     #101013;
+      --text:      #f2f1ee;
+      --secondary: #b3b1ab;
+      --muted:     #86847e;
+      --border:    rgba(255,255,255,0.12);
+      --accent:    #6ea8f0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 64px;
+    background: var(--plane);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  header { padding: 56px 0 32px; }
+  h1 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(2rem, 7vw, 2.75rem);
+    line-height: 1.1;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .lede { color: var(--secondary); margin: 0; font-size: 1.05rem; }
+  .edition {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .edition.latest { border-color: var(--accent); }
+  .edition-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .edition h2 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 2px 9px;
+  }
+  .meta { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .meta-item { font-size: 0.85rem; color: var(--secondary); }
+  .meta-item.muted { color: var(--muted); font-style: italic; }
+  .links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .link {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text);
+    background: var(--plane);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 7px 15px;
+  }
+  .link.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .link:hover { border-color: var(--accent); }
+  .empty { color: var(--muted); }
+  footer {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Neues aus Sachsen-Anhalt</h1>
+      <p class="lede">Nachrichtenübersicht mit Schwerpunkt Halle (Saale). Zusammengestellt aus MDR Sachsen-Anhalt, den Pressemitteilungen der Landesregierung und der Parlamentsdokumentation des Landtags.</p>
+    </header>
+    <main>
+      <article class="edition latest">
+        <div class="edition-head">
+          <h2>4. August 2026</h2>
+          <span class="badge">aktuell</span>
+        </div>
+        <div class="meta"><span class="meta-item">Zeitraum 28.07.–04.08.2026</span><span class="meta-item">66 Einträge gesehen, 50 aufgenommen, 16 verworfen.</span></div>
+        <div class="links"><a class="link primary" href="ausgaben/2026-08-04.html">Dashboard ansehen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-04.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-04-filter.md">Filter-Log</a></div>
+      </article>
+      <article class="edition">
+        <div class="edition-head">
+          <h2>27. Juli 2026</h2>
+          
+        </div>
+        <div class="meta"><span class="meta-item">Zeitraum 24.07.–27.07.2026</span></div>
+        <div class="links"><a class="link primary" href="ausgaben/2026-07-27.html">Dashboard ansehen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-07-27.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-07-27-filter.md">Filter-Log</a></div>
+      </article>
+      <article class="edition">
+        <div class="edition-head">
+          <h2>26. Juni 2026</h2>
+          
+        </div>
+        <div class="meta"><span class="meta-item">Zeitraum 01.06.2026 – 30.06.2026</span><span class="meta-item muted">nur als Bericht</span></div>
+        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-06-26.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-06-26-filter.md">Filter-Log</a></div>
+      </article>
+      <article class="edition">
+        <div class="edition-head">
+          <h2>30. Mai 2026</h2>
+          
+        </div>
+        <div class="meta"><span class="meta-item">Zeitraum 27.05.–30.05.2026</span><span class="meta-item muted">nur als Bericht</span></div>
+        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30-filter-landesregierung.md">Filter-Log (LANDESREGIERUNG)</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30-filter-mdr.md">Filter-Log (MDR)</a></div>
+      </article>
+      <article class="edition">
+        <div class="edition-head">
+          <h2>28. Mai 2026</h2>
+          
+        </div>
+        <div class="meta"><span class="meta-item">Zeitraum 25.05.–27.05.2026</span><span class="meta-item muted">nur als Bericht</span></div>
+        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-28.md">Bericht lesen</a></div>
+      </article>
+    </main>
+    <footer>
+      <p>Zuletzt erzeugt am 7. August 2026 um 13:21. Alle Inhalte stammen aus öffentlich zugänglichen Quellen und sind dort verlinkt.</p>
+    </footer>
+  </div>
+</body>
+</html>

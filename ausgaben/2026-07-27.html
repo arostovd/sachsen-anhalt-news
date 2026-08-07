@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sachsen-Anhalt News — 27.07.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f4f3f0;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --border:         rgba(11,11,11,0.10);
+    --cat-politik:    #2a78d6;
+    --cat-wirtschaft: #1baf7a;
+    --cat-verkehr:    #eda100;
+    --cat-energie:    #008300;
+    --cat-digital:    #4a3aa7;
+    --cat-bildung:    #e34948;
+    --cat-gesellschaft: #e87ba4;
+    --cat-justiz:     #eb6834;
+    --font-headline:  'Fraunces', Georgia, serif;
+    --font-body:      'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1:      #232322;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --border:         rgba(255,255,255,0.10);
+      --cat-politik:    #3987e5;
+      --cat-wirtschaft: #199e70;
+      --cat-verkehr:    #c98500;
+      --cat-energie:    #008300;
+      --cat-digital:    #9085e9;
+      --cat-bildung:    #e66767;
+      --cat-gesellschaft: #d55181;
+      --cat-justiz:     #d95926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding-bottom: 60px; }
+
+  header.top {
+    background: var(--surface-1);
+    padding: 18px 16px 0;
+    border-bottom: 1px solid var(--gridline);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  header.top h1 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    line-height: 1.1;
+  }
+  header.top h1 em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  header.top .sub {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  nav.filters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+  }
+  nav.filters a {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    background: var(--page-plane);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+  nav.filters a .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+  @media (min-width: 680px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    background: var(--gridline);
+  }
+  .card .body { padding: 16px 16px 18px; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 9px;
+  }
+  .badge .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .card h3 {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 21px;
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  .card .date { font-size: 11.5px; color: var(--text-muted); margin-bottom: 9px; }
+  .card p.zusammenfassung {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    margin: 0 0 10px;
+  }
+  .warum {
+    display: flex;
+    gap: 8px;
+    background: var(--page-plane);
+    border-radius: 8px;
+    padding: 9px 11px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    color: var(--text-primary);
+  }
+  .warum .icon { flex: none; }
+  .warum strong {
+    display: block;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  details.einordnung {
+    background: var(--page-plane);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  details.einordnung summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 12.5px;
+  }
+  details.einordnung .src-line { margin-top: 6px; color: var(--text-secondary); }
+  .linkrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .linkrow a {
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--text-primary);
+    background: var(--page-plane);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 10px;
+  }
+  .linkrow a:hover { border-color: var(--text-muted); }
+
+  .section-label {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-secondary);
+    padding: 20px 16px 4px;
+  }
+  footer.note {
+    padding: 20px 16px 40px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>🏛️ Sachsen-Anhalt <em>News</em></h1>
+    <div class="sub">Montag, 27. Juli 2026 · MDR (letzte 4 Tage) · Landesregierung (Juli) · Landtag/PADOKA (Juli)</div>
+    <nav class="filters">
+      <a href="#politik"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</a>
+      <a href="#wirtschaft"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</a>
+      <a href="#verkehr"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</a>
+      <a href="#energie"><span class="dot" style="background:var(--cat-energie)"></span>Energie</a>
+      <a href="#bildung"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</a>
+      <a href="#justiz"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</a>
+    </nav>
+  </header>
+
+  <div class="section-label" id="politik">Landespolitik &amp; Personalien</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Landtagswahl: 15 Parteien für Wahlzettel zugelassen</h3>
+        <div class="date">24.07., aktualisiert 27.07.2026, 15:02 Uhr</div>
+        <p class="zusammenfassung">Der Landeswahlausschuss in Magdeburg hat entschieden, welche Parteien am 6. September mit ihren Landeslisten antreten dürfen — insgesamt 15. Nicht zugelassen wurden KPD, Die Libertären und die Partei der Vernunft.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Formaler Startschuss für die heiße Phase des Landtagswahlkampfs.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landeswahlausschuss-landeswahlleiterin-entscheidung-wahl,parteien-zulassung-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Elbehof Wahrenberg: Sorge vor AfD-Wahlsieg</h3>
+        <div class="date">25.07.2026, 16:41 Uhr</div>
+        <p class="zusammenfassung">Norbert Krebber, seit 30 Jahren Betreiber des Elbehofs in Wahrenberg (Landkreis Stendal) und Gründer der Netzwerkstatt „Storchendorf Wahrenberg", fürchtet bei einem AfD-Wahlsieg um Förderung und persönliche Sicherheit.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zeigt exemplarisch, wie die Wahl zivilgesellschaftliches Engagement im ländlichen Raum beunruhigt.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/stendal/stendal/sorge-afd-wahlsieg-,elbehof-wahrenberg-108.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Soziologe: AfD-Rückholpläne für Fachkräfte eine „Scheindebatte"</h3>
+        <div class="date">26.07.2026, 13:06 Uhr</div>
+        <p class="zusammenfassung">Die AfD will ausgewanderte Fachkräfte mit Geldprämien zurückholen. Soziologe Prof. Marcel Erlinghagen (Uni Duisburg-Essen) hält die Erfolgsaussichten angesichts der Statistiken für gering.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Wissenschaftliche Einordnung eines zentralen Wahlkampfthemas.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/soziologe-kritisiert-plaene-wahlprogramm-jobs-berufe-,afd-fachkraefte-rueckkehr-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Ragner Wenzel neuer Präsident des Landesamtes für Soziales, Jugend und Gesundheit</h3>
+        <div class="date">02.07.2026</div>
+        <p class="zusammenfassung">Personalie an der Spitze des Landesamtes für Soziales, Jugend und Gesundheit.</p>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=665420">🏛️ PM Nr. 125/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Mitteldeutsche Justizministerinnenkonferenz in Halberstadt</h3>
+        <div class="date">02.07.2026</div>
+        <p class="zusammenfassung">Justizministerinnen aus Sachsen, Sachsen-Anhalt und Thüringen berieten unter dem Titel „Justiz als Garantin des Rechtsstaats" über gemeinsame Herausforderungen.</p>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=665429">🏛️ Landesregierung</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label" id="wirtschaft">Wirtschaft, Infrastruktur &amp; Strukturwandel</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Betreiber der Giftmülldeponie Teutschenthal insolvent</h3>
+        <div class="date">24.07.2026, 19:40 Uhr</div>
+        <p class="zusammenfassung">Der Betreiber der Untertagedeponie im ehemaligen Salzbergwerk bei Teutschenthal (Saalekreis) hat Insolvenz angemeldet. Laut Mitteldeutscher Zeitung könnte das Land für Stilllegung und Sicherung einspringen müssen — Hochrechnung: rund 130 Millionen Euro.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Potenziell erhebliche Haushaltsbelastung für das Land, Saalekreis/Halle-Bezug.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/betreiber-insolvenz-investor,teutschenthal-deponie-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Nammo baut Standort Schönebeck mit 15 Millionen Euro weiter aus</h3>
+        <div class="date">22.07.2026</div>
+        <p class="zusammenfassung">Ministerpräsident Sven Schulze würdigte die Investition des Rüstungsunternehmens Nammo in Schönebeck als „starkes Bekenntnis zu unserem Land".</p>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=669771">🏛️ PM Nr. 408/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Mehr als 2 Mio. € für Mobilitätsprojekt „SMOViE" im Mitteldeutschen Revier</h3>
+        <div class="date">16.07.2026</div>
+        <p class="zusammenfassung">Länderübergreifende Förderung eines Mobilitätsprojekts im Rahmen des Strukturwandels im Mitteldeutschen Braunkohlerevier.</p>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=668582">🏛️ PM Nr. 124/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Ansiedlung von Rechenzentren: Strategie, Wertschöpfung und Umweltfolgen</h3>
+        <div class="date">17.07.2026 (KA 8/3811)</div>
+        <p class="zusammenfassung">Kleine Anfrage von Kerstin Eisenreich (Die Linke) an das Wirtschaftsministerium zu Strategie und Umweltfolgen der wachsenden Nachfrage nach Rechenzentrums-Standorten.</p>
+        <details class="einordnung">
+          <summary>Einordnung — Hintergrund zur Grünen-Forderung</summary>
+          <div class="src-line">Die Grünen-Fraktion hatte bereits Ende 2025 eine landesweite Nachhaltigkeitsstrategie gefordert — Hintergrund: stark steigende Standortanfragen, Sorge um Stromnetz-Belastung.</div>
+        </details>
+        <div class="linkrow">
+          <a href="https://padoka.landtag.sachsen-anhalt.de/files/drs/wp8/drs/d7249dak.pdf">📋 Drucksache 8/7249</a>
+          <a href="https://hallespektrum.de/aktuelles/gruene-fordern-nachhaltige-strategie-fuer-rechenzentren-in-sachsen-anhalt/474456/">🔗 Hintergrund</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Industriestandort Dessau-Roßlau: Arbeitsplatzverlust seit 2015</h3>
+        <div class="date">20.07.2026 (KA 8/3831)</div>
+        <p class="zusammenfassung">Kleine Anfrage der AfD-Abgeordneten Nadine Koppehel und Margret Wendt an das Wirtschaftsministerium zur Beschäftigungsentwicklung im Industriestandort Dessau-Roßlau.</p>
+        <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/files/drs/wp8/drs/d7253aak.pdf">📋 Drucksache 8/7253</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Digitaler Blick aufs Feld: GeoBox-Viewer für Landwirte</h3>
+        <div class="date">27.07.2026, 15:41 Uhr</div>
+        <p class="zusammenfassung">Das Land stellt Landwirten mit dem kostenlosen GeoBox-Viewer eine digitale Plattform mit Boden- und Pflanzendaten zur Verfügung.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Landesweite Digitalisierungsinitiative für die Landwirtschaft.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landwirte-zukunft-digital-ernte-bauern,geo-box-viewer-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label" id="verkehr">Verkehr &amp; Mobilität</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Saaletalbrücke: höchste Straßenbrücke des Landes vor Fertigstellung</h3>
+        <div class="date">26.07.2026, 11:33 Uhr</div>
+        <p class="zusammenfassung">Die seit März 2022 gebaute Saaletalbrücke der B87n zwischen Bad Kösen (Sachsen-Anhalt) und Großheringen (Thüringen) soll Ende 2026 freigegeben werden — bis zu 60 m hoch, über 1 km lang, rund 72 Millionen Euro Baukosten.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Länderübergreifendes Großprojekt kurz vor Abschluss.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/burgenland/update-bau-freigabe-verlauf-karte-bundesstrasse-b87n-bad-koesen-,saaletalbruecke-102.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label" id="energie">Energie &amp; Umwelt</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Flutpolder Rösa: Hochwasserschutz an der Mulde wird ausgebaut</h3>
+        <div class="date">26.07.2026, 13:45 Uhr</div>
+        <p class="zusammenfassung">Spatenstich für das Einlaufbauwerk des Flutpolders Rösa (Landkreis Anhalt-Bitterfeld) — 520 Hektar Rückhaltebecken für bis zu 20 Mio. m³ Muldewasser im Hochwasserfall.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/bitterfeld/hochwasserschutz-mulde-spatenstich,flutpolder-roesa-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Willingmann: Ausbau erneuerbarer Energien weiter auf gutem Weg</h3>
+        <div class="date">14.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=668227">🏛️ PM Nr. 397/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Willingmann kritisiert Brüsseler Bürokratie bei der Wasserstoffwirtschaft</h3>
+        <div class="date">14.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=668236">🏛️ PM Nr. 398/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Windenergieanlagen: Bestandsaufnahme 2021–2025</h3>
+        <div class="date">23.07.2026 (KA 8/3772)</div>
+        <p class="zusammenfassung">Kleine Anfrage von Daniel Roi (AfD) zur Entwicklung der Windkraft im Land.</p>
+        <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/portal/browse.tt.html?type=generic2&action=link&db=lsa.lissh&doctype=D&from=01.07.2026&to=31.07.2026&wp=8">📋 Drucksache 8/7273</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Zukunfts- und Klimaschutzkongress: Umsetzung und Wirksamkeit</h3>
+        <div class="date">23.07.2026 (KA 8/3809)</div>
+        <p class="zusammenfassung">Kleine Anfrage von Hendrik Lange und Kerstin Eisenreich (Die Linke) zur Bilanz der Klimapolitik-Instrumente der Landesregierung.</p>
+        <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/portal/browse.tt.html?type=generic2&action=link&db=lsa.lissh&doctype=D&from=01.07.2026&to=31.07.2026&wp=8">📋 Drucksache 8/7274</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Grüner Wasserstoff in Leuna: Betriebsstand, Förderung, Ausbaupfad bis 2030</h3>
+        <div class="date">15.07.2026 (KA 8/3790)</div>
+        <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/files/drs/wp8/drs/d7243dak.pdf">📋 Drucksache 8/7243</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label" id="bildung">Bildung, Jugend &amp; Soziales</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Mögliche Jugendamts-Versäumnisse im Fall der getöteten sechsjährigen Alicia</h3>
+        <div class="date">24.07.2026 (KA 8/3839)</div>
+        <p class="zusammenfassung">Kleine Anfrage der AfD-Abgeordneten Nadine Koppehel und Margret Wendt an das Sozialministerium zu möglichen behördlichen Versäumnissen im Osternienburger Land.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Alicia (6) starb im Juni mutmaßlich an Misshandlungen; rund 400 Warn-E-Mails an das Jugendamt Dessau landeten in einem stillgelegten Postfach und blieben unbearbeitet. Schwerwiegendes Kinderschutz-Versagen mit politischer Aufarbeitung.</div></div>
+        <div class="linkrow">
+          <a href="https://padoka.landtag.sachsen-anhalt.de/files/drs/wp8/drs/d7276aak.pdf">📋 Drucksache 8/7276</a>
+          <a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/anhalt/news-fall-alicia-offenbart-schwaechen-im-kinderschutz,getoetetes-maedchen-alicia-100.html">📰 MDR-Hintergrund</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Abitur und Mittlerer Schulabschluss 2026: stabile Leistungen</h3>
+        <div class="date">15.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=668376">🏛️ PM Nr. 56/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Bundesrat verabschiedet Entschließung zur Stärkung der Schulpflicht</h3>
+        <div class="date">10.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=667464">🏛️ PM Nr. 52/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>HiLSA-Studie: Hitzeschutz in Sachsen-Anhalts Wohnvierteln</h3>
+        <div class="date">25.07.2026, 12:25 Uhr</div>
+        <p class="zusammenfassung">Forscherinnen der Hochschulen Magdeburg-Stendal und Harz untersuchen, wie ältere und chronisch kranke Menschen künftig besser vor extremer Hitze geschützt werden können.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/update-hilsa-studie-hitzeschutz-hochschule-magdeburg-stendal-harz,hilsa-studie-hitzeschutz-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Noroviren-Verdacht: Rückruf von Tiefkühlbeeren ausgeweitet</h3>
+        <div class="date">25.07.2026, 16:26 Uhr</div>
+        <p class="zusammenfassung">Der Hersteller Jütro Tiefkühlkost aus Jessen (Landkreis Wittenberg) ruft Bio-Beerenmischungen wegen Noroviren-Verdachts zurück — bundesweit bei Aldi, Lidl und Netto verkauft.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/wittenberg/noroviren-rueckruf-aldi-lidl-netto,rueckruf-tiefkuehl-beeren-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Sanierte Gebäude für Pharmazie und Chemie der MLU Halle-Wittenberg übergeben</h3>
+        <div class="date">03.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=667131">🏛️ Landesregierung</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label" id="justiz">Justiz, Inneres &amp; Sicherheit</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>CSD-Anschlag Berlin: „Reißt Wunden auf" — Reaktionen aus Sachsen-Anhalt</h3>
+        <div class="date">27.07.2026, 16:00 Uhr</div>
+        <p class="zusammenfassung">Nach dem tödlichen Angriff am Rande des CSD Berlin äußerte sich Justizministerin Franziska Weidinger (CDU) betroffen und zog Parallelen zum Magdeburger Weihnachtsmarkt-Anschlag.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/news-anschlag-auswirkungen-halle-,csd-angriff-berlin-100.html">📰 MDR-Artikel</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>Sachsen-Anhalt stellt Cybersicherheitsstrategie vor</h3>
+        <div class="date">07.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=666416">🏛️ PM Nr. 112/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>Sachsen-Anhalt setzt sich für moderne Verwaltungsgerichtsbarkeit ein</h3>
+        <div class="date">10.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=667307">🏛️ PM Nr. 027/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>Bericht der Härtefallkommission für das Jahr 2025</h3>
+        <div class="date">07.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=666424">🏛️ PM Nr. 093/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>Sonnenwendfeiern mit völkischem Hintergrund in Sachsen-Anhalt</h3>
+        <div class="date">24.07.2026 (KA 8/3840)</div>
+        <p class="zusammenfassung">Kleine Anfrage von Eva von Angern (Die Linke) an das Innenministerium.</p>
+        <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/portal/browse.tt.html?type=generic2&action=link&db=lsa.lissh&doctype=D&from=01.07.2026&to=31.07.2026&wp=8">📋 Drucksache 8/7277</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>Häufung: Parlamentarisches Monitoring rechtsextremer Vorfälle</h3>
+        <div class="date">14.–24.07.2026</div>
+        <p class="zusammenfassung">Die fraktionslose Abgeordnete Henriette Quade hat im Juli mindestens zehn Nachfragen zu älteren Kleinen Anfragen zu rechtsextremen Vorfällen gestellt — u.a. Durchsuchungen bei Reichsbürgern (Roßla) und Neonazis (Görschen, Roitzsch), rechtsextreme Graffiti (Burg), ein Mann in SS-Uniform (Zeitz), Hakenkreuze auf einem Fußballplatz (Allstedt), ein Angriff auf Journalisten (Schnellroda) sowie antisemitische Vorfälle beim Halleschen FC. Ergänzend fragte Sebastian Striegel (Grüne) nach der PMK-rechts-Statistik Mai 2026 und einer versuchten Anstiftung zum Mord in Gardelegen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Verdichtetes parlamentarisches Monitoring von Rechtsextremismus im Vorfeld der Landtagswahl im September.</div></div>
+        <div class="linkrow"><a href="https://padoka.landtag.sachsen-anhalt.de/portal/browse.tt.html?type=generic2&action=link&db=lsa.lissh&doctype=D&from=01.07.2026&to=31.07.2026&wp=8">📋 Drucksachen 8/7238–8/7275 (diverse)</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>Elektronische Akte in der Sozialgerichtsbarkeit eingeführt</h3>
+        <div class="date">06.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=666086">🏛️ PM Nr. 026/2026</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz/Inneres</div>
+        <h3>Landesdemokratieprogramm: Beirat empfiehlt Ausbau</h3>
+        <div class="date">06.07.2026</div>
+        <div class="linkrow"><a href="https://www.sachsen-anhalt.de/bs/pressemitteilungen/ministerien?tx_tsarssinclude_pi1%5Baction%5D=single&tx_tsarssinclude_pi1%5Bcontroller%5D=Base&tx_tsarssinclude_pi1%5Buid%5D=666165">🏛️ PM Nr. 124/2026</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="note">
+    Vollständiger Bericht: MDR (24.–27.07.), Landesregierung (Juli), PADOKA-Drucksachen (Juli). Filter-Log: <code>filtered_2026-07-27_17-30.md</code>
+  </footer>
+
+</div>
+</body>
+</html>
