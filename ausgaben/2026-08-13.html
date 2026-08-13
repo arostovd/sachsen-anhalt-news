@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sachsen-Anhalt News — 2026-08-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --surface-1: #fcfcfb; --page-plane: #f4f3f0; --text-primary: #0b0b0b;
+    --text-secondary: #52514e; --text-muted: #898781; --gridline: #e1e0d9;
+    --border: rgba(11,11,11,0.10);
+    --cat-politik: #2a78d6; --cat-wirtschaft: #1baf7a; --cat-verkehr: #eda100;
+    --cat-energie: #008300; --cat-digital: #4a3aa7; --cat-bildung: #e34948;
+    --cat-gesellschaft: #e87ba4; --cat-justiz: #eb6834;
+    --font-headline: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1: #232322; --page-plane: #0d0d0d; --text-primary: #ffffff;
+      --text-secondary: #c3c2b7; --text-muted: #898781; --gridline: #2c2c2a;
+      --border: rgba(255,255,255,0.10);
+      --cat-politik: #3987e5; --cat-wirtschaft: #199e70; --cat-verkehr: #c98500;
+      --cat-energie: #008300; --cat-digital: #9085e9; --cat-bildung: #e66767;
+      --cat-gesellschaft: #d55181; --cat-justiz: #d95926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page-plane); color: var(--text-primary);
+    font-family: var(--font-body); line-height: 1.5; }
+  .wrap { max-width: 920px; margin: 0 auto; padding-bottom: 60px; }
+  header.top { background: var(--surface-1); padding: 18px 16px 0;
+    border-bottom: 1px solid var(--gridline); position: sticky; top: 0; z-index: 5; }
+  header.top h1 { font-family: var(--font-headline); font-weight: 700; font-size: 34px;
+    letter-spacing: -0.01em; margin: 0 0 4px; line-height: 1.1; }
+  header.top h1 em { font-style: italic; font-weight: 600; color: var(--text-secondary); }
+  header.top .sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 10px; }
+  nav.filters { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; }
+  nav.filters a { flex: none; display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12.5px; text-decoration: none; color: var(--text-secondary);
+    background: var(--page-plane); border: 1px solid var(--border);
+    border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+  nav.filters a .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 16px; }
+  @media (min-width: 680px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .card .body { padding: 16px 16px 18px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 9px; }
+  .badge .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .card h3 { font-family: var(--font-headline); font-weight: 600; font-size: 21px;
+    margin: 0 0 8px; line-height: 1.25; }
+  .card .date { font-size: 11.5px; color: var(--text-muted); margin-bottom: 9px; }
+  .card p.zusammenfassung { font-size: 14.5px; color: var(--text-secondary); margin: 0 0 10px; }
+  .warum { display: flex; gap: 8px; background: var(--page-plane); border-radius: 8px;
+    padding: 9px 11px; margin-bottom: 10px; font-size: 13.5px; color: var(--text-primary); }
+  .warum .icon { flex: none; }
+  .warum strong { display: block; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted); font-weight: 600; margin-bottom: 2px; }
+  details.einordnung { background: var(--page-plane); border-radius: 8px; padding: 8px 10px;
+    margin-bottom: 10px; font-size: 13px; }
+  details.einordnung summary { cursor: pointer; font-weight: 600; color: var(--text-primary); font-size: 12.5px; }
+  details.einordnung a.src-line { display: block; margin-top: 6px; color: var(--text-secondary);
+    text-decoration: none; border-bottom: 1px solid transparent;
+    transition: color .12s ease, border-color .12s ease; }
+  details.einordnung a.src-line:hover, details.einordnung a.src-line:focus-visible {
+    color: var(--text-primary); border-bottom-color: currentColor; }
+  .linkrow { display: flex; flex-wrap: wrap; gap: 8px; }
+  .linkrow a { font-size: 12.5px; text-decoration: none; color: var(--text-primary);
+    background: var(--page-plane); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 10px; }
+  .linkrow a:hover { border-color: var(--text-muted); }
+  .section-label { font-family: var(--font-headline); font-weight: 600; font-style: italic;
+    font-size: 15px; color: var(--text-secondary); padding: 20px 16px 4px; }
+  footer.fuss { padding: 24px 16px; font-size: 12px; color: var(--text-muted); }
+  footer.fuss a { color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>🏛️ Sachsen-Anhalt <em>News</em></h1>
+    <div class="sub">06.08.–13.08.2026 · MDR · Landesregierung</div>
+    <nav class="filters">
+      <a href="#politik"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</a>
+      <a href="#wirtschaft"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</a>
+      <a href="#energie"><span class="dot" style="background:var(--cat-energie)"></span>Energie</a>
+      <a href="#verkehr"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</a>
+      <a href="#bildung"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</a>
+      <a href="#gesellschaft"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</a>
+      <a href="#justiz"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</a>
+      <a href="#digital"><span class="dot" style="background:var(--cat-digital)"></span>Digitales</a>
+    </nav>
+  </header>
+
+  <div class="section-label" id="politik">🏛️ Landespolitik &amp; Landtagswahl</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Wahlarena: Spitzenkandidaten stellen sich den Bürgerfragen</h3>
+        <div class="date">13.08.2026 (Sendung am 12.08.)</div>
+        <p class="zusammenfassung">In der Sendung „Fakt ist!&quot; beantworteten die Spitzenkandidaten Publikumsfragen zu Brandmauer, Fachkräftemangel und Bildung. Der MDR führte parallel einen Faktencheck als Ticker mit, in dem Aussagen eingeordnet und bei Bedarf richtiggestellt wurden.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der einzige direkte Schlagabtausch aller Spitzenkandidaten vor der Wahl.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/fragen-buerger-spitzenkandidaten-landtagswahl-102,fakt-ist-wahlarena-116.html">📰 MDR (13.08.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/politiker-aussagen-104,faktencheck-wahlarena-100.html">📰 MDR Faktencheck (13.08.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/fragen-buerger-spitzenkandidaten-landtagswahl-102,fakt-ist-wahlarena-116.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/politiker-aussagen-104,faktencheck-wahlarena-100.html">📰 MDR Faktencheck</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Die beiden Spitzenkandidaten im Interview und im Porträt</h3>
+        <div class="date">10.–12.08.2026</div>
+        <p class="zusammenfassung">Ulrich Siegmund (AfD) fordert im MDR-Interview mehr Sicherheit, sieht Einsparpotenzial bei Migration und Asyl und will ausgewanderte Fachkräfte zurückholen. Sven Schulze (CDU) verteidigt sein Eintreten für die abschlagsfreie Rente nach 45 Jahren als Würdigung ostdeutscher Lebensleistung und räumt Fehler seiner Partei in der Migrationspolitik ein. Zu beiden Interviews hat der MDR eine Faktenbasis veröffentlicht, die zentrale Aussagen anhand von Daten prüft — bei Siegmund unter anderem die Kriminalitätsentwicklung, die tatsächlich rückläufig ist.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der MDR benennt in seiner Faktenbasis, dass die AfD vom Verfassungsschutz als gesichert rechtsextreme Bestrebung eingestuft ist.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/afd-ulrich-siegmund-interview,landtagswahl-akt-110.html">📰 MDR Interview Siegmund (10.08.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/interview-faktencheck-104,ulrich-siegmund-afd-136.html">📰 MDR Faktenbasis Siegmund (11.08.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/ulrich-siegmund-102,portrait-afd-100.html">📰 MDR Porträt Siegmund (11.08.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/cdu-sven-schulze-interview,landtagswahl-akt-112.html">📰 MDR Interview Schulze (11.08.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/afd-ulrich-siegmund-interview,landtagswahl-akt-110.html">📰 MDR Interview Siegmund</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/interview-faktencheck-104,ulrich-siegmund-afd-136.html">📰 MDR Faktenbasis Siegmund</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/ulrich-siegmund-102,portrait-afd-100.html">📰 MDR Porträt Siegmund</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/cdu-sven-schulze-interview,landtagswahl-akt-112.html">📰 MDR Interview Schulze</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>MDR Investigativ: Rechtsextremer Aktivist in der AfD-Geschäftsstelle</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Der AfD-Landesverband beschäftigt einen Aktivisten mit Vorgeschichte bei den „Autonomen Nationalisten&quot; und der „Identitären Bewegung&quot; mit der Betreuung der Parteihomepage — vorgeschlagen von Spitzenkandidat Siegmund persönlich. Es ist laut Recherche nicht die einzige Stelle im Umfeld der Landesspitze, die mit früheren Mitgliedern rechtsextremer Gruppen besetzt wurde, obwohl die Partei eine Unvereinbarkeitsliste führt.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Eigenrecherche, kein Wahlkampfmaterial; betrifft die Frage, wie belastbar die Abgrenzung der Partei nach rechtsaußen ist.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/rechtsextremer-aktivist-job-afd-geschaeftsstelle-siegmund-102,afd-1198.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Zwei Erklärstücke zum Wahlrecht: Fünf-Prozent-Hürde und Sperrminorität</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Erreicht eine Partei mehr als ein Drittel der Sitze, kann sie Beschlüsse blockieren, für die eine Zweidrittelmehrheit nötig ist — Verfassungsänderungen, die Wahl von Verfassungsrichtern, die Auflösung des Landtags. Das zweite Stück erklärt, wie das Scheitern kleiner Parteien an der Fünf-Prozent-Marke die Mehrheitsverhältnisse verschiebt.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Beides entscheidet über die Handlungsfähigkeit des nächsten Landtags, unabhängig davon, wer die meisten Stimmen holt.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/bedeutung-minderheit-blockade-beschluesse-afd-102,erklaerer-sperrminoritaet-100.html">📰 MDR Sperrminorität (13.08.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtag-sitzverteilung-102,5-prozent-huerde-100.html">📰 MDR Fünf-Prozent-Hürde (13.08.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/bedeutung-minderheit-blockade-beschluesse-afd-102,erklaerer-sperrminoritaet-100.html">📰 MDR Sperrminorität</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtag-sitzverteilung-102,5-prozent-huerde-100.html">📰 MDR Fünf-Prozent-Hürde</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Wahl-O-Mat mit Rekordnutzung, Grüne kämpfen ums Weiterkommen</h3>
+        <div class="date">12.–13.08.2026</div>
+        <p class="zusammenfassung">Der Wahl-O-Mat wurde binnen einer Woche fast eine halbe Million Mal genutzt; die Landeszentrale für politische Bildung nennt die Resonanz außergewöhnlich. Die Grünen richteten in Dessau-Roßlau ein dreitägiges Wahlkampfcamp mit über 80 Freiwilligen aus, um die Fünf-Prozent-Hürde zu schaffen.</p>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/nutzer-rekord-100,wahl-o-mat-190.html">📰 MDR Wahl-O-Mat (13.08.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/wiedereinzug-landtag-100,gruene-wahlkampf-108.html">📰 MDR Grüne (12.08.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/nutzer-rekord-100,wahl-o-mat-190.html">📰 MDR Wahl-O-Mat</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/wiedereinzug-landtag-100,gruene-wahlkampf-108.html">📰 MDR Grüne</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Wahlalter 16: Kinder- und Jugendbeauftragter fordert Absenkung</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Holger Paech, Kinder- und Jugendbeauftragter des Landes, sprach sich am Internationalen Tag der Jugend dafür aus, das Wahlalter auf 16 Jahre zu senken. Die Wahl im September solle die letzte sein, die 16- und 17-Jährige ausschließt.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/beauftragter-wahlalter-16-ist-ein-gebot-der-gerechtigkeit">🏛 ️ Landesregierung Nr. 145/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Neuer Landesentwicklungsplan tritt in Kraft</h3>
+        <div class="date">11.08.2026</div>
+        <p class="zusammenfassung">Die Landesregierung hat die Verordnung über den Landesentwicklungsplan 2026 beschlossen; mit der Verkündung im Gesetz- und Verordnungsblatt ist er in Kraft. Die Staatskanzlei betont, die Strategie sei in viereinhalb Jahren erarbeitet worden.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der LEP steuert für die kommenden Jahre, wo im Land gebaut, Industrie angesiedelt und Fläche geschützt wird — die größte planerische Weichenstellung dieser Woche und zugleich eine, die kurz vor der Wahl beschlossen wurde.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neuer-landesentwicklungsplan-fuer-sachsenanhalt-tritt-in-kraft">🏛 ️ Landesregierung Nr. 453/2026</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="wirtschaft">🏗️ Wirtschaft &amp; Strukturwandel</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Wirtschaftspolitik im Wahlkampf: Chemie und Zulieferer unter Druck</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">MDR-Wahlexperte Jens Hänisch analysiert die wirtschaftspolitischen Vorhaben der Parteien. Ausgangslage: Unsicherheit in der Chemieindustrie und bei Autozulieferern, hohe Abhängigkeit von wenigen Großkonzernen, hohe Verschuldung je Einwohner.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/wirtschaft-wahlkampf-parteien-jobs-arbeitsplaetze-wachstum-leuna,newsletter-entscheidung-110.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Geestferkel-Insolvenz: 13 von 14 Standorten im Land gesichert</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Nach der Insolvenz des Schweinezüchters Geestferkel Ende Juli gibt es für 13 der 14 Standorte in Sachsen-Anhalt neue Betreiber oder konkrete Interessenten. Für alle 23 Standorte des Unternehmens waren zuvor vorläufige Lösungen gefunden worden.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/staelle-verpachtet-insolvenzverwalter-loesung-gefunden-104,geestferkel-schweine-zuechter-insolvent-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>39 Millionen Euro für Algenbiotechnologie an der Hochschule Anhalt</h3>
+        <div class="date">06.08.2026</div>
+        <p class="zusammenfassung">Wissenschaftsminister Willingmann übergab Förderzusage und Mittelzuweisung über insgesamt 39 Millionen Euro an die Hochschule Anhalt. Finanziert werden der Neubau eines Mitteldeutschen Algenzentrums und Forschungsprojekte zur Mikroalgen-Biotechnologie.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-ueberreicht-foerderzusage-und-mittelzuweisung-ueber-insgesamt-39-millionen-euro-an-hochschule-anhalt">🏛 ️ Landesregierung Nr. 135/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>17,5 Millionen Euro für den Medizintechnik-Campus STIMULATE</h3>
+        <div class="date">07.08.2026</div>
+        <p class="zusammenfassung">Das Wissenschaftsministerium fördert den Neubau und Ausbau des Forschungscampus STIMULATE der Otto-von-Guericke-Universität Magdeburg mit 17,5 Millionen Euro.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/175-mio-euro-fuer-stimulateerweiterung-willingmann-ueberreicht-foerderzusage-zuenden-jetzt-die-naechste-entwicklungsstufe">🏛 ️ Landesregierung Nr. 137/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>23 Millionen Euro für ein MakerLab in Eisleben</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Ministerpräsident Schulze übergab dem Landkreis Mansfeld-Südharz drei Fördermittelbescheide über zusammen rund 23 Millionen Euro. In Lutherstadt Eisleben entsteht daraus ein MakerLab, ein offenes Entwicklungszentrum. Das Geld stammt aus dem Investitionsgesetz Kohleregionen von Bund und Land.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Strukturwandelmittel aus dem Kohleausstieg, eine der größten Einzelzuwendungen der Woche.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/rund-23-millionen-euro-fuer-die-zukunft-der-region-ministerpraesident-sven-schulze-uebergibt-foerderbescheide-fuer-makerlab-in-eisleben">🏛 ️ Landesregierung Nr. 460/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Wäschereien: Branche schrumpft um 30 Prozent, Neubau in Wittenberg</h3>
+        <div class="date">10.08.2026</div>
+        <p class="zusammenfassung">Seit 2019 ist die Zahl der Wäschereien und Textilreinigungen im Land um knapp 30 Prozent gesunken, Ursache sind gestiegene Personal- und Energiekosten. Gegen den Trend hat das Augustinuswerk in Wittenberg 1,7 Millionen Euro in eine neue Wäscherei investiert, die Hotels, Pflegeheime und Krankenhäuser beliefert.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/wittenberg/unternehmen-augustinerwerk-102,immer-weniger-waeschereien-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Grundsteuerreform erzeugt Bürokratie bei Landwirten</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Bei landwirtschaftlichen Flächen (Grundsteuer A) hat der Verwaltungsaufwand nach der Reform spürbar zugenommen. In Kemberg im Landkreis Wittenberg werden Bescheide über Beträge verschickt, die teilweise nicht einmal die Kosten ihrer Bearbeitung decken.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/wittenberg/verwaltung-buerokratie-reform-102,kemberg-landwirtschaft-grundsteuer-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Tarifvertrag für Sicherheitsdienstleistungen allgemeinverbindlich</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Der Entgelttarifvertrag für Sicherheitsdienstleistungen gilt künftig für alle Beschäftigten im fachlichen Geltungsbereich — Objekt-, Veranstaltungs- und Personenschutz —, unabhängig von der Tarifbindung des Arbeitgebers.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/tarifvertrag-nun-allgemeinverbindlich-viele-beschaeftigte-im-bereich-der-sicherheitsdienstleistungen-profitieren-von-fairen-arbeitsbedingungen">🏛 ️ Landesregierung Nr. 129/2026</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="energie">💶 Energie &amp; Umwelt</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Größter Batteriespeicher Deutschlands bei Leuna eingeweiht</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">In Leuna/Krumpa im Saalekreis ist einer der größten Batteriespeicher Deutschlands in Betrieb gegangen. Betreiber ist Münch Energie. Die Anlage nimmt überschüssigen Strom aus Wind- und Solaranlagen auf und speist ihn bei Bedarf zurück; sie soll die Versorgung stabilisieren und weitere Unternehmen an den Standort holen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Im Saalekreis gelegen, also im unmittelbaren Umland von Halle — und der bislang sichtbarste Beleg für das Argument, dass Sachsen-Anhalt Stromüberschüsse nutzbar machen kann.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/news-einweihung-energieprojekt-102,batteriespeicher-leuna-100.html">📰 MDR (13.08.)</a><a class="src-line" href="https://sachsen-anhalt.de/pressemitteilung/ministerpraesident-sven-schulze-bei-einweihung-des-groessten-batteriespeichers-deutschlands-sachsenanhalt-ist-energieland">🏛 ️ Landesregierung Nr. 459/2026 (13.08.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/news-einweihung-energieprojekt-102,batteriespeicher-leuna-100.html">📰 MDR</a><a href="https://sachsen-anhalt.de/pressemitteilung/ministerpraesident-sven-schulze-bei-einweihung-des-groessten-batteriespeichers-deutschlands-sachsenanhalt-ist-energieland">🏛 ️ Landesregierung Nr. 459/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Elbe-Pegel Magdeburg auf 37 Zentimetern — Tiefstwert</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Der Pegel Magdeburg-Strombrücke zeigte am Mittwoch 37 Zentimeter, so wenig wie nie zuvor gemessen; die amtliche Bestätigung steht noch aus. Fähren stellen den Betrieb ein, Wittenberg meldet ebenfalls einen Tiefstand. DLRG und NABU warnen vor Gefahren für Schwimmer und Natur. Die Trinkwasserversorgung bleibt nach Angaben der Behörden stabil.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg-gefahren-binnenschifffahrt-pegel-130-,elbe-niedrigwasser-128.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Hitze und Trockenheit: Wald- und Feldbrände in mehreren Landkreisen</h3>
+        <div class="date">10. und 13.08.2026</div>
+        <p class="zusammenfassung">In mehreren Regionen mussten Feuerwehren brennende Wälder und Felder löschen. Am Donnerstag brach östlich von Benneckenstein im Harz ein Waldbrand auf etwa fünf Hektar aus; 250 Einsatzkräfte und ein Löschflugzeug waren im Einsatz. Der Brand ist unter Kontrolle, aber nicht gelöscht, und wird die Feuerwehr noch einige Tage beschäftigen.</p>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/brand-feld-harz-102,waldbrand-gernrode-100.html">📰 MDR (10.08.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/feuerwehr-einsatz-104,waldbrand-benneckenstein-102.html">📰 MDR (13.08.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/brand-feld-harz-102,waldbrand-gernrode-100.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/feuerwehr-einsatz-104,waldbrand-benneckenstein-102.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>18,9 Millionen Euro EU-Naturschutzförderung vollständig abgerufen</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Zum Ende der EU-Förderperiode 2021–2027 zieht Umweltminister Willingmann Bilanz: 18,9 Millionen Euro wurden für 43 Projekte bewilligt, das Budget ist vollständig ausgeschöpft.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-zieht-positive-bilanz-zur-eufinanzierten-naturschutzfoerderung-im-land">🏛 ️ Landesregierung Nr. 140/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>1,7 Millionen Euro für Geothermie-Speicher in Hettstedt</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Die Stadtwerke Hettstedt erhalten für die zweite Stufe des Vorhabens „Grüne Fernwärme&quot; rund 1,7 Millionen Euro aus Bundes- und Landesmitteln des Investitionsgesetzes Kohleregionen, unter anderem für einen geothermischen Speicher.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/17-mio-fuer-modellprojekt-fuer-gruene-fernwaerme-und-geothermie-ministerpraesident-sven-schulze-uebergibt-foerderbescheid">🏛 ️ Landesregierung Nr. 458/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Mehr Trinkbrunnen gegen die Hitze</h3>
+        <div class="date">09.08.2026</div>
+        <p class="zusammenfassung">Die Städte im Land bauen das Netz öffentlicher Trinkwasserspender aus. Magdeburg hatte vor drei Jahren keinen einzigen Trinkbrunnen und hat heute fünf, zwei weitere sind geplant; über die Standorte kann bis zum 24. August online abgestimmt werden.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/refill-hitze-stadt-100,trinkbrunnen-120.html">📰 MDR</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="verkehr">🚆 Verkehr &amp; Mobilität</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Bahnstrecke Magdeburg–Halberstadt sechs Wochen gesperrt</h3>
+        <div class="date">11.08.2026</div>
+        <p class="zusammenfassung">Seit Dienstag, 3 Uhr, ist die Verbindung wegen einer kurzfristig angesetzten Brückenreparatur bis einschließlich 27. September unterbrochen. Reisende und Pendler in den Harz müssen auf Ersatzverkehr ausweichen.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/magdeburg/halberstadt-harz-sperrung-ersatzverkehr-bus-102,bahn-1328.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Carsharing im Saalekreis wird verlängert</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Das seit 2024 geförderte Carsharing-Projekt in Bad Lauchstädt mit E-Auto, Neunsitzerbus und Hochdach-Kombi wird nach rund 200 Fahrten und etwa 20 Nutzern fortgesetzt. Bürgermeister Christian Runkel (CDU) berichtet von anfänglichen Überzeugungsschwierigkeiten.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Einer der wenigen belastbaren Praxisversuche, ob geteilte Mobilität auf dem Land trägt — und das im Nachbarlandkreis.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/bad-lauchstaedt-teil-auto,carsharing-130.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Reimportierte DDR-Kleinkrafträder dürfen fahren</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Der Bund hat die Unterschiede zwischen reimportierten und originär für die DDR bestimmten Mopeds bei Höchstgeschwindigkeit und Fahrerlaubnis aufgehoben. Damit dürfen in Sachsen-Anhalt künftig auch reimportierte Kleinkrafträder aus DDR-Produktion zugelassen werden.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/sachsenanhalt-genehmigt-reimportierte-kleinkraftraeder">🏛 ️ Landesregierung Nr. 139/2026</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="bildung">📚 Bildung, Jugend &amp; Soziales</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Faktenbasis Bildung: Lehrermangel bleibt das beherrschende Thema</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Rückblick auf eine Legislaturperiode von verpflichtender Mehrarbeit bis zur Entlassung der Bildungsministerin. Ein Experte kritisiert, das Land habe zu lange gebraucht, sich dem Seiteneinstieg zu öffnen; der Bildungsminister stellt weitere „sehr harte&quot; Jahre in Aussicht.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/landtagswahl-schule-lehrermangel,bildung-akt-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Faktenbasis Gesundheit und Soziales: Kliniken auf der Kippe</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Mehr alte und kranke Menschen, zu viele Krankenhausbetten, zu wenig Fachpersonal, sinkende Geburtenzahlen und erste Kita-Schließungen. Dem stehen erfolgreiche Anwerbung ausländischer Fachkräfte und angepasste Versorgungskonzepte gegenüber.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/landtagswahl-pflege-krankenhaus-,soziales-akt-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Schulmaterial 26 Prozent teurer als 2021</h3>
+        <div class="date">10.08.2026</div>
+        <p class="zusammenfassung">Schreibwaren und Zeichenmaterialien verteuerten sich zwischen 2021 und 2025 um 26 Prozent, während die Verbraucherpreise insgesamt um 19,7 Prozent stiegen. Quelle ist das Statistische Landesamt in Halle.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/hefte-stifte-buecher-preise-100,schulmaterialien-teuer-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Kindeswohlgefährdung: 981 bestätigte Fälle im Land</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Während die Zahlen bundesweit einen Höchststand erreichen, gingen sie in Sachsen-Anhalt leicht zurück: Die Jugendämter registrierten 981 Fälle, 17 weniger als im Vorjahr. Am Kinderschutz gibt es dennoch Kritik.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/zahlen-100,kindeswohlgefaehrdung-134.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>98.000 Euro für sektorenübergreifende Gesundheitsversorgung in Havelberg</h3>
+        <div class="date">11.08.2026</div>
+        <p class="zusammenfassung">Gesundheitsministerin Grimm-Benne übergab einen Zuwendungsbescheid über rund 98.000 Euro für den Aufbau einer sektorenübergreifenden Versorgung in Havelberg — ein Modell, ambulante und stationäre Versorgung im ländlichen Raum zusammenzuführen.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/gesundheitsministerium-foerdert-aufbau-einer-sektorenuebergreifenden-gesundheitsversorgung-in-havelberg-mit-98000-euro">🏛 ️ Landesregierung Nr. 144/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>1,5 Millionen Euro für zwei Begegnungszentren in Mansfeld-Südharz</h3>
+        <div class="date">11.08.2026</div>
+        <p class="zusammenfassung">Die Volkssolidarität Mansfeld-Südharz erhielt zwei Zuwendungsbescheide über zusammen rund 1,5 Millionen Euro für Sanierung und Umbau der Begegnungszentren in Helbra und Gerbstedt, finanziert aus dem Investitionsgesetz Kohleregion und kommunalen Mitteln.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/ministerpraesident-sven-schulze-ueberreicht-rund-15-millionen-euro-fuer-begegnungszentren">🏛 ️ Landesregierung Nr. 443/2026</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="gesellschaft">📊 Gesellschaft &amp; Demografie</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Faktenbasis Zusammenhalt: „Enthemmt, diffamierend bis feindselig&quot;</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Eine Infratest-dimap-Umfrage zeigt eine große Mehrheit, die beunruhigt auf die Verhältnisse im Land blickt: hohe persönliche Lebenszufriedenheit bei gleichzeitig bröckelndem Zusammenhalt, Misstrauen und antipluralistischen Einstellungen. Der MDR ordnet das historisch ein und fragt, wo sich trotzdem Solidarität zeigt.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/landtagswahl-zusammenhalt-polarisierung-engagement-,gesellschaft-akt-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Faktenbasis Migration: Zuwanderung übersteigt Abwanderung</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Es kommen mehr Menschen aus dem Ausland nach Sachsen-Anhalt, als das Land verlassen; fast die Hälfte der Zugewanderten will langfristig bleiben. Zugleich kommen nur wenige freiwillig, und einige gehen wieder, weil sie sich nicht willkommen fühlen. Wissenschaftlerinnen haben untersucht, was helfen könnte.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das Thema, das viele im Land als dringendstes Problem nennen — hier gegen die Datenlage gehalten.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landespolitik/landtagswahl-einwanderung-abwanderung-wirtschaft,migration-akt-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Zukunftszentrum Halle: Direktorin verteidigt den Standort</h3>
+        <div class="date">09.08.2026</div>
+        <p class="zusammenfassung">Programmdirektorin Uta Bretschneider stellt sich nach 100 Tagen im Amt der Kritik am Zukunftszentrum für Deutsche Einheit und Europäische Transformation — „zu teuer, zu ostdeutsch&quot;. Sie sieht die Vorwürfe als Anlass zum Dialog über ostdeutsche Erfahrungen und will Emotionen wie Wut ernst nehmen. Im Oktober startet das erste Programm, die Baustelle am Riebeckplatz läuft.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das größte Bundesprojekt in Halle, mitten in der Stadt.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/teuer-ostdeutsch-kritik-dialog-,uta-bretschneider-zukunftszentrum-kultur-news-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Südpark Halle: Warmwasser wird doch nicht abgestellt</h3>
+        <div class="date">10.08.2026</div>
+        <p class="zusammenfassung">Die Stadtwerke Halle hatten angekündigt, ab 10. August in einigen Häusern im Südpark Warmwasser und Fernwärme abzustellen — Grund waren erhebliche Zahlungsrückstände des Eigentümers. Nun gibt es Entwarnung, offenbar wurde die ausstehende Summe gezahlt.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/degag-pleite-wasser-stopp-100,suedpark-waermeversorgung-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="justiz">⚖️ Justiz, Inneres &amp; Sicherheit</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Oberverwaltungsgericht: AfD-Mitgliedern kann die Waffenerlaubnis entzogen werden</h3>
+        <div class="date">11.08.2026</div>
+        <p class="zusammenfassung">Das Oberverwaltungsgericht Sachsen-Anhalt sieht eine ausreichende Rechtsgrundlage dafür, Mitgliedern und Unterstützern der AfD Sachsen-Anhalt die waffenrechtliche Erlaubnis zu entziehen. Mehr als 120 Widerrufsverfahren wurden geprüft, über 100 Betroffenen droht der Entzug. Das Innenministerium sieht seine Linie bestätigt, AfD-Politiker prüfen eine Verfassungsbeschwerde.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die juristisch gewichtigste Entscheidung der Woche, mit Wirkung über den Einzelfall hinaus.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/afd-mitglieder-verbot-gericht-102,waffenbesitz-afd-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Razzia gegen Telefonbetrug in Halle und im Saalekreis</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Polizei und Staatsanwaltschaft durchsuchten am Montag mehrere Wohnungen in Halle und im Saalekreis. Fünf Verdächtige wurden festgenommen; sie sollen an Betrugsmaschen gegen ältere Menschen beteiligt gewesen sein.</p>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/enkeltrick-polizei-festnahme-betrug-104,razzia-telefonbetrug-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Polizeiärztliches Zentrum in Halle übergeben</h3>
+        <div class="date">07.08.2026</div>
+        <p class="zusammenfassung">Auf dem Gelände „An der Fliederwegkaserne&quot; in Halle ist eine neue Außenstelle des Polizeiärztlichen Zentrums für die Landespolizei entstanden. Innenministerin Tamara Zieschang und Finanzstaatssekretär Rüdiger Malter übergaben das Gebäude.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/feierliche-uebergabe-des-polizeiaerztlichen-zentrums-in-halle-saale">🏛 ️ Landesregierung Nr. 105/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Todesfall in der JVA Burg</h3>
+        <div class="date">07.08.2026</div>
+        <p class="zusammenfassung">In der JVA Burg wurde ein Untersuchungsgefangener leblos in seinem Einzelhaftraum aufgefunden. Anhaltspunkte für Fremdverschulden liegen nach Angaben des Justizministeriums nicht vor; es wird von einer Selbsttötung ausgegangen, ein Todesermittlungsverfahren läuft.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/tod-eines-gefangenen">🏛 ️ Landesregierung Nr. 029/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Feuerwehr: 78 Fahrzeuge für 2027 bestellt, 54 für 2028</h3>
+        <div class="date">08.08.2026</div>
+        <p class="zusammenfassung">Das Land setzt die zentrale Beschaffung von Feuerwehrfahrzeugen für die Gemeinden fort. Bestellt sind bereits 78 Fahrzeuge und 24 Rollcontainermodule zur Auslieferung 2027 sowie weitere 54 Fahrzeuge für 2028.</p>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/sachsenanhalt-setzt-beschaffungsoffensive-bei-feuerwehrfahrzeugen-fort">🏛 ️ Landesregierung Nr. 107/2026</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="digital">📡 Digitalisierung</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-digital)"></span>Digitales</div>
+        <h3>Neues Landesportal online</h3>
+        <div class="date">10.08.2026</div>
+        <p class="zusammenfassung">Unter www.sachsen-anhalt.de steht ein modernisierter zentraler Einstieg in die digitalen Angebote des Landes bereit. Das Ministerium für Infrastruktur und Digitales hat das Portal gemeinsam mit dem Bund und der Bundesdruckerei umgesetzt.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Genau dieser Relaunch hat Anfang August unsere eigene Abfrage der Pressemitteilungen unbrauchbar gemacht — die alten Adressen liefern seither 404, das Portal ist eine JavaScript-Anwendung geworden. Die Pressemitteilung datiert den Start auf den 10.08., unser Skript musste bereits am 04.08. angepasst werden; der Umbau lief also vor der offiziellen Ankündigung.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neues-landesportal-sachsenanhalt-gestartet">🏛 ️ Landesregierung Nr. 134/2026</a></div>
+        </div>
+      </div>
+  </div>
+
+  <footer class="fuss">
+    Vollständige Filterentscheidungen: <a href="projects/sachsen-anhalt-news/filtered_2026-08-13_23-15.md">projects/sachsen-anhalt-news/filtered_2026-08-13_23-15.md</a>
+  </footer>
+</div>
+<script>
+  // Externe Links im neuen Tab; Sprungmarken bleiben unberührt.
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+</body>
+</html>
