@@ -138,14 +138,14 @@ function renderEdition(edition: Edition, isLatest: boolean): string {
     links.push(
       `<a class="link primary" href="${AUSGABEN_DIR}/${
         escapeHtml(edition.dashboard)
-      }">Dashboard ansehen</a>`,
+      }">Ausgabe lesen</a>`,
     );
   }
   if (edition.report) {
     links.push(
       `<a class="link" href="${BLOB_BASE}/${
         escapeHtml(edition.report)
-      }">Bericht lesen</a>`,
+      }">Markdown Version</a>`,
     );
   }
   for (const filter of edition.filters) {
@@ -166,7 +166,7 @@ function renderEdition(edition: Edition, isLatest: boolean): string {
     meta.push(`<span class="meta-item">${escapeHtml(edition.balance)}</span>`);
   }
   if (!edition.dashboard) {
-    meta.push(`<span class="meta-item muted">nur als Bericht</span>`);
+    meta.push(`<span class="meta-item muted">nur als Markdown Version</span>`);
   }
 
   return `      <article class="edition${isLatest ? " latest" : ""}">
@@ -270,20 +270,33 @@ export function renderIndexHtml(
   .meta { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
   .meta-item { font-size: 0.85rem; color: var(--secondary); }
   .meta-item.muted { color: var(--muted); font-style: italic; }
-  .links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .links {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 18px;
+  }
+  /* Tertiary by default: plain text links, as in the navigation. Only the
+     primary call to action carries a filled pill, so each card has exactly
+     one obvious next step. */
   .link {
     display: inline-block;
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    color: var(--text);
-    background: var(--plane);
-    border: 1px solid var(--border);
+    color: var(--secondary);
+    padding: 7px 0;
+  }
+  .link:hover { color: var(--accent); text-decoration: underline; }
+  .link.primary {
+    color: #fff;
+    background: var(--accent);
+    border: 1px solid var(--accent);
     border-radius: 999px;
     padding: 7px 15px;
   }
-  .link.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .link:hover { border-color: var(--accent); }
+  .link.primary:hover { color: #fff; text-decoration: none; opacity: 0.88; }
   .empty { color: var(--muted); }
   footer {
     margin-top: 36px;

@@ -147,8 +147,34 @@ Deno.test("renderIndexHtml marks the newest edition and links every file", () =>
   // Exactly one "aktuell" badge, on the first card.
   assertEquals(html.split('class="badge"').length - 1, 1);
   // The dashboard-less edition says so.
-  assertEquals(html.includes("nur als Bericht"), true);
+  assertEquals(html.includes("nur als Markdown Version"), true);
   assertEquals(html.includes("7. August 2026 um 13:20"), true);
+});
+
+// Each card must offer exactly one obvious next step. The wording and the
+// primary/tertiary split are a deliberate design decision, so pin both here:
+// a stray second pill would quietly undo it.
+Deno.test("renderIndexHtml gives every edition a single primary action", () => {
+  const editions: Edition[] = [
+    {
+      date: "2026-08-04",
+      dashboard: "2026-08-04.html",
+      report: "2026-08-04.md",
+      filters: [{ file: "2026-08-04-filter.md" }],
+    },
+  ];
+  const html = renderIndexHtml(editions, "7. August 2026 um 13:20");
+
+  assertEquals(html.includes(">Ausgabe lesen<"), true);
+  assertEquals(html.includes(">Markdown Version<"), true);
+  assertEquals(html.includes(">Filter-Log<"), true);
+  // Retired wording must not creep back in.
+  assertEquals(html.includes("Dashboard ansehen"), false);
+  assertEquals(html.includes("Bericht lesen"), false);
+  // One pill per card, and it is the edition itself.
+  assertEquals(html.split('class="link primary"').length - 1, 1);
+  // The remaining two are plain text links.
+  assertEquals(html.split('class="link"').length - 1, 2);
 });
 
 Deno.test("renderIndexHtml survives an empty directory", () => {

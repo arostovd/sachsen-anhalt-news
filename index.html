@@ -80,20 +80,33 @@
   .meta { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
   .meta-item { font-size: 0.85rem; color: var(--secondary); }
   .meta-item.muted { color: var(--muted); font-style: italic; }
-  .links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .links {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 18px;
+  }
+  /* Tertiary by default: plain text links, as in the navigation. Only the
+     primary call to action carries a filled pill, so each card has exactly
+     one obvious next step. */
   .link {
     display: inline-block;
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    color: var(--text);
-    background: var(--plane);
-    border: 1px solid var(--border);
+    color: var(--secondary);
+    padding: 7px 0;
+  }
+  .link:hover { color: var(--accent); text-decoration: underline; }
+  .link.primary {
+    color: #fff;
+    background: var(--accent);
+    border: 1px solid var(--accent);
     border-radius: 999px;
     padding: 7px 15px;
   }
-  .link.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .link:hover { border-color: var(--accent); }
+  .link.primary:hover { color: #fff; text-decoration: none; opacity: 0.88; }
   .empty { color: var(--muted); }
   footer {
     margin-top: 36px;
@@ -118,7 +131,7 @@
           <span class="badge">aktuell</span>
         </div>
         <div class="meta"><span class="meta-item">Zeitraum 06.08.–13.08.2026</span></div>
-        <div class="links"><a class="link primary" href="ausgaben/2026-08-13.html">Dashboard ansehen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-13.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-13-filter.md">Filter-Log</a></div>
+        <div class="links"><a class="link primary" href="ausgaben/2026-08-13.html">Ausgabe lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-13.md">Markdown Version</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-13-filter.md">Filter-Log</a></div>
       </article>
       <article class="edition">
         <div class="edition-head">
@@ -126,7 +139,7 @@
           
         </div>
         <div class="meta"><span class="meta-item">Zeitraum 28.07.–04.08.2026</span><span class="meta-item">66 Einträge gesehen, 50 aufgenommen, 16 verworfen.</span></div>
-        <div class="links"><a class="link primary" href="ausgaben/2026-08-04.html">Dashboard ansehen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-04.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-04-filter.md">Filter-Log</a></div>
+        <div class="links"><a class="link primary" href="ausgaben/2026-08-04.html">Ausgabe lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-04.md">Markdown Version</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-08-04-filter.md">Filter-Log</a></div>
       </article>
       <article class="edition">
         <div class="edition-head">
@@ -134,35 +147,35 @@
           
         </div>
         <div class="meta"><span class="meta-item">Zeitraum 24.07.–27.07.2026</span></div>
-        <div class="links"><a class="link primary" href="ausgaben/2026-07-27.html">Dashboard ansehen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-07-27.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-07-27-filter.md">Filter-Log</a></div>
+        <div class="links"><a class="link primary" href="ausgaben/2026-07-27.html">Ausgabe lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-07-27.md">Markdown Version</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-07-27-filter.md">Filter-Log</a></div>
       </article>
       <article class="edition">
         <div class="edition-head">
           <h2>26. Juni 2026</h2>
           
         </div>
-        <div class="meta"><span class="meta-item">Zeitraum 01.06.2026 – 30.06.2026</span><span class="meta-item muted">nur als Bericht</span></div>
-        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-06-26.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-06-26-filter.md">Filter-Log</a></div>
+        <div class="meta"><span class="meta-item">Zeitraum 01.06.2026 – 30.06.2026</span><span class="meta-item muted">nur als Markdown Version</span></div>
+        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-06-26.md">Markdown Version</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-06-26-filter.md">Filter-Log</a></div>
       </article>
       <article class="edition">
         <div class="edition-head">
           <h2>30. Mai 2026</h2>
           
         </div>
-        <div class="meta"><span class="meta-item">Zeitraum 27.05.–30.05.2026</span><span class="meta-item muted">nur als Bericht</span></div>
-        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30.md">Bericht lesen</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30-filter-landesregierung.md">Filter-Log (LANDESREGIERUNG)</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30-filter-mdr.md">Filter-Log (MDR)</a></div>
+        <div class="meta"><span class="meta-item">Zeitraum 27.05.–30.05.2026</span><span class="meta-item muted">nur als Markdown Version</span></div>
+        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30.md">Markdown Version</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30-filter-landesregierung.md">Filter-Log (LANDESREGIERUNG)</a><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-30-filter-mdr.md">Filter-Log (MDR)</a></div>
       </article>
       <article class="edition">
         <div class="edition-head">
           <h2>28. Mai 2026</h2>
           
         </div>
-        <div class="meta"><span class="meta-item">Zeitraum 25.05.–27.05.2026</span><span class="meta-item muted">nur als Bericht</span></div>
-        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-28.md">Bericht lesen</a></div>
+        <div class="meta"><span class="meta-item">Zeitraum 25.05.–27.05.2026</span><span class="meta-item muted">nur als Markdown Version</span></div>
+        <div class="links"><a class="link" href="https://github.com/arostovd/sachsen-anhalt-news/blob/main/ausgaben/2026-05-28.md">Markdown Version</a></div>
       </article>
     </main>
     <footer>
-      <p>Zuletzt erzeugt am 14. August 2026 um 12:35. Alle Inhalte stammen aus öffentlich zugänglichen Quellen und sind dort verlinkt.</p>
+      <p>Zuletzt erzeugt am 15. August 2026 um 10:14. Alle Inhalte stammen aus öffentlich zugänglichen Quellen und sind dort verlinkt.</p>
     </footer>
   </div>
 </body>
