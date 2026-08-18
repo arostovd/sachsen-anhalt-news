@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sachsen-Anhalt News — 2026-08-18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --surface-1: #fcfcfb; --page-plane: #f4f3f0; --text-primary: #0b0b0b;
+    --text-secondary: #52514e; --text-muted: #898781; --gridline: #e1e0d9;
+    --border: rgba(11,11,11,0.10);
+    --cat-politik: #2a78d6; --cat-wirtschaft: #1baf7a; --cat-verkehr: #eda100;
+    --cat-energie: #008300; --cat-digital: #4a3aa7; --cat-bildung: #e34948;
+    --cat-gesellschaft: #e87ba4; --cat-justiz: #eb6834;
+    --font-headline: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1: #232322; --page-plane: #0d0d0d; --text-primary: #ffffff;
+      --text-secondary: #c3c2b7; --text-muted: #898781; --gridline: #2c2c2a;
+      --border: rgba(255,255,255,0.10);
+      --cat-politik: #3987e5; --cat-wirtschaft: #199e70; --cat-verkehr: #c98500;
+      --cat-energie: #008300; --cat-digital: #9085e9; --cat-bildung: #e66767;
+      --cat-gesellschaft: #d55181; --cat-justiz: #d95926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page-plane); color: var(--text-primary);
+    font-family: var(--font-body); line-height: 1.5; }
+  .wrap { max-width: 920px; margin: 0 auto; padding-bottom: 60px; }
+  header.top { background: var(--surface-1); padding: 18px 16px 0;
+    border-bottom: 1px solid var(--gridline); position: sticky; top: 0; z-index: 5; }
+  header.top h1 { font-family: var(--font-headline); font-weight: 700; font-size: 34px;
+    letter-spacing: -0.01em; margin: 0 0 4px; line-height: 1.1; }
+  header.top h1 em { font-style: italic; font-weight: 600; color: var(--text-secondary); }
+  header.top .sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 10px; }
+  nav.filters { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; }
+  nav.filters a { flex: none; display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12.5px; text-decoration: none; color: var(--text-secondary);
+    background: var(--page-plane); border: 1px solid var(--border);
+    border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+  nav.filters a .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 16px; }
+  @media (min-width: 680px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .card .body { padding: 16px 16px 18px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 9px; }
+  .badge .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .card h3 { font-family: var(--font-headline); font-weight: 600; font-size: 21px;
+    margin: 0 0 8px; line-height: 1.25; }
+  .card .date { font-size: 11.5px; color: var(--text-muted); margin-bottom: 9px; }
+  .card p.zusammenfassung { font-size: 14.5px; color: var(--text-secondary); margin: 0 0 10px; }
+  .warum { display: flex; gap: 8px; background: var(--page-plane); border-radius: 8px;
+    padding: 9px 11px; margin-bottom: 10px; font-size: 13.5px; color: var(--text-primary); }
+  .warum .icon { flex: none; }
+  .warum strong { display: block; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted); font-weight: 600; margin-bottom: 2px; }
+  details.einordnung { background: var(--page-plane); border-radius: 8px; padding: 8px 10px;
+    margin-bottom: 10px; font-size: 13px; }
+  details.einordnung summary { cursor: pointer; font-weight: 600; color: var(--text-primary); font-size: 12.5px; }
+  details.einordnung a.src-line { display: block; margin-top: 6px; color: var(--text-secondary);
+    text-decoration: none; border-bottom: 1px solid transparent;
+    transition: color .12s ease, border-color .12s ease; }
+  details.einordnung a.src-line:hover, details.einordnung a.src-line:focus-visible {
+    color: var(--text-primary); border-bottom-color: currentColor; }
+  .linkrow { display: flex; flex-wrap: wrap; gap: 8px; }
+  .linkrow a { font-size: 12.5px; text-decoration: none; color: var(--text-primary);
+    background: var(--page-plane); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 10px; }
+  .linkrow a:hover { border-color: var(--text-muted); }
+  .section-label { font-family: var(--font-headline); font-weight: 600; font-style: italic;
+    font-size: 15px; color: var(--text-secondary); padding: 20px 16px 4px; }
+  footer.fuss { padding: 24px 16px; font-size: 12px; color: var(--text-muted); }
+  footer.fuss a { color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a href="../index.html" style="display:inline-block;margin-bottom:6px;font-size:12.5px;color:var(--text-muted);text-decoration:none">&larr; Alle Ausgaben</a>
+    <h1><a href="../index.html" title="Zur Übersicht aller Ausgaben" style="color:inherit;text-decoration:none">🏛️ Sachsen-Anhalt <em>News</em></a></h1>
+    <div class="sub">2026-08-18 · MDR · Landesregierung</div>
+    <nav class="filters">
+      <a href="#wirtschaft"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</a>
+      <a href="#verkehr"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</a>
+      <a href="#bildung"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</a>
+      <a href="#kommunalpolitik"><span class="dot" style="background:var(--cat-politik)"></span>Kommunalpolitik</a>
+      <a href="#gesellschaft"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</a>
+    </nav>
+  </header>
+
+  <div class="section-label" id="wirtschaft">🏗️ Wirtschaft, Infrastruktur &amp; Strukturwandel</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Riebeckplatz: Der Umbau für das Zukunftszentrum beginnt am 20. August</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Am Donnerstag, dem 20. August, fällt mit einem symbolischen Spatenstich der Startschuss für den Umbau des Riebeckplatzes; Vizekanzler Lars Klingbeil nimmt teil. Ausführend ist eine Arbeitsgemeinschaft aus Strabag und Papenburg. Zuerst wird der Pkw- und Busparkplatz an der Volkmannstraße vollständig gesperrt und dient als Logistik- und Containerfläche; die Ausfahrt vom Riebeckplatz nach Norden wird an die Bahngleise verlegt. Der Ablaufplan reicht von September 2026 bis Ende 2029: Leitungsverlegungen 09/2026–05/2028, Knotenpunkt Riebeckplatz Nord und Delitzscher Straße Nord 02–06/2027, östliche Volkmannstraße mit Querspange 06–12/2027, Baufeldfreimachung für das Zukunftszentrum 12/2027–03/2028, Magdeburger Straße 02–06/2028, Delitzscher Straße Süd 06–10/2028. Der Fahrbahnbelag des Kreisels wird bis 2029 erneuert, mit geänderter Spurführung und neuen Ampeln.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das ist die längste Dauerbaustelle, die Halle in den nächsten Jahren haben wird, und sie liegt auf dem Weg zum Hauptbahnhof. Wer die Innenstadt mit dem Auto quert oder am Riebeckplatz umsteigt, ist bis 2029 betroffen — nicht punktuell, sondern in acht aufeinanderfolgenden Abschnitten. Der Spatenstich ist zugleich der Punkt, ab dem das Zukunftszentrum kein Planungsvorhaben mehr ist, sondern ein Bauablauf mit Terminen.</div></div>
+        <div class="warum"><span class="icon">🧭</span><div><strong>Einordnung</strong>Die Kostenseite wurde bereits im Juni im gemeinsamen Ausschuss vorgelegt: 46 Millionen Euro für die Stadt (überwiegend Fördermittel) und 12 Millionen für die Stadtwerke, jeweils für Leitungsverlegung und Erschließung. Das Zukunftszentrum selbst zahlt der Bund. Der Abriss der Hochstraßenbrücken, das größte Einzelstück, soll bis spätestens Ende 2029 erfolgen; der Umbau des Knotens Riebeckplatz Süd und der Merseburger Straße Nord ist für September bis Dezember 2029 vorgesehen.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://dubisthalle.de/grossumbau-am-riebeckplatz-in-halle-fuer-das-zukunftszentrum-startet-20-august-mit-spatenstich-vizekanzler-lars-klingbeil-kommt/">📰 Du bist Halle (12.08.)</a><a class="src-line" href="https://dubisthalle.de/umbau-am-riebeckplatz-fuer-zukunftszentrum-zeitplan-und-kosten-stehen-fest-erste-leitungsverlegungen-ab-september-brueckenabriss-spaetestens-2029/">🔗 Zeitplan und Kosten, Ausschusssitzung (23.06.)</a></details>
+        <div class="linkrow"><a href="https://dubisthalle.de/grossumbau-am-riebeckplatz-in-halle-fuer-das-zukunftszentrum-startet-20-august-mit-spatenstich-vizekanzler-lars-klingbeil-kommt/">📰 Du bist Halle</a><a href="https://dubisthalle.de/umbau-am-riebeckplatz-fuer-zukunftszentrum-zeitplan-und-kosten-stehen-fest-erste-leitungsverlegungen-ab-september-brueckenabriss-spaetestens-2029/">🔗 Zeitplan und Kosten, Ausschusssitzung</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Wasserwerk Beesen: Fördermittelbescheid am 20. August</h3>
+        <div class="date">14.08.2026 / 18.08.2026</div>
+        <p class="zusammenfassung">Am Donnerstag, dem 20. August, übergibt Umweltminister Armin Willingmann im Wasserwerk Beesen den Fördermittelbescheid für das „Spitzenlastwasserwerk Beesen&quot;. Oberbürgermeister Alexander Vogt begrüßt, Vizekanzler Lars Klingbeil spricht ein Grußwort. Das historische Wasserwerk wird reaktiviert; das Vorhaben kostet nach Angaben von Du bist Halle über 50 Millionen Euro. Es soll die Trinkwasserversorgung gegen Dürreperioden absichern und zugleich Industrieansiedlungen ermöglichen. Willingmann stellt bei der Gelegenheit das Landesprogramm zur Versorgungsresilienz mit Trinkwasser vor.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das ist die Antwort der Stadt auf drei Dürresommer in Folge — Halle liegt im Regenschatten des Harzes, und die Spitzenlast im Hochsommer ist genau das Problem, das ein solches Werk auffängt. Interessant ist die Doppelbegründung: Es geht nicht nur um Versorgungssicherheit für Haushalte, sondern ausdrücklich um Wasser für künftige Großansiedlungen. Wer sich fragt, warum das Land hier zweistellige Millionenbeträge bewegt, findet dort die Antwort.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/sachsen-anhalt-staerkt-trinkwasserversorgung-foerdermittel-fuer-spitzenlastwasserwerk-beesen">🏛 ️ Stadt Halle (18.08.)</a><a class="src-line" href="https://dubisthalle.de/millionenfoerderung-fuer-halle-reaktivierung-des-wasserwerks-beesen-sichert-trinkwasser-und-kuenftige-industrieansiedlungen-vizekanzler-klingbeil-kommt/">📰 Du bist Halle (14.08.)</a></details>
+        <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/sachsen-anhalt-staerkt-trinkwasserversorgung-foerdermittel-fuer-spitzenlastwasserwerk-beesen">🏛 ️ Stadt Halle</a><a href="https://dubisthalle.de/millionenfoerderung-fuer-halle-reaktivierung-des-wasserwerks-beesen-sichert-trinkwasser-und-kuenftige-industrieansiedlungen-vizekanzler-klingbeil-kommt/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Bonback investiert 400 Millionen Euro im Star Park Halle-Queis</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Die Großbäckerei Bonback, die zur Schwarz-Gruppe (Kaufland, Lidl) gehört, beginnt in zwei Wochen mit dem Bau im Star Park Halle-Queis. Das Investitionsvolumen beträgt rund 400 Millionen Euro, 400 neue Arbeitsplätze sollen entstehen. Angekündigt worden war das Vorhaben bereits vor anderthalb Jahren; nun erfolgt tatsächlich der Baubeginn.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Vierhundert Millionen sind für den Star Park eine andere Größenordnung als die übliche Ansiedlung, und der Abstand zwischen Ankündigung und Spatenstich — anderthalb Jahre — ist der eigentliche Nachrichtenwert. Bei Industrieansiedlungen in Sachsen-Anhalt ist dieser Schritt erfahrungsgemäß der, an dem Vorhaben scheitern.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/kaufland-baeckerei-bonback-investiert-400-millionen-euro-in-den-star-park-und-schafft-400-neue-jobs/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Volkspark: Generalsanierung für 7,1 Millionen Euro begonnen</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Mit einem symbolischen Spatenstich hat die Generalsanierung des 119 Jahre alten Volksparks begonnen. Bis voraussichtlich 2030 fließen 7,1 Millionen Euro in Modernisierung und denkmalgerechte Instandsetzung. Den Auftakt machte Ingrid Häußler, Vorsitzende des Volkspark Halle e. V. und frühere Oberbürgermeisterin; der Verein betreibt das Haus weitgehend ehrenamtlich und ist auf Fördermittel angewiesen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Ein Bauzeitraum bis 2030 für ein Haus, das ehrenamtlich betrieben wird, ist bemerkenswert — die Sanierung dauert länger als manche Vereinsvorstandschaft. Für Halle ist der Volkspark einer der wenigen erhaltenen Versammlungsbauten der Arbeiterbewegung; die denkmalgerechte Instandsetzung entscheidet, ob er als Veranstaltungsort weiterlebt.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/sanierung-fuer-71-millionen-euro-symbolischer-spatenstich-am-volkspark-halle-saale/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Saalepromenade Trotha saniert — Klausberge wieder erreichbar</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Die Sanierung der Saalepromenade Trotha zwischen Pfarrstraße und dem nördlichen Treppenaufgang zu den Klausbergen ist abgeschlossen; die Klausberge sind von Trotha aus wieder erreichbar. Der Uferweg wurde seit Jahresbeginn grundhaft erneuert, asphaltiert und mit einem Läuferband aus Naturstein eingefasst, das historische Sockelmauerwerk saniert. Vier Bäume, 280 Sträucher und rund 2.200 Stauden wurden gepflanzt, dazu elf neue Bänke und fünf Abfallbehälter; die Bürgerinitiative „BI Gesundes Trotha&quot; sponserte ein 25 Quadratmeter großes Labyrinth. Die Fertigstellungspflege läuft bis November.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Damit ist das Fluthilfe-Uferwegprojekt rund um das Naturschutzgebiet Klausberge abgeschlossen — der letzte Abschnitt einer Reihe, die 2021 mit der südlichen Treppenanlage begann. Ein konkretes Stück Saaleufer, das nach Jahren wieder durchgängig begehbar ist.</div></div>
+        <div class="warum"><span class="icon">🧭</span><div><strong>Einordnung</strong>Die Kostenangaben der Quellen gehen auseinander. Die Stadt und HalleSpektrum nennen rund 664.000 Euro für diesen Abschnitt, vollständig aus Fluthilfemitteln; Du bist Halle setzt „3 Millionen Euro&quot; in die Überschrift, was sich auf das Gesamtprojekt beziehen dürfte. Im Fließtext beider Blätter steht dieselbe Zahl von 664.000 Euro.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/fluthilfe-die-saalepromenade-trotha-ist-saniert-stadt-schliesst-uferweg-sanierung-an-den-klausbergen-ab">🏛 ️ Stadt Halle (13.08.)</a><a class="src-line" href="https://dubisthalle.de/fuer-3-millionen-euro-uferweg-sanierung-an-den-klausbergen-abgeschlossen-saalepromenade-in-trotha-wieder-frei/">📰 Du bist Halle (13.08.)</a><a class="src-line" href="https://hallespektrum.de/aktuelles/saalepromenade-trotha-nach-sanierung-wieder-geoeffnet/478453/">📰 HalleSpektrum (13.08.)</a></details>
+        <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/fluthilfe-die-saalepromenade-trotha-ist-saniert-stadt-schliesst-uferweg-sanierung-an-den-klausbergen-ab">🏛 ️ Stadt Halle</a><a href="https://dubisthalle.de/fuer-3-millionen-euro-uferweg-sanierung-an-den-klausbergen-abgeschlossen-saalepromenade-in-trotha-wieder-frei/">📰 Du bist Halle</a><a href="https://hallespektrum.de/aktuelles/saalepromenade-trotha-nach-sanierung-wieder-geoeffnet/478453/">📰 HalleSpektrum</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="verkehr">🚆 Verkehr &amp; Mobilität</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Köthener Straße erneut gesperrt — Buslinien 25 und 35 umgeleitet bis Ende September</h3>
+        <div class="date">11.08.2026 / 12.08.2026</div>
+        <p class="zusammenfassung">Die städtischen Tiefbauarbeiten in der Köthener Straße werden ab Freitag, dem 14. August, fortgesetzt; dafür ist erneut eine Sperrung nötig. Die HAVAG leitet die Buslinien 25 und 35 bis voraussichtlich Mittwoch, den 30. September, im Bereich Trotha um — Linie 25 Richtung Mörikestraße/Seeben über Uranusstraße und Oppiner Straße, Linie 35 Richtung Franzigmark zusätzlich über Viktor-Klemperer- und Hans-Dittmar-Straße. Die Haltestellen Uranusstraße und Hans-Dittmar-Straße entfallen; Ersatz- und Zusatzhaltestellen werden eingerichtet, Fahrgäste sollen Trotha (Steig D/E) nutzen. In der Gegenrichtung fahren beide Linien regulär.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Sechseinhalb Wochen sind keine Kurzbaustelle, und das Wort „erneut&quot; verrät den Ärger dahinter: Die Straße war zwischenzeitlich freigegeben und wird nun wieder aufgemacht. Wer in Trotha oder Seeben wohnt, sollte den Zeitraum kennen.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/koethener-strasse-erneut-gesperrt-umleitungen-fuer-buslinien-25-und-35">🏛 ️ Stadt Halle (12.08.)</a><a class="src-line" href="https://dubisthalle.de/koethener-strasse-erneut-gesperrt-umleitungen-fuer-buslinien-25-und-35/">📰 Du bist Halle (11.08.)</a></details>
+        <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/koethener-strasse-erneut-gesperrt-umleitungen-fuer-buslinien-25-und-35">🏛 ️ Stadt Halle</a><a href="https://dubisthalle.de/koethener-strasse-erneut-gesperrt-umleitungen-fuer-buslinien-25-und-35/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Burgstraße halbseitig gesperrt</h3>
+        <div class="date">11.08.2026</div>
+        <p class="zusammenfassung">Wegen der Instandsetzung des Gehweges in der Burgstraße 67 (Neubau Ecke Rainstraße) wurden am 13. und 14. August der Gehweg vollständig und die Burgstraße am Baubereich halbseitig gesperrt. Stadteinwärts wurde der Verkehr über Große Brunnenstraße, Richard-Wagner-Straße, Bernburger Straße und Mühlweg umgeleitet.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Erledigt, aber als Muster lehrreich: Die Stadt meldet solche Zweitagessperrungen zuverlässig zwei Tage vorher über ihr Presseportal. Wer den Kanal liest, erfährt sie rechtzeitig — der Grund, warum halle.de in diesem Bericht als eigene Quelle geführt wird.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/halbseitige-sperrung-in-der-burgstrasse">🏛 ️ Stadt Halle (11.08.)</a><a class="src-line" href="https://dubisthalle.de/burgstrasse-am-donnerstag-und-freitag-halbseitig-gesperrt/">📰 Du bist Halle (11.08.)</a></details>
+        <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/halbseitige-sperrung-in-der-burgstrasse">🏛 ️ Stadt Halle</a><a href="https://dubisthalle.de/burgstrasse-am-donnerstag-und-freitag-halbseitig-gesperrt/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="bildung">📚 Bildung, Jugend &amp; Soziales</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Südpark: 23 Millionen Euro für Grund- und Förderschule</h3>
+        <div class="date">16.08.2026</div>
+        <p class="zusammenfassung">Mit dem neuen Schuljahr beginnt die Sanierung des gemeinsam genutzten Gebäudekomplexes der Grundschule „Am Kirchteich&quot; und der Förderschule „Christian Gotthilf Salzmann&quot; im Südpark. Für knapp 23 Millionen Euro wird der DDR-Typenbau grundlegend saniert, energetisch ertüchtigt und architektonisch neu konzipiert. Den Baubeschluss hatte der Stadtrat bereits im März gefasst. Weil sich ein Vorhaben dieser Größe nicht im laufenden Betrieb umsetzen lässt, sichern Ausweichquartiere den Unterricht.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Dreiundzwanzig Millionen für zwei Schulen an einem Standort ist die größte Einzelinvestition in Halles Schulbestand in diesem Jahr — und ein Vorgriff darauf, was auf die übrigen Typenbauten der Stadt zukommt. Für Familien im Süden ist vor allem die Ausweichlösung von Belang, die über Jahre trägt.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/neuanfang-im-suedpark-hallesches-millionenprojekt-verwandelt-ddr-typenbau-in-moderne-bildungslandschaft/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Hol- und Bringzonen statt Elterntaxis — achte Schule am Start</h3>
+        <div class="date">13.08.2026</div>
+        <p class="zusammenfassung">Die Stadt richtet weitere Hol- und Bringzonen an Grundschulen ein; vor wenigen Tagen kam die Lessingschule im Paulusviertel hinzu. Damit sind acht Schulen im Stadtgebiet ausgestattet. Eltern sollen ihre Kinder nicht mehr direkt vor dem Schultor absetzen, sondern an ausgewiesenen Haltebereichen in einiger Entfernung.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Ein Instrument, das ohne Verbot auskommt und trotzdem wirkt — und eines, nach dem sich an der eigenen Grundschule zu fragen lohnt. Acht von rund fünfzig Grundschulen zeigen zugleich, wie früh das Programm noch steht.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/mehr-sicherheit-fuer-grundschulkinder-halle-saale-setzt-konsequent-auf-neue-hol-und-bringzonen-statt-elterntaxis-8-schulen-mittlerweile-dabei-lessingschule-ganz-neu-am-start/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Fahrbibliothek hält ab September an der Heideschule</h3>
+        <div class="date">17.08.2026</div>
+        <p class="zusammenfassung">Ab Mittwoch, dem 2. September, fährt die städtische Fahrbibliothek einen neuen Haltepunkt an der Grundschule „Heideschule&quot; in Heide-Nord an, jeweils mittwochs von 11.10 bis 12.10 Uhr am Zanderweg 1. Dafür entfällt der Haltepunkt Roßlauer Straße in der Südstadt; als Ersatz dienen der Haltepunkt Rosengarten in den ungeraden Kalenderwochen und die neue Stadtteilbibliothek Süd.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Eine kleine Verschiebung mit klarer Logik: Der Bücherbus zieht dorthin, wo keine feste Bibliothek in der Nähe ist, und weicht dort, wo eine neue eröffnet hat. Wer die Südstadt-Haltestelle genutzt hat, muss umplanen.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/fahrbibliothek-faehrt-neuen-haltepunkt-in-der-grundschule-heideschule-an">🏛 ️ Stadt Halle (17.08.)</a><a class="src-line" href="https://dubisthalle.de/fahrbibliothek-faehrt-ab-september-neuen-haltepunkt-in-der-grundschule-heideschule-an/">📰 Du bist Halle (17.08.)</a></details>
+        <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/fahrbibliothek-faehrt-neuen-haltepunkt-in-der-grundschule-heideschule-an">🏛 ️ Stadt Halle</a><a href="https://dubisthalle.de/fahrbibliothek-faehrt-ab-september-neuen-haltepunkt-in-der-grundschule-heideschule-an/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="kommunalpolitik">🏛️ Kommunalpolitik &amp; Stadtfinanzen</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Kommunalpolitik</div>
+        <h3>Theater, Oper und Orchester: 30 Millionen Zuschuss, 4 Millionen Eigeneinnahmen</h3>
+        <div class="date">18.08.2026</div>
+        <p class="zusammenfassung">Im Finanzausschuss geriet die Finanzierung der Theater, Oper und Orchester GmbH (TOOH) erneut in die Kritik. Die Stadt stellt der TOOH im kommenden Jahr knapp 30 Millionen Euro zur Verfügung, das Land weitere 18,5 Millionen; dem stehen geschätzte Eigeneinnahmen von rund 4 Millionen Euro gegenüber. Die AfD-Fraktion verband ihre Kritik an diesem Verhältnis mit dem Vorwurf, die Spielpläne dienten politischer Erziehung — was zu scharfen Auseinandersetzungen mit der Geschäftsführung und Teilen der übrigen Fraktionen führte.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Achtundvierzig Millionen öffentliche Mittel gegen vier Millionen eigene Einnahmen ist eine Relation, über die man auch ohne kulturpolitische Hintergedanken streiten kann — und sie fällt in ein Jahr, in dem die Stadt ein Haushaltskonsolidierungskonzept umsetzt. Beides zusammen macht die TOOH zum wahrscheinlichsten Konfliktfeld des halleschen Haushalts.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/kultur-krise-in-halle-saale-millionen-vom-steuerzahler-afd-beklagt-geringe-einnahmen-und-macht-vorwuerfe-politischer-erziehung/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Kommunalpolitik</div>
+        <h3>Stadtrat legt Ausschüsse zusammen — Grüne warnen vor Beratungsstau</h3>
+        <div class="date">12.08.2026</div>
+        <p class="zusammenfassung">Ende August entscheidet der Stadtrat über die Zusammenlegung von Ausschüssen, ein Bestandteil des Haushaltskonsolidierungskonzepts 2026. Die Fraktion Bündnis 90/Die Grünen trägt das Sparziel mit, hält aber den Zuschnitt für problematisch: Fraktionsvorsitzende Melanie Ranft verlangt, dass die neuen Ausschüsse inhaltlich zusammenpassen und jedes Thema noch genügend Zeit auf der Tagesordnung findet. Da Vorlagen in den Ausschüssen fachlich vorberaten werden, bevor der Stadtrat entscheidet, sei mit überlangen Tagesordnungen niemandem gedient.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Eine unscheinbare Organisationsentscheidung mit Folgen für alles Weitere: Wo künftig beraten wird, entscheidet mit, wie gründlich beraten wird. Wer den Riebeckplatz-Umbau oder den Schulbau über die nächsten Jahre verfolgen will, sollte wissen, in welchem Ausschuss er künftig landet.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/zusammenlegung-der-ausschuesse-stadtratsfraktion-buendnis-90-die-gruenen-warnt-davor-dass-klimathemen-untergehen/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="gesellschaft">📊 Gesellschaft &amp; Stadtleben</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Bergzoo streicht das Halloween-Spektakel</h3>
+        <div class="date">18.08.2026</div>
+        <p class="zusammenfassung">Der Bergzoo beendet sein Halloween-Spektakel auf dem Reilsberg ersatzlos, samt aller zugehörigen Veranstaltungen und Dekorationen. Bekannt gegeben wurde das im städtischen Finanzausschuss. Die Zooleitung begründet den Schritt mit gestiegenen Kosten für Logistik, Deko und Personal bei gleichzeitig rückläufigen Besucherzahlen; zuletzt habe die Veranstaltung nur noch einen minimalen Gewinn erwirtschaftet, das Risiko sei zu groß geworden.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Für Familien mit Kindern fällt ein fester Herbsttermin weg. Bemerkenswert ist, wo die Nachricht auftauchte: im Finanzausschuss, nicht in einer Zoo-Mitteilung — das Halloween-Aus ist eine Sparentscheidung, keine pädagogische.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/aus-fuer-die-gruselzeit-auf-dem-reilsberg-bergzoo-streicht-halloween-spektakel/">📰 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <footer class="fuss">
+    Vollständige Filterentscheidungen: <a href="projects/sachsen-anhalt-news/filtered_halle_2026-08-18_21-13.md">projects/sachsen-anhalt-news/filtered_halle_2026-08-18_21-13.md</a>
+  </footer>
+</div>
+<script>
+  // Externe Links im neuen Tab; Sprungmarken bleiben unberührt.
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+</body>
+</html>
