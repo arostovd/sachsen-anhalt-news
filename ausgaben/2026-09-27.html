@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sachsen-Anhalt News — 2026-09-27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --surface-1: #fcfcfb; --page-plane: #f4f3f0; --text-primary: #0b0b0b;
+    --text-secondary: #52514e; --text-muted: #898781; --gridline: #e1e0d9;
+    --border: rgba(11,11,11,0.10);
+    --cat-politik: #2a78d6; --cat-wirtschaft: #1baf7a; --cat-verkehr: #eda100;
+    --cat-energie: #008300; --cat-digital: #4a3aa7; --cat-bildung: #e34948;
+    --cat-gesellschaft: #e87ba4; --cat-justiz: #eb6834;
+    --font-headline: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1: #232322; --page-plane: #0d0d0d; --text-primary: #ffffff;
+      --text-secondary: #c3c2b7; --text-muted: #898781; --gridline: #2c2c2a;
+      --border: rgba(255,255,255,0.10);
+      --cat-politik: #3987e5; --cat-wirtschaft: #199e70; --cat-verkehr: #c98500;
+      --cat-energie: #008300; --cat-digital: #9085e9; --cat-bildung: #e66767;
+      --cat-gesellschaft: #d55181; --cat-justiz: #d95926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page-plane); color: var(--text-primary);
+    font-family: var(--font-body); line-height: 1.5; }
+  .wrap { max-width: 920px; margin: 0 auto; padding-bottom: 60px; }
+  header.top { background: var(--surface-1); padding: 18px 16px 0;
+    border-bottom: 1px solid var(--gridline); position: sticky; top: 0; z-index: 5; }
+  header.top h1 { font-family: var(--font-headline); font-weight: 700; font-size: 34px;
+    letter-spacing: -0.01em; margin: 0 0 4px; line-height: 1.1; }
+  header.top h1 em { font-style: italic; font-weight: 600; color: var(--text-secondary); }
+  header.top .sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 10px; }
+  nav.filters { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; }
+  nav.filters a { flex: none; display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12.5px; text-decoration: none; color: var(--text-secondary);
+    background: var(--page-plane); border: 1px solid var(--border);
+    border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+  nav.filters a .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 16px; }
+  @media (min-width: 680px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .card .body { padding: 16px 16px 18px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 9px; }
+  .badge .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .card h3 { font-family: var(--font-headline); font-weight: 600; font-size: 21px;
+    margin: 0 0 8px; line-height: 1.25; }
+  .card .date { font-size: 11.5px; color: var(--text-muted); margin-bottom: 9px; }
+  .card p.zusammenfassung { font-size: 14.5px; color: var(--text-secondary); margin: 0 0 10px; }
+  .warum { display: flex; gap: 8px; background: var(--page-plane); border-radius: 8px;
+    padding: 9px 11px; margin-bottom: 10px; font-size: 13.5px; color: var(--text-primary); }
+  .warum .icon { flex: none; }
+  .warum strong { display: block; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted); font-weight: 600; margin-bottom: 2px; }
+  details.einordnung { background: var(--page-plane); border-radius: 8px; padding: 8px 10px;
+    margin-bottom: 10px; font-size: 13px; }
+  details.einordnung summary { cursor: pointer; font-weight: 600; color: var(--text-primary); font-size: 12.5px; }
+  details.einordnung a.src-line { display: block; margin-top: 6px; color: var(--text-secondary);
+    text-decoration: none; border-bottom: 1px solid transparent;
+    transition: color .12s ease, border-color .12s ease; }
+  details.einordnung a.src-line:hover, details.einordnung a.src-line:focus-visible {
+    color: var(--text-primary); border-bottom-color: currentColor; }
+  .linkrow { display: flex; flex-wrap: wrap; gap: 8px; }
+  .linkrow a { font-size: 12.5px; text-decoration: none; color: var(--text-primary);
+    background: var(--page-plane); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 10px; }
+  .linkrow a:hover { border-color: var(--text-muted); }
+  .section-label { font-family: var(--font-headline); font-weight: 600; font-style: italic;
+    font-size: 15px; color: var(--text-secondary); padding: 20px 16px 4px; }
+  footer.fuss { padding: 24px 16px; font-size: 12px; color: var(--text-muted); }
+  footer.fuss a { color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a href="../index.html" style="display:inline-block;margin-bottom:6px;font-size:12.5px;color:var(--text-muted);text-decoration:none">&larr; Alle Ausgaben</a>
+    <h1><a href="../index.html" title="Zur Übersicht aller Ausgaben" style="color:inherit;text-decoration:none">🏛️ Sachsen-Anhalt <em>News</em></a></h1>
+    <div class="sub">14.09.-27.09.2026 · MDR · Landesregierung · Halle-Lokalquellen</div>
+    <nav class="filters">
+      <a href="#politik"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</a>
+      <a href="#wirtschaft"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</a>
+      <a href="#verkehr"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</a>
+      <a href="#energie"><span class="dot" style="background:var(--cat-energie)"></span>Energie</a>
+      <a href="#digital"><span class="dot" style="background:var(--cat-digital)"></span>Infrastruktur &amp; Digitales</a>
+      <a href="#bildung"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</a>
+      <a href="#gesellschaft"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</a>
+      <a href="#justiz"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</a>
+    </nav>
+  </header>
+
+  <div class="section-label" id="politik">🏛️ Landespolitik &amp; Personalien</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Endgültiges Wahlergebnis: AfD 43,8 Prozent, CDU stürzt auf 17,2 Prozent</h3>
+        <div class="date">22.09.2026 / 23.09.2026</div>
+        <p class="zusammenfassung">Der Landeswahlausschuss hat das endgültige Ergebnis der Landtagswahl vom 6. September festgestellt. Die AfD ist mit 43,8 Prozent stärkste Kraft und stellt 39 der insgesamt 83 Abgeordneten — drei Sitze fehlen ihr zur absoluten Mehrheit. Die CDU rutscht auf 17,2 Prozent, die SPD erreicht 9,3 Prozent, die Grünen 8,9 Prozent, die Linke 8,6 Prozent. Das BSW zieht mit 5,3 Prozent neu in den Landtag ein, die FDP scheitert mit 2,6 Prozent. Die Wahlbeteiligung lag bei 77,8 Prozent und damit so hoch wie bei keiner Landtagswahl seit der Wiedervereinigung. In den halleschen Wahlkreisen 36 und 37 holten die Grünen 33,7 Prozent.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die drei fehlenden Sitze sind die ganze Rechnung dieser Legislaturperiode: Sie entscheiden, ob im Land regiert werden kann, ohne eine Partei zu beteiligen, die der Landesverfassungsschutz als gesichert rechtsextrem einordnet — so bezeichnet sie auch der MDR in seiner Berichterstattung. Alle folgenden Meldungen zu Präsidium, Ausschussgrößen und Sondierungen sind Varianten dieser einen Arithmetik. Für Halle ist die Lücke zwischen Landesergebnis und Stadtergebnis auffällig groß.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/auf-einen-blick-112,ergebnisse-landkreise-kreisfreie-staedte-100.html">📰 MDR (22.09.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/news-aktuelles-wahltag-wahlbeteiligung-124,ergebnisse-wahlkreise-gemeinden-100.html">📰 MDR (23.09.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/auf-einen-blick-112,ergebnisse-landkreise-kreisfreie-staedte-100.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/news-aktuelles-wahltag-wahlbeteiligung-124,ergebnisse-wahlkreise-gemeinden-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Konstituierung am 6. Oktober — Streit um die Größe der Ausschüsse</h3>
+        <div class="date">24.09.2026 / 25.09.2026</div>
+        <p class="zusammenfassung">Der neue Landtag tritt am 6. Oktober zu seiner konstituierenden Sitzung zusammen; die Vertreter der sechs Fraktionen haben sich am 16. September auf diesen Termin verständigt. Der Vor-Ältestenrat bereitet in Magdeburg Sitzordnung, Ausschussbesetzung und Präsidiumswahl vor. Umstritten ist, ob die Ausschüsse elf oder zwölf Mitglieder haben. Die AfD verfügt mit 39 von 83 Mandaten über knapp 47 Prozent der Sitze — bei zwölf Plätzen je Ausschuss könnte sie dort auf sechs Sitze kommen und damit auf eine andere Sperrwirkung als bei elf.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Eine Verfahrensfrage, die wie Formalie klingt und keine ist: Die Ausschussgröße übersetzt 47 Prozent der Mandate entweder in eine Sperrminorität oder in eine Hälfte. Wer den kommenden Streitigkeiten im Landtag folgen will, muss diese Zahl kennen, bevor die erste Sachfrage verhandelt wird.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/neuer-landtag-ausschuesse-praesident-konstituierung-106,landtagswahl-erste-schritte-100.html">📰 MDR (24.09.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtag-regeln-ausschuesse-100,vor-aeltestenrat-100.html">📰 MDR (25.09.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/neuer-landtag-ausschuesse-praesident-konstituierung-106,landtagswahl-erste-schritte-100.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtag-regeln-ausschuesse-100,vor-aeltestenrat-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>AfD soll den Landtagspräsidenten stellen, das BSW den Vize</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">AfD und BSW haben sich offenbar darauf verständigt, dass ein AfD-Abgeordneter Landtagspräsident und ein BSW-Abgeordneter Vizepräsident wird. BSW-Landeschefin Claudia Wittig bestätigte die Unterstützung für einen AfD-Landtagspräsidenten; ein eigenes Vorschlagsrecht für das Präsidium hat das BSW nicht. Die AfD-Fraktion wollte sich am 29. September auf einen Kandidaten verständigen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das Präsidium ist der erste Gegenstand, an dem sich zeigt, ob die übrigen Fraktionen die parlamentarische Gepflogenheit „stärkste Fraktion stellt den Präsidenten&quot; anwenden oder aussetzen — und das BSW gibt hier zum ersten Mal eine erkennbare Antwort auf die Frage, für welche Seite seine fünf Prozent zählen.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtagspraesident-vizepraesident-verstaendigung-104,afd-bsw-gespraeche-102.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>CDU sagt Gespräche mit der SPD ab — welche Koalitionen bleiben</h3>
+        <div class="date">24.09.2026</div>
+        <p class="zusammenfassung">Die CDU nimmt an den von der SPD angebotenen Gesprächen über eine Regierung ohne AfD nicht teil; der Landesvorstand hält an der Entscheidung fest, in die Opposition zu gehen. SPD-Landesvize Armin Willingmann äußerte die Erwartung, dass die CDU diese Absage nicht dauerhaft aufrechterhalten werde. Rechnerisch erreichen CDU, SPD und Grüne gemeinsam keine Mehrheit; im Gespräch sind ein breites Parteienbündnis, eine Minderheitsregierung oder wechselnde Mehrheiten.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Damit ist die Regierungsbildung offen ohne dass eine Seite verhandelt — die für Sachsen-Anhalt neue Lage. Wer wissen will, wann das Land wieder eine handlungsfähige Regierung hat, liest hier die Vorentscheidung: Solange die CDU bei der Opposition bleibt, führt jeder Weg über das BSW oder über eine Minderheitsregierung.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/ministerpraesident-einladung-cdu-absage-spd-106,regierungsbildung-spd-gespraeche-104.html">📰 MDR (24.09.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/koalitionen-regierung-landtag-108,ltw-news-fraktionen-100.html">📰 MDR (24.09.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/ministerpraesident-einladung-cdu-absage-spd-106,regierungsbildung-spd-gespraeche-104.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/koalitionen-regierung-landtag-108,ltw-news-fraktionen-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Sachsen-Anhalt wird beim MPK-Vorsitz übersprungen</h3>
+        <div class="date">25.09.2026</div>
+        <p class="zusammenfassung">Die Regierungschefs aller 16 Bundesländer haben am 24. September einstimmig beschlossen, Sachsen-Anhalt beim turnusmäßigen Wechsel im Vorsitz der Ministerpräsidentenkonferenz auszusetzen. Das Land wäre im Oktober an der Reihe gewesen; Rheinland-Pfalz behält den Vorsitz ein weiteres Jahr. Einen Grund nennt der Bericht nicht.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Beschluss fiel zwei Tage nach Feststellung des endgültigen Wahlergebnisses und einen Tag vor der Verständigung über das Landtagspräsidium — welchen Zusammenhang die Länder selbst gesehen haben, ist nicht belegt, und ich trage keinen nach. Festzuhalten ist die Folge: Sachsen-Anhalt verliert für ein Jahr die Bühne, auf der Landesinteressen gegenüber dem Bund gebündelt werden.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/mpk-vorsitz-ministerpraesidenten-100,ministerpraesidenten-konferenz-vorsitz-schulze-schnieder-siegmund-afd-cdu-landtagswahl-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Kinder- und Jugendbeauftragter wirbt für das Wahlalter 16</h3>
+        <div class="date">18.09.2026</div>
+        <p class="zusammenfassung">Zum Weltkindertag am 20. September hat der Kinder- und Jugendbeauftragte des Landes, Holger Paech, die Absenkung des Landtagswahlalters auf 16 Jahre gefordert. Sieben der 16 Bundesländer räumen 16-Jährigen bereits das Wahlrecht bei Landtagswahlen ein. Kinderrechte stehen seit 2014 in der Landesverfassung Sachsen-Anhalts.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Ein Vorstoß, dessen Aussichten sich mit dem 6. September gedreht haben: Eine Änderung des Wahlalters berührt das Wahlrecht und damit Mehrheiten, die im neuen Landtag anders liegen als im alten. Die Forderung ist damit weniger Programm als Markierung.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/starke-kinder-starke-zukunft-beauftragter-wirbt-zum-weltkindertag-fuer-absenkung-des-wahlalters-auf-16-jahre">🏛 ️ Landesregierung Nr. 183/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Halle: 129,8 Millionen Euro Defizit für 2027, Sparkurs über 299 Millionen bis 2035</h3>
+        <div class="date">15.09.2026 / 16.09.2026 / 17.09.2026</div>
+        <p class="zusammenfassung">Der Haushaltsentwurf 2027 der Stadt Halle weist ein Defizit von 129,8 Millionen Euro aus; 2026 lag der Fehlbetrag bei 138,2 Millionen Euro — erstmals seit 2012 wieder tiefrote Zahlen. Bis 2030 verfestigt sich das Minus bei knapp 129 Millionen Euro im Jahr. Der Liquiditätskreditrahmen beträgt 2027 710 Millionen Euro und überschreitet die gesetzliche Genehmigungsgrenze von 196,3 Millionen Euro um mehr als das Dreifache. Das Landesverwaltungsamt hat mit Haushaltsverfügung vom 4. Mai 2026 angeordnet, dass der Stadtrat bis zum 30. November ein überarbeitetes Konsolidierungskonzept vorlegt; seit 2026 gilt zudem eine Haushaltssperre über 20 Millionen Euro. Das vorgelegte Konzept umfasst 100 Maßnahmen — 40 fortgeführte und verschärfte, 60 neue (9 zur Ertragssteigerung, 51 zur Aufwandssenkung) — und soll bis 2035 299,2 Millionen Euro erbringen, davon 140,9 Millionen aus Mehrerträgen und 158,3 Millionen aus Einsparungen. Für 2027 ist ein Konsolidierungsziel von 38,85 Millionen Euro veranlagt. Die freiwilligen Leistungen wurden 2026 auf 90 Prozent gedrosselt, 2027 werden nur 80 Prozent der ursprünglichen Ansätze eingeplant. Beim Eigenbetrieb Kita sinkt der laufende Zuschuss um 2,9 Millionen Euro im Jahr, 5,1 Millionen Euro werden 2027 einmalig entnommen, und die **Kitagebührensatzung wird zum Kita-Jahr 2027/2028 überarbeitet**. Erhöht werden sollen die Hebesätze für Beherbergungs- und Gewerbesteuer sowie Verwaltungs- und Parkgebühren; beim Laternenfest ist eine „Neuausrichtung&quot; samt Kürzung des städtischen Zuschusses vorgesehen. Der 1.344 Seiten starke Entwurf ging am 15. September an die Fraktionen, die Ausschussberatungen beginnen im Oktober.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Von allen Meldungen dieser zwei Wochen ist das die, die Euren Haushalt am direktesten trifft: Die Kitagebührensatzung wird zum Kita-Jahr 2027/2028 überarbeitet, und zwar in einem Konzept, dessen erklärter Zweck Mehrerträge sind — mit zwei Kindern in Betreuung ist das keine abstrakte Zahl. Zweitens lohnt der Blick auf die Reihenfolge: Nicht die Stadt hat den Sparkurs aus eigenem Antrieb aufgelegt, die Kommunalaufsicht hat ihn mit Frist angeordnet. Und drittens das Laternenfest, das Ihr im Kalender habt — „Neuausrichtung&quot; heißt hier Zuschusskürzung.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://dubisthalle.de/haushalts-desaster-in-halle-saale-geht-weiter-130-millionen-euro-fehlen-naechstes-jahr-in-der-kasse/">🔗 Du bist Halle (15.09.)</a><a class="src-line" href="https://dubisthalle.de/neues-konsolidierungskonzept-gegen-haushaltskrise-in-halle-saale-20-prozent-der-freiwilligen-leistungen-werden-gekuerzt-hoehere-kita-gebuehren-sowie-gewerbesteuer-senkung-der-personalkosten/">🔗 Du bist Halle (16.09.)</a><a class="src-line" href="https://dubisthalle.de/dreihundert-millionen-euro-sparkurs-mit-100-massnahmen-wie-die-stadt-halle-saale-bis-2035-aus-den-roten-zahlen-steuern-moechte/">🔗 Du bist Halle (16.09.)</a><a class="src-line" href="https://dubisthalle.de/130-millionen-euro-im-minus-stadtpolitik-vor-mammutaufgabe-beim-halleschen-haushalt-so-reagieren-die-fraktionen-auf-die-zahlen/">🔗 Du bist Halle (17.09.)</a></details>
+        <div class="linkrow"><a href="https://dubisthalle.de/haushalts-desaster-in-halle-saale-geht-weiter-130-millionen-euro-fehlen-naechstes-jahr-in-der-kasse/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/neues-konsolidierungskonzept-gegen-haushaltskrise-in-halle-saale-20-prozent-der-freiwilligen-leistungen-werden-gekuerzt-hoehere-kita-gebuehren-sowie-gewerbesteuer-senkung-der-personalkosten/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/dreihundert-millionen-euro-sparkurs-mit-100-massnahmen-wie-die-stadt-halle-saale-bis-2035-aus-den-roten-zahlen-steuern-moechte/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/130-millionen-euro-im-minus-stadtpolitik-vor-mammutaufgabe-beim-halleschen-haushalt-so-reagieren-die-fraktionen-auf-die-zahlen/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
+        <h3>Halle: 163 Millionen Euro Investitionen trotz Defizit</h3>
+        <div class="date">16.09.2026</div>
+        <p class="zusammenfassung">Der Finanzhaushalt der Stadt Halle sieht für 2027 Investitionen von 163,287 Millionen Euro vor — für Schulen, Straßen und Brücken, Feuerwehr, Sportstätten, Stadtentwicklung, Digitalisierung und den Nahverkehr. Fast 82 Millionen Euro davon stammen aus Förderprogrammen von Bund, Land und Europäischer Union.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die Hälfte des Investitionsvolumens ist Fördergeld und damit nicht frei verfügbar — gekürzt werden kann faktisch nur der Eigenanteil, und mit ihm fällt die Förderung weg. Das erklärt, warum eine Stadt mit 130 Millionen Euro Defizit gleichzeitig 163 Millionen investiert: Es sind zwei verschiedene Haushalte mit verschiedenen Spielräumen.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/halle-investiert-trotz-mega-haushaltskrise-163-millionen-in-schulen-strassen-feuerwehr-und-stadtentwicklung/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="wirtschaft">🏗️ Wirtschaft &amp; Strukturwandel</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Grube Teutschenthal: Insolvenzverfahren verschoben, 90 Arbeitsplätze vorerst sicher</h3>
+        <div class="date">25.09.2026</div>
+        <p class="zusammenfassung">Das Insolvenzverfahren der GTS Grube Teutschenthal Sicherungs GmbH &amp; Co. KG im Saalekreis wird von Oktober auf November 2026 verschoben. Der Betrieb läuft weiter, die 90 Beschäftigten erhalten ihre Gehälter; Insolvenzverwalter Lucas Flöther prüft parallel mit möglichen Investoren eine Lösung. Das frühere Kali- und Steinsalzbergwerk wird durch Verfüllung von Hohlräumen gesichert. Käme der Betrieb zum Stillstand, müsste das Land Sachsen-Anhalt für die Sicherung einspringen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der letzte Satz ist der eigentliche Vorgang: Hier hängt nicht nur ein Betrieb mit 90 Stellen, sondern eine Sicherungspflicht, die im Zweifel beim Land landet — in einem Jahr, in dem das Land noch keine Regierung hat. Der Ort liegt zwanzig Kilometer von Halle.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/insolvenz-aufgeschoben-100,grube-teutschenthal-164.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>UNESCO prüft den geplanten Industriepark bei Quedlinburg</h3>
+        <div class="date">22.09.2026</div>
+        <p class="zusammenfassung">Das UNESCO-Welterbezentrum in Paris prüft die Pläne für den Industrie- und Energiepark Morgenrot bei Quedlinburg. Vorgesehen sind rund 350 Hektar Industriefläche, 130 Hektar Photovoltaik, 14 Windräder von bis zu 260 Metern Höhe und ein Batteriespeicher. Die Stadt erwartet etwa 1.000 Arbeitsplätze und 5 bis 10 Millionen Euro Gewerbesteuer im Jahr. Die Planung wurde bereits angepasst, Gutachten gehen nach Paris.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Fall stellt eine Frage, die dem Land noch häufiger begegnen wird: Was wiegt mehr — der Welterbetitel einer Altstadt oder 1.000 Arbeitsplätze in Sichtweite. Eine Ablehnung aus Paris hätte Signalwirkung für jedes weitere Vorhaben im Umfeld geschützter Ensembles.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/status-wird-ueberprueft-102,quedlinburg-unesco-welterbe-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>AfD will das Zukunftszentrum in Halle nun doch nicht stoppen</h3>
+        <div class="date">14.09.2026</div>
+        <p class="zusammenfassung">AfD-Spitzenkandidat Ulrich Siegmund hat erklärt, seine Partei werde das Zukunftszentrum für Deutsche Einheit und Europäische Transformation am Riebeckplatz nicht stoppen oder rückgängig machen. Zuvor hatte die AfD das Bundesprojekt über Monate bekämpft, insbesondere nachdem die Gesamtkosten von 208 auf 277 Millionen Euro gestiegen waren. Als Grund für die Kehrtwende werden drohende Schadensersatzforderungen genannt; der Bau läuft bereits.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das ist die erste Probe darauf, wie sich Wahlkampfpositionen in Regierungsnähe verhalten — ein laufender Bauvertrag ist ein stärkeres Argument als ein Wahlprogramm. Für Halle heißt es konkret: Die größte Baustelle der Stadt bleibt, unabhängig davon, wer im Landtag die Mehrheit hat.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/angst-vor-schadensersatz-afd-will-bau-des-zukunftszentrums-in-halle-nicht-stoppen/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Richtfest in der Turmstraße: 73 Wohnungen auf dem früheren Mafa-Areal</h3>
+        <div class="date">16.09.2026</div>
+        <p class="zusammenfassung">Der Bauträger isihome hat in der Turmstraße 33 in Halle Richtfest für einen dreiflügeligen Neubau auf Teilen des ehemaligen Mafa-Areals gefeiert. Auf rund 5.000 Quadratmetern Wohnfläche entstehen 73 Einheiten mit einem bis fünf Zimmern und Größen zwischen 46 und 134 Quadratmetern.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>73 Wohnungen sind für den halleschen Markt keine Entlastung, aber ein Signal, dass privat gebaut wird, während die Stadt spart — und Wohnungen mit vier und fünf Zimmern sind das Segment, das Familien in Halle tatsächlich fehlt.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/isihome-feiert-richtfest-fuer-neubau-in-der-turmstrasse/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
+        <h3>Handwerkskammer Halle fordert niedrigere Kraftstoffsteuern</h3>
+        <div class="date">15.09.2026</div>
+        <p class="zusammenfassung">Angesichts weiter steigender Kraftstoffpreise fordert die Handwerkskammer Halle eine schnelle Entlastung. Die Mehrzahl der Betriebe sei auf Fahrzeuge angewiesen, um zu Kunden und Baustellen zu kommen; die Preise für Diesel und Benzin trieben die Kosten. Kammerpräsident Thomas Keindorf schlug vor, den Steueranteil auf Kraftstoffe zu senken.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die Forderung fällt in die Woche, in der der Bund einen Tankrabatt ab Oktober beschlossen hat — das Handwerk hält die Entlastung offenkundig für zu klein. Wer die Dieselpreise in Halle ohnehin verfolgt, hat hier die Begründung, warum die Preise nicht nur eine Verbraucherfrage sind.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/handwerkskammer-halle-fordert-entlastung-bei-den-kraftstoffpreisen/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="verkehr">🚆 Verkehr &amp; Mobilität</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Halle: Bürgerinitiativen fordern Stopp der TINA-Straßenbahnen, HAVAG sieht Fortschritte</h3>
+        <div class="date">14.09.2026 / 17.09.2026 / 22.09.2026</div>
+        <p class="zusammenfassung">HAVAG und Stadler erklärten nach dem zweiten Bürgerdialog am 10. September, die TINA-Bahnen hätten sich im Betrieb bewährt, seien zuverlässig durch Winter und Sommer gekommen und würden von Fahrgästen besonders für Barrierefreiheit und Klimaanlage geschätzt; Messungen an Wagen 857 hätten gezeigt, dass sich die Vibrationen um mindestens fünf bis zehn Prozent senken lassen. Die Bürgerinitiative „TINA – so nicht in Halle!&quot; zieht nach einem Jahr Probebetrieb ein negatives Fazit und fordert einen Stopp. Zur Fachmesse InnoTrans in Berlin (22. bis 25. September) haben Initiativen aus Halle und Darmstadt gemeinsam Kritik geübt: Vier Jahre nach der Premiere des Modells bezweifeln sie, dass die Erschütterungsprobleme lösbar sind, und sprechen von drei bis zehn Prozent Verbesserung.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Hier stehen zwei Zahlen zum selben Messvorgang gegeneinander — „mindestens fünf bis zehn Prozent&quot; aus dem Rathaus, „drei bis zehn Prozent&quot; von den Initiativen. Der Unterschied ist klein, aber er entscheidet die Deutung: Fortschritt oder Messrauschen. Dass sich Anwohnervertretungen aus zwei Städten zur Branchenmesse zusammentun, verlagert den Streit von Halle zum Hersteller — für die HAVAG ist damit nicht mehr nur der Betrieb, sondern die Beschaffung berührt.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/nach-dem-zweiten-buergerdialog-havag-und-stadler-treiben-weitere-optimierungen-an-den-tina-bahnen-voran">🔗 Stadt Halle (14.09.)</a><a class="src-line" href="https://dubisthalle.de/keine-besserung-beim-tina-probebetrieb-hallesche-buergerinitiative-zieht-nach-einjaehriger-testphase-ein-klares-negatives-fazit-und-fordert-stopp/">🔗 Du bist Halle (17.09.)</a><a class="src-line" href="https://dubisthalle.de/weiterhin-kritik-an-stadlers-tina-strassenbahn-buergerinitiativen-aus-halle-und-darmstadt-fordern-zur-innotrans-echte-loesungen-gegen-spuerbare-erschuetterungen/">🔗 Du bist Halle (22.09.)</a></details>
+        <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/nach-dem-zweiten-buergerdialog-havag-und-stadler-treiben-weitere-optimierungen-an-den-tina-bahnen-voran">🔗 Stadt Halle</a><a href="https://dubisthalle.de/keine-besserung-beim-tina-probebetrieb-hallesche-buergerinitiative-zieht-nach-einjaehriger-testphase-ein-klares-negatives-fazit-und-fordert-stopp/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/weiterhin-kritik-an-stadlers-tina-strassenbahn-buergerinitiativen-aus-halle-und-darmstadt-fordern-zur-innotrans-echte-loesungen-gegen-spuerbare-erschuetterungen/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Halle: Stadtbahn-Programm wird wegen der Baupreise neu priorisiert</h3>
+        <div class="date">14.09.2026 / 21.09.2026</div>
+        <p class="zusammenfassung">An der Kreuzung Vogelweide finden vom 21. September bis 9. Oktober montags bis donnerstags von 20 bis etwa 3 Uhr Gleisbauarbeiten statt; die Linien 1, 2, 8 und 95 fahren abends und nachts abweichend, teils mit Schienenersatzverkehr. Eigentlich sollte der gesamte Bereich samt Damaschkestraße, Elsa-Brändström-Straße, Straße Vogelweide und Paul-Suhr-Straße im Rahmen des Stadtbahnprogramms instand gesetzt werden. Stattdessen handelt es sich um planmäßige Instandhaltung — das Stadtbahnprogramm wird derzeit wegen der Baupreisentwicklung neu priorisiert.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Nebensatz ist die Nachricht: Das Stadtbahnprogramm, seit Jahren das große Versprechen für den halleschen Nahverkehr, wird nach Baupreisen umsortiert. Wer wissen will, welche Strecke wann saniert wird, bekommt hier die Antwort „später&quot; — passend zur Haushaltslage der Stadt.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://dubisthalle.de/strassenbahnumleitungen-wegen-gleisbauarbeiten-an-der-vogelweide-stadtbahn-programm-wird-derzeit-wegen-baupreisentwicklung-neu-priorisiert/">🔗 Du bist Halle (21.09.)</a><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/gleisbauarbeiten-an-der-vogelweide-strassenbahnlinien-1-2-8-und-95-fahren-nachts-abweichend">🔗 Stadt Halle (14.09.)</a></details>
+        <div class="linkrow"><a href="https://dubisthalle.de/strassenbahnumleitungen-wegen-gleisbauarbeiten-an-der-vogelweide-stadtbahn-programm-wird-derzeit-wegen-baupreisentwicklung-neu-priorisiert/">🔗 Du bist Halle</a><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/gleisbauarbeiten-an-der-vogelweide-strassenbahnlinien-1-2-8-und-95-fahren-nachts-abweichend">🔗 Stadt Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Halle: Südbrücken am Rennbahnkreuz fallen, Holzplatz-Brücke folgt</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Nachdem der Verkehr auf die beiden neugebauten nördlichen Brücken am Rennbahnkreuz umgestellt wurde, werden die südlichen Bauwerke abgebrochen. Nach der westlichen folgte die östliche Südbrücke: Von Donnerstag, 24. September, 9 Uhr, bis Montag, 28. September, 7 Uhr, war die stadteinwärtige Fahrbeziehung in Richtung Kröllwitz über den Gimritzer Damm gesperrt, mit Umleitung über die Anschlussstellen Weststraße und Zollrain. Am Holzplatz wird nach Fertigstellung der Nordbrücke ab Freitag, 25. September, am südlichen Bauwerk weitergearbeitet; der Verkehr läuft in beiden Richtungen über die Nordbrücke.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zwei der wichtigsten Saale-Querungen der Stadt sind gleichzeitig im Umbau, und beide liegen auf Wegen, die man mit dem Rad nicht beliebig umfahren kann. Die Sperrungen sind kurz, aber die Reihenfolge der Bauabschnitte lohnt die Aufmerksamkeit: Rennbahnkreuz und Holzplatz bleiben bis auf weiteres Nadelöhre.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/abriss-der-oestlichen-suedbruecke-am-rennbahnkreuz-zufahrt-zum-gimritzer-damm-von-der-b-80-ist-gesperrt">🔗 Stadt Halle (23.09.)</a><a class="src-line" href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/arbeiten-auf-suedlicher-holzplatz-bruecke-verkehr-rollt-ueber-nordbruecke">🔗 Stadt Halle (23.09.)</a></details>
+        <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/abriss-der-oestlichen-suedbruecke-am-rennbahnkreuz-zufahrt-zum-gimritzer-damm-von-der-b-80-ist-gesperrt">🔗 Stadt Halle</a><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/arbeiten-auf-suedlicher-holzplatz-bruecke-verkehr-rollt-ueber-nordbruecke">🔗 Stadt Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Halle: Kidical Mass zum Weltkindertag — 40 Kinder für sicherere Straßen</h3>
+        <div class="date">20.09.2026</div>
+        <p class="zusammenfassung">Zum Weltkindertag beteiligten sich in Halle rund 40 Kinder, Jugendliche und Eltern trotz heftiger Regenschauer an der Fahrraddemonstration „Kidical Mass&quot;. Der Zug führte über den Riebeckplatz und den Gimritzer Damm; gefordert wurden sicherere Straßen für Kinder.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die Route ist das Argument: Riebeckplatz und Gimritzer Damm sind genau die Stellen, an denen man Kinder in Halle heute nicht fahren lässt. 40 Teilnehmer bei Dauerregen sind wenig für eine Demonstration und viel für eine mit Laufrädern.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/kidical-mass-in-halle-mit-dem-fahrrad-durch-den-regenguss-fuer-kinderfreundliche-strassen/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Halle: Bürgerinitiative zieht wegen der A 143 vor das Bundesverfassungsgericht</h3>
+        <div class="date">17.09.2026</div>
+        <p class="zusammenfassung">Die Bürgerinitiative Saaletal hat am 13. August eine Verfassungsbeschwerde beim Bundesverfassungsgericht in Karlsruhe eingereicht, um den Weiterbau der A 143 — der Westumfahrung Halle — zu stoppen oder den Bauplan für den verbleibenden Abschnitt aufheben zu lassen. Die Bauarbeiten laufen bereits.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Nach jahrzehntelangem Verfahrensweg über Verwaltungs- und Bundesverwaltungsgericht ist das der letzte verbleibende Rechtsweg; eine Annahme zur Entscheidung wäre die eigentliche Nachricht, denn Verfassungsbeschwerden gegen Planfeststellungen sind selten erfolgreich. Bis dahin wird weitergebaut.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/verfassungsklage-gegen-die-autobahn-rechtsstreit-eskaliert-buergerinitiative-will-die-a-143-vor-dem-hoechsten-deutschen-gericht-stoppen/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>Bahn verschiebt die Arbeiten zwischen Halle und Kassel um ein Jahr</h3>
+        <div class="date">22.09.2026</div>
+        <p class="zusammenfassung">Die Deutsche Bahn verschiebt die für 2027 geplante Erneuerung der Stellwerke zwischen Lutherstadt Eisleben und Sangerhausen um ein Jahr. Grund ist die verzögerte Sanierung der Strecke bei Stendal: Weil Güterzüge deshalb über Halle-Eichberg umgeleitet werden müssen, ist die Strecke Halle–Kassel nicht zusätzlich verfügbar. Der Landkreis Mansfeld-Südharz kritisiert die Pläne nach bereits zwei Jahren Bauzeit; zwischen Halle und Berga-Kelbra ist bis Mitte Dezember gesperrt.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Das ist die sichtbare Folge des Sanierungsstaus: Eine Verzögerung im Norden verschiebt die Bauarbeiten im Süden, und die Sperrung in Richtung Kassel dauert an. Wer von Halle nach Westen fährt, rechnet weiter mit Ersatzverkehr.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/mansfeld/sperrung-verzoegerung-zeitplan-100,bahn-bauarbeiten-114.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
+        <h3>ICE-Strecke Berlin–Hannover ab 2. Oktober für mindestens 14 Monate gesperrt</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Die ICE-Strecke Berlin–Hannover mit Halten in Stendal und Wolfsburg wird ab 2. Oktober gesperrt — ursprünglich waren drei Monate geplant, nun mindestens 14. Der Fernverkehr wird über Magdeburg und Braunschweig umgeleitet, im Nahverkehr fahren Ersatzbusse. Am Johanniter-Klinikum Stendal pendeln nach Angaben der Geschäftsführung etwa 40 Ärzte täglich; der Kardiologe Udo Zacharzowsky warnt, dass viele von ihnen nicht bleiben können.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Aus drei Monaten werden vierzehn — das ist die eigentliche Information, und sie betrifft nicht nur Reisende: Ein Klinikum, dessen Fachärzte mit dem Zug kommen, verliert mit der Strecke seine Personaldecke. Die Umleitung über Magdeburg bringt zugleich mehr Fernverkehr auf die Strecken im Landesinneren.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/stendal/stendal/protest-sperrung-infrastruktur-arzt-104,bahn-bau-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="energie">💶 Energie &amp; Umwelt</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Unterirdischer Kohlebrand: siebte Luftmessung im Burgenlandkreis</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Im Tagebau Rusendorf bei Meuselwitz (Thüringen) schwelt seit Ende Juni ein unterirdisches Kohlefeuer auf etwa acht Hektar. Der Rauch zieht in den benachbarten Burgenlandkreis. Die Feuerwehr Weißenfels hat mit einem Messfahrzeug seit Juli zum siebten Mal ein Luftscreening durchgeführt und prüft unter anderem auf Schwefelwasserstoff; die Ergebnisse gehen an das Kreisumweltamt.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Ein Brand, den man nicht löschen kann, dessen Rauch aber eine Landesgrenze überschreitet — die Zuständigkeit liegt in Thüringen, die Atemluft in Sachsen-Anhalt. Für den Süden des Landes ist das eine Dauerlage, keine Meldung.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/burgenland/luftscreening-dicke-luft-102,kohlebrand-104.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Eichenprozessionsspinner: Gift, Drohnen und Fadenwürmer reichen nicht</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Trotz Bioziden, Nematoden, Drohneneinsätzen und Paintball-Verfahren nimmt der Eichenprozessionsspinner in Sachsen-Anhalt nicht ab. Mindestens 30 Prozent der Raupen überleben die Bekämpfung jedes Jahr und vermehren sich weiter. Die Brennhaare lösen Ausschlag, Atemnot und Augenentzündungen aus, in schweren Fällen Herz-Kreislauf-Beschwerden.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Eine 30-Prozent-Überlebensquote heißt, dass die eingesetzten Mittel die Population nicht begrenzen, sondern nur verzögern — wer Kinder auf Spielplätzen unter Eichen hat, sollte die Warnschilder im Frühsommer ernst nehmen statt auf die Bekämpfung zu vertrauen.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/bekaempfung-gift-fressfeind-102,eichenprozessionsspinner-264.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
+        <h3>Großes Bruch: Vernässung des früheren Moors wird geprüft</h3>
+        <div class="date">26.09.2026</div>
+        <p class="zusammenfassung">Das rund 80 Quadratkilometer große Gebiet Großes Bruch in der Börde soll wieder vernässt und zum Moor werden, um Klima- und Artenschutzziele zu erreichen. Anfangs gab es erheblichen Widerstand; inzwischen verhandeln alle Beteiligten an einem Tisch über einen Kompromiss. Die Machbarkeit wird derzeit geprüft, unter anderem die Frage, wie viel Moorboden überhaupt noch vorhanden ist.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Wiedervernässung ist die billigste Klimamaßnahme, die ein Flächenland hat — und die konfliktreichste, weil sie Ackerland betrifft. Dass hier alle Seiten verhandeln statt zu klagen, macht das Vorhaben zum Muster für weitere Moorflächen im Land.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/boerde/moor-umweltschutz-tierschutz,das-grosse-bruch-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="digital">📡 Infrastruktur &amp; Digitales</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-digital)"></span>Infrastruktur &amp; Digitales</div>
+        <h3>Digitaler Pflegeplatzfinder gestartet — mit der Uni Halle entwickelt</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Sachsen-Anhalt hat am 23. September einen digitalen Pflegeplatzfinder als App und Website freigeschaltet. Nutzer können nach Ort oder Postleitzahl freie Kurzzeit- und Langzeitpflegeplätze suchen und Einrichtungen direkt kontaktieren; die Daten werden wöchentlich aktualisiert. Entwickelt wurde das Angebot mit der Universität Halle, beschlossen hatte es der Landtag im Januar 2025. Im Land gibt es rund 200.000 Pflegebedürftige, etwa 28.000 leben in Pflegeheimen. Nach Nordrhein-Westfalen ist Sachsen-Anhalt das zweite Bundesland mit einem verbindlichen öffentlichen Pflegeplatzfinder.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der praktische Wert entscheidet sich an der Meldepflicht: Ein Verzeichnis, das wöchentlich aktualisiert wird, hilft bei der Suche nach einem Kurzzeitpflegeplatz nach einem Krankenhausaufenthalt — genau der Fall, in dem Angehörige heute Telefonlisten abarbeiten. Ob die Einrichtungen verlässlich melden, wird sich erst im Betrieb zeigen.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/pflege-platz-finder-digital-102,pflegeheim-finden-online-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-digital)"></span>Infrastruktur &amp; Digitales</div>
+        <h3>Halle: Ideenwettbewerb „Digitale Brückenbauer&quot; in Neustadt</h3>
+        <div class="date">22.09.2026</div>
+        <p class="zusammenfassung">Das Smart-City-Projekt der Stadt Halle hat gemeinsam mit science2public erneut den Ideenwettbewerb „Digitale Brückenbauer&quot; ausgerichtet, um digitale Teilhabe in Halle-Neustadt zu stärken. Neun Projekte bewarben sich, die Sieger erhalten zwischen 1.250 und 5.000 Euro. Zwei Siegerprojekte sind im September gestartet, ein weiteres beginnt noch in dieser Woche; die Angebote reichen von Podcast- und Content-Creation-Workshops bis zu Porzellan aus dem 3D-Drucker.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Fördersummen zwischen 1.250 und 5.000 Euro sind für Stadtprojekte ungewöhnlich klein — das macht den Wettbewerb zu einem der wenigen Formate, in denen ein Einzelner mit einer Idee tatsächlich zum Zug kommt. In einem Stadtteil, der in Digitalisierungsdebatten meist als Problemfall auftaucht, ist das die interessantere Richtung.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/smart-city-halle-saale-ideenwettbewerb-digitale-brueckenbauer-podcast-content-creation-und-porzellan-aus-dem-3d-drucker-in-halle-neustadt/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="bildung">📚 Bildung, Jugend &amp; Soziales</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>9,2 Millionen Euro für zwei Linearbeschleuniger an der Universitätsmedizin Halle</h3>
+        <div class="date">17.09.2026</div>
+        <p class="zusammenfassung">Wissenschaftsminister Armin Willingmann hat der Universitätsmedizin Halle (Saale) Förderbescheide über insgesamt 9,2 Millionen Euro für zwei Linearbeschleuniger zur Strahlentherapie überreicht. Die Geräte bestrahlen im Sub-Millimeterbereich und ersetzen Anlagen aus den Jahren 2014 und 2015. Im Tandembetrieb sollen täglich etwa 100 Tumorpatientinnen und -patienten behandelt werden, ohne die Versorgung während des Austauschs zu unterbrechen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Halle ist der Standort, an dem Krebspatienten aus dem gesamten Süden des Landes bestrahlt werden; zwei Geräte statt eines bedeuten, dass ein Ausfall die Behandlungsketten nicht unterbricht. Das ist der seltene Fall, in dem eine Fördersumme eine unmittelbar nachvollziehbare Versorgungswirkung hat.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-ueberreicht-foerderung-ueber-92-mio-euro-hightech-fuer-krebstherapie-in-halle">🏛 ️ Landesregierung Nr. 168/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Zweiter ERC Starting Grant nach Halle: 1,5 Millionen Euro für Pflanzenforschung</h3>
+        <div class="date">17.09.2026</div>
+        <p class="zusammenfassung">Die Biologin Dr. Mariana Schuster vom Leibniz-Institut für Pflanzenbiochemie in Halle erhält einen Starting Grant des Europäischen Forschungsrats über 1,5 Millionen Euro für das Projekt FRONTERA zur Pflanzenimmunität, laufend über fünf Jahre. Von 4.807 Bewerbungen weltweit wurden 421 Projekte gefördert, davon 89 in Deutschland. Es ist der zweite Starting Grant für Halle in dieser Wettbewerbsrunde.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>ERC-Grants sind der belastbarste Vergleichsmaßstab für Forschungsstärke, den es in Europa gibt — sie werden europaweit im Wettbewerb vergeben, nicht vom Land verteilt. Zwei in einer Runde an einen Standort ist für Halle eine Aussage über die Qualität, nicht über die Fördermittelpolitik.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/zweiter-starting-grant-geht-nach-halle-willingmann-saalestadt-wird-zum-hotspot-der-europaeischen-forschungsfoerderung">🏛 ️ Landesregierung Nr. 170/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Landesteilhabebericht: Telepräsenzroboter im Unterricht, Teilhabemanager vor Ort</h3>
+        <div class="date">22.09.2026</div>
+        <p class="zusammenfassung">Das Kabinett hat den Bericht zur Umsetzung des Landesaktionsplans 2.0 zur UN-Behindertenrechtskonvention vorgestellt. Genannte Beispiele: örtliche Teilhabemanagerinnen und -manager, ein Pilotprojekt mit AV1-Telepräsenzrobotern, die erkrankten Kindern die Teilnahme am Unterricht ermöglichen, und das Kompetenzzentrum Inklusive Bildung der Hochschule Magdeburg-Stendal. Sachsen-Anhalt setzt die Konvention seit 2009 um.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Bericht ist die einzige regelmäßige Bestandsaufnahme, an der sich Inklusionspolitik im Land überhaupt messen lässt — und er erscheint in dem Moment, in dem eine neue Mehrheit über die Fortschreibung des Aktionsplans entscheiden wird.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neuer-landesteilhabebericht-zeigt-fortschritte-und-herausforderungen-fuer-ein-inklusives-sachsenanhalt">🏛 ️ Landesregierung Nr. 551/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Ferienpraktikum mit Prämie: bis zu 120 Euro pro Woche in den Herbstferien</h3>
+        <div class="date">22.09.2026</div>
+        <p class="zusammenfassung">Schülerinnen und Schüler ab 15 Jahren können in den Herbstferien vom 19. bis 30. Oktober ein Praktikum im Handwerk oder in einem Grünen Beruf absolvieren und dafür eine Prämie von bis zu 120 Euro je Woche erhalten, maximal 480 Euro im Jahr. 2026 wurden bereits über 1.000 Praktika gefördert. Im Handwerk schlossen nach Ministeriumsangaben rund 30 Prozent der Teilnehmenden anschließend einen Ausbildungsvertrag.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die 30-Prozent-Quote ist die einzige belastbare Zahl in diesem Programm und erklärt, warum es weiterläuft — für Eltern von Jugendlichen ist die Frist relevanter: Anmeldung vor dem 19. Oktober.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/berufe-ausprobieren-und-bis-zu-120-euro-pro-woche-erhalten">🏛 ️ Landesregierung Nr. 39/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Neues Alzheimer-Medikament: Uniklinik Magdeburg behandelt erste Patienten</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Die Universitätsklinik Magdeburg behandelt Alzheimer-Patienten mit dem Antikörper Lecanemab (Leqembi), der Amyloid-Plaques bindet und den Krankheitsverlauf bremsen soll. Die Infusionen erfolgen alle zwei Wochen; entscheidend ist eine frühe Diagnose. Magdeburg war nach der Berliner Charité das zweite Zentrum in Deutschland, das die Therapie anbietet. In Deutschland leben etwa 1,8 Millionen Menschen mit Demenz, in Sachsen-Anhalt rund 200.000.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die Therapie wirkt nur im Frühstadium — das verschiebt den entscheidenden Schritt von der Klinik in die Hausarztpraxis, wo Gedächtnisstörungen bisher oft als Alterserscheinung abgetan werden. Für Angehörige ist das der Unterschied zwischen Abwarten und Überweisung.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/magdeburg/uniklinik-therapie-spritze-leqembi-102,alzheimer-patient-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Bettina Erzgräber bleibt Rektorin der Burg Giebichenstein</h3>
+        <div class="date">16.09.2026 / 17.09.2026</div>
+        <p class="zusammenfassung">Prof. Bettina Erzgräber (62) wurde für eine zweite vierjährige Amtszeit zur Rektorin der Kunsthochschule Burg Giebichenstein in Halle ernannt; sie beginnt am 1. Oktober 2026 und leitet die Hochschule seit 2022. Die Burg hat rund 1.100 Studierende in 20 Studiengängen. Als wichtiges Vorhaben der Amtszeit gilt der Neubau für den Campus Kunst.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Campus-Kunst-Neubau ist ein Bauvorhaben des Landes in Halle, das über die Amtszeit hinausreicht — Kontinuität in der Hochschulleitung ist hier die Voraussetzung dafür, dass es nicht wieder von vorn beginnt.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-ernennt-prof-bettina-erzgraeber-zur-rektorin-der-kunsthochschule-halle">🏛 ️ Landesregierung Nr. 169/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>6,4 Millionen Euro vom Bund für drei Bäder, eines davon in Merseburg</h3>
+        <div class="date">24.09.2026</div>
+        <p class="zusammenfassung">Mehr als 6,4 Millionen Euro Bundesmittel fließen in drei Schwimmbäder in Sachsen-Anhalt: nach Sülzetal, Gräfenhainichen und Merseburg. Gefördert werden die Sanierung beziehungsweise der Neubau eines Freibads und zweier Hallenbäder. Profitieren sollen Schwimmunterricht, Vereine und Freizeitschwimmer.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Schwimmunterricht scheitert im Land regelmäßig an fehlenden Bahnen, nicht an fehlenden Lehrkräften; Merseburg liegt im Einzugsbereich halleschen Schulschwimmens. Drei Bäder sind wenig — aber jedes Bad, das schließt, verschwindet dauerhaft.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/geld-schwimmbaeder-100,foerdergeld-fuer-schwimmbaeder-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Halle: Bildungscampus Diemitz eröffnet — 12,5 Millionen Euro für Kita und Hort</h3>
+        <div class="date">18.09.2026</div>
+        <p class="zusammenfassung">In der Fritz-Hoffmann-Straße 36 in Halle ist das neue gemeinsame Gebäude der Kita „Ökolino&quot; und des Hortes der Grundschule Diemitz eröffnet worden. Der Komplex bietet Platz für bis zu 80 Kita- und 240 Hortkinder und kostete 12,5 Millionen Euro. Geplant war die Eröffnung ursprünglich für 2020; die Verzögerung hatte vor allem finanzielle Gründen. Für die Stadtverwaltung sprach Beigeordnete Katharina Brederlow.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Sechs Jahre Verzug bei einem Kita- und Hortbau sind der Maßstab, an dem man die Investitionspläne der Stadt für 2027 lesen sollte — 163 Millionen Euro auf dem Papier bedeuten nicht 163 Millionen Euro im Bau. Für Familien im Osten der Stadt ist der Campus gleichzeitig die seltene gute Nachricht: Kita und Hort unter einem Dach ersparen den Wechsel.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/neuer-bildungscampus-in-diemitz-eroeffnet-kita-oekolino-und-hort-teilen-sich-modernes-gebaeude-fuer-125-millionen-euro/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
+        <h3>Halle: 130 Millionen Euro für Hilfen zur Erziehung — Gutachten angeordnet</h3>
+        <div class="date">22.09.2026</div>
+        <p class="zusammenfassung">Die Ausgaben der Stadt Halle für Hilfen zur Erziehung (HzE) lagen im vergangenen Jahr bei knapp 130 Millionen Euro. Ein externes Gutachten soll noch vor dem Jahreswechsel Wege aufzeigen, wie die Kosten im Jugendbereich gesenkt werden können. Beim Jugendamt gingen im vergangenen Jahr 1.910 Meldungen ein; in 437 Fällen mussten Kinder oder Jugendliche vorübergehend in Obhut genommen werden.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Zwei Zahlen gehören zusammengelesen: Die Jugendhilfe kostet ungefähr so viel, wie der gesamte Haushalt im Defizit ist. Und das Gutachten ist keine freie Entscheidung der Stadt — die Haushaltsverfügung des Landesverwaltungsamts vom 4. Mai verlangt ausdrücklich einen externen Sachverständigen für die HzE-Kostensteigerung. Wo gespart wird, entscheidet sich damit an einer Stelle, an der es um Inobhutnahmen geht.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/130-millionen-euro-fuer-hze-in-halle-gutachten-soll-sparkurs-bei-jugendhilfekosten-einleiten/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="gesellschaft">📊 Gesellschaft &amp; Demografie</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Halles Oberbürgermeister will Asylbewerber zu gemeinnütziger Arbeit verpflichten</h3>
+        <div class="date">24.09.2026</div>
+        <p class="zusammenfassung">Oberbürgermeister Alexander Vogt (parteilos) will Asylbewerber und Geduldete in Halle verpflichtend zu gemeinnütziger Arbeit heranziehen — Grünflächenpflege, Reinigung öffentlicher Plätze, Unterstützung in Sozialeinrichtungen. Freiwillige Angebote werden bislang kaum angenommen. Der Vorstoß wird kontrovers diskutiert; auch andere Kreise im Süden des Landes befassen sich damit.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Es geht um eine kommunale Entscheidung, die in Halle unmittelbar sichtbar würde, und um eine Frage, die der neue Landtag ohnehin aufgreifen wird. Die im Bericht genannte geringe Beteiligung an freiwilligen Angeboten ist dabei das Argument beider Seiten — je nachdem, ob man daraus mangelnden Willen oder mangelnde Vermittlung liest.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/asylbewerber-buergerarbeit-arbeitspflicht--102,buergerarbeit-asylbewerber-sanktionen-verpflichtend-burgenlandkreis-salzlandkreis-mansfeld-suedharz-halle-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Radio Corax und Evangelische Akademie vor ungewisser Förderung</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Dem freien Radiosender Radio Corax in Halle und der Evangelischen Akademie Sachsen-Anhalt will die AfD die Fördermittel streichen. Radio Corax ermöglicht unter anderem Menschen mit Flucht- und Migrationsgeschichte, wöchentlich eigene Sendungen in mehreren Sprachen zu gestalten; die Evangelische Akademie organisiert Debattenformate. Beide Einrichtungen geben sich zuversichtlich.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Hier wird konkret, was eine veränderte Mehrheit im Landeshaushalt bedeutet: Zwei Einrichtungen in Halle hängen an Zuwendungen, die politisch gesetzt sind und mit einem Haushaltsbeschluss endeten. Für die hallesche Kulturlandschaft ist Radio Corax kein Nebenposten.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/zuversicht-trotz-ungewisser-foerderung-104,afd-will-radio-corax-und-der-evangelischen-akademie-die-foerdermittel-streichen-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Puschkino Halle erhält den Hauptpreis für das beste Jahresfilmprogramm</h3>
+        <div class="date">16.09.2026</div>
+        <p class="zusammenfassung">Das Puschkino in Halle (Saale) wurde beim Kinoprogrammpreis Mitteldeutschland für das beste Jahresfilmprogramm 2025 ausgezeichnet und erhält 25.000 Euro. Der zweite Hauptpreis ging an den Moritzhof in Magdeburg. Vergeben wurden die Preise auf der 26. Filmkunstmesse Leipzig; insgesamt erhielten 30 Kinos in Sachsen, Sachsen-Anhalt und Thüringen zusammen 300.000 Euro.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Beide Hauptpreise in einem kleinen Land — das ist die Kehrseite der Kinoschließungen: Wo wenige Häuser bleiben, sind die verbliebenen erstaunlich gut. 25.000 Euro entscheiden bei einem Programmkino über die Spielplanung eines Jahres.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/beide-hauptpreise-an-kinos-in-sachsenanhalt-robra-lobt-die-arbeit-der-kinos">🏛 ️ Landesregierung Nr. 548/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Kunststiftung zeigt die vergessene Bauhaus-Weberin Benita Koch-Otte</h3>
+        <div class="date">25.09.2026</div>
+        <p class="zusammenfassung">Die Kunststiftung Sachsen-Anhalt widmet sich ab 27. September der Textilkünstlerin Benita Koch-Otte (1892–1976), die die Weberei an der Burg Giebichenstein in Halle leitete und später in der Behindertenarbeit tätig war. Gezeigt werden originale Gewebe und Teppiche neben zeitgenössischen Interpretationen; die Ausstellung lädt ausdrücklich zum Anfassen ein.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die Weberei der Burg ist der hallesche Beitrag zur Bauhaus-Geschichte, und er läuft meist unter Weimar und Dessau mit. Eine Ausstellung, die Textilien zum Anfassen zeigt, ist zudem eine der wenigen, die man mit kleinen Kindern übersteht.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/textil-teppich-kunst-ausstellung-bauhaus-kunststiftung,meine-liebste-otte-kultur-news-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Halle: über 7.000 Menschen beim größten CSD in der Geschichte des Landes</h3>
+        <div class="date">14.09.2026</div>
+        <p class="zusammenfassung">Der Christopher Street Day in Halle war nach Angaben der Veranstalter der größte in der Geschichte Sachsen-Anhalts. Am politischen Umzug nahmen laut Polizei über 7.000 Menschen teil, das Straßenfest in der Innenstadt besuchten mehrere tausend. Oberbürgermeister Alexander Vogt äußerte sich stolz über die Beteiligung.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die Zahl ist in dem Jahr bemerkenswert, in dem die AfD im Land 43,8 Prozent geholt hat und in den halleschen Wahlkreisen die Grünen vorn lagen — Halle bewegt sich sichtbar anders als das Umland. Wer die Stadt einschätzen will, hat hier neben dem Wahlergebnis einen zweiten Datenpunkt.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/ueber-7-000-menschen-machen-den-csd-in-halle-zum-groessten-in-der-geschichte-von-sachsen-anhalt-ob-vogt-bin-stolz/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
+        <h3>Halle: Streit um das Bundeswehr-Gelöbnis erreicht den Hauptausschuss</h3>
+        <div class="date">24.09.2026</div>
+        <p class="zusammenfassung">Zwei Wochen nach dem öffentlichen Gelöbnis des 1. Sanitätsregiments der Bundeswehr auf dem halleschen Marktplatz am 10. September hat der Hauptausschuss des Stadtrats über die Veranstaltung gestritten. Gegen die Kritik des Friedensbündnisses Halle stellte sich eine fraktionsübergreifende Mehrheit von der AfD über die CDU bis zur Linken: Die Stadtverwaltung habe auf Grundlage eines Stadtratsbeschlusses aus dem Jahr 2023 gehandelt.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Eine fraktionsübergreifende Mehrheit von der AfD bis zur Linken ist in Halle so selten, dass sie selbst die Nachricht ist — und sie kommt nicht in der Sache zustande, sondern in der Verfahrensfrage, dass ein Stadtratsbeschluss gilt. Das ist die stabilere Argumentation, aber es beendet die inhaltliche Debatte nicht.</div></div>
+        <div class="linkrow"><a href="https://dubisthalle.de/geloebnis-debatte-im-hauptausschuss-friedensbuendnis-kritisiert-bundeswehr-praesenz-ratsmehrheit-verweist-auf-demokratischen-beschluss/">🔗 Du bist Halle</a></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="section-label" id="justiz">⚖️ Justiz, Inneres &amp; Sicherheit</div>
+  <div class="grid">
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>104 neue Volljuristinnen und Volljuristen — Zahl der Absolventen sinkt</h3>
+        <div class="date">23.09.2026</div>
+        <p class="zusammenfassung">Justizministerin Franziska Weidinger hat 104 Absolventinnen und Absolventen der Zweiten Juristischen Staatsprüfung verabschiedet; zehn erreichten ein Prädikat, die beste Einzelleistung lag bei 11,70 Punkten. 62 Prozent hatten ihre Erste Juristische Prüfung in Sachsen-Anhalt abgelegt. 2025 waren es 133 Absolventen, 2024 noch 126.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Rückgang von 133 auf 104 innerhalb eines Jahres trifft ein Land, das Richter, Staatsanwälte und Verwaltungsjuristen in erheblicher Zahl in den Ruhestand verabschiedet. Die 62-Prozent-Quote zeigt zugleich, wie stark die Justiz von den eigenen Fakultäten abhängt — Dass Halle und Magdeburg ausbilden, ist hier kein Standortargument, sondern Personalpolitik.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/erfolgreiche-ausbildung-in-sachsenanhalt-ueber-100-neue-volljuristinnen-und-volljuristen">🏛 ️ Landesregierung Nr. 038/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Neue Leiterin der JVA Volkstedt — Umbau für 240 Millionen Euro</h3>
+        <div class="date">16.09.2026</div>
+        <p class="zusammenfassung">Oberregierungsrätin Claudia Boa Schulze (36) leitet seit dem 14. September die Justizvollzugsanstalt Volkstedt im Kreis Mansfeld-Südharz mit 191 Haftplätzen. Sie war zuvor Vollzugsleiterin in den Anstalten Burg und Volkstedt. In Volkstedt laufen Um- und Erweiterungsarbeiten mit einem Baukostenvolumen von 240 Millionen Euro; die ersten Neubauten sollen 2028 in Betrieb gehen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>240 Millionen Euro sind für den Justizhaushalt des Landes eine Größe, die andere Vorhaben verdrängt — und ein laufendes Bauprojekt bindet die kommende Regierung, unabhängig davon, wer sie stellt.</div></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neue-leiterin-fuer-die-justizvollzugsanstalt-volkstedt">🏛 ️ Landesregierung Nr. 036/2026</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Abschiebehaftanstalt wird später fertig als geplant</h3>
+        <div class="date">27.09.2026</div>
+        <p class="zusammenfassung">Die im Kreis Mansfeld-Südharz entstehende Abschiebehaftanstalt des Landes wird später fertig als vorgesehen; als Gründe werden schlechtes Wetter und nicht abgeschlossene Bauarbeiten genannt. Bis zur Fertigstellung muss Sachsen-Anhalt weiterhin Abschiebehaftplätze in anderen Bundesländern nutzen.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die Anstalt ist das Vorhaben, mit dem das Land seine Abhängigkeit von Haftplätzen anderer Länder beenden wollte — jede Verzögerung verlängert einen Zustand, der bei jeder Abschiebung Verwaltungsaufwand und Kosten verursacht. Ein Fertigstellungstermin steht im Bericht nicht.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/mansfeld/bauarbeiten-verzoegerung-100,abschiebe-haftanstalt-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Externe Fachleute sollen der Polizei bei Cold Cases helfen</h3>
+        <div class="date">25.09.2026</div>
+        <p class="zusammenfassung">Sachsen-Anhalt veranstaltet erstmals einen True-Crime-Hackathon, bei dem externe Fachleute verschiedener Disziplinen an ungelösten und aktuellen Ermittlungsfällen arbeiten. Polizei und Staatsanwaltschaften erproben damit, ob ein Blick von außen bei Cold Cases weiterhilft.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Ermittlungsakten außerhalb der Behörde zu öffnen, ist ein Bruch mit der bisherigen Praxis — und der Versuch verrät, wie knapp die personellen Reserven für Altfälle sind. Interessant wird, welche Auswahl- und Vertraulichkeitsregeln dabei gelten.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/bewerber-helfen-polizisten-100,true-crime-hackathon-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Weißer Ring wird 50 — Fälle häuslicher Gewalt haben sich verdoppelt</h3>
+        <div class="date">25.09.2026</div>
+        <p class="zusammenfassung">Der Opferhilfeverein Weißer Ring besteht seit 1976. In Sachsen-Anhalt hat sich nach Angaben des Vereins die Zahl der Fälle häuslicher Gewalt seit der Corona-Zeit verdoppelt; zunehmend geht es auch um digitale Gewalt. Der Landesverband zählt rund 600 Mitglieder und 80 ehrenamtliche Helfer in 14 Außenstellen und sucht dringend Nachwuchs. Das Opfertelefon ist unter 116 006 erreichbar.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Eine Verdopplung der Fälle bei unverändert 80 Ehrenamtlichen ist die eigentliche Nachricht — die Hilfsstruktur wächst nicht mit. Die Rufnummer gehört zu den wenigen, die man kennen sollte, bevor man sie braucht.</div></div>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/dessau-rosslau/50-jahre-opferschutz-100,weisser-ring-166.html">📰 MDR</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+        <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
+        <h3>Zwei Katastrophenschutzübungen an einem Wochenende</h3>
+        <div class="date">26.09.2026 / 27.09.2026</div>
+        <p class="zusammenfassung">Am 26. September übten in Sachsen-Anhalt rund 140 Einsatzkräfte mit einem Konvoi von West nach Ost; auf den Autobahnen A14 und A36 kam es zu erhöhtem Verkehrsaufkommen. Die Übung wurde als durchweg positiv bewertet. Etwa 300 medizinische Einsatzkräfte trainierten parallel auf einem Bundeswehrgelände im Osten des Landes die Versorgung von Verwundeten im Bündnisfall.</p>
+        <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Übungsszenarien verraten die Annahmen der Planer: Getestet wurde nicht Hochwasser oder Waldbrand, sondern Verlegung über Land und Verwundetenversorgung im Bündnisfall. Das ist eine Verschiebung, die in den Meldungen selbst nicht ausgesprochen wird.</div></div>
+        <details class="einordnung"><summary>Quellen im Einzelnen</summary><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/autobahnen-verkehr,katastrophenschutz-uebung-102.html">📰 MDR (26.09.)</a><a class="src-line" href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/wittenberg/ernstfall-verteidigungsfall-100,grossuebung-rettungskraefte-100.html">📰 MDR (27.09.)</a></details>
+        <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/autobahnen-verkehr,katastrophenschutz-uebung-102.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/wittenberg/ernstfall-verteidigungsfall-100,grossuebung-rettungskraefte-100.html">📰 MDR</a></div>
+        </div>
+      </div>
+  </div>
+
+  <footer class="fuss">
+    Vollständige Filterentscheidungen: <a href=""></a>
+  </footer>
+</div>
+<script>
+  // Externe Links im neuen Tab; Sprungmarken bleiben unberührt.
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+</body>
+</html>
