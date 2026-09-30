@@ -44,6 +44,18 @@
     background: var(--page-plane); border: 1px solid var(--border);
     border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
   nav.filters a .dot { width: 8px; height: 8px; border-radius: 50%; }
+  nav.sources { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px;
+    scrollbar-width: thin; border-top: 1px solid var(--gridline); padding-top: 9px; }
+  nav.sources button { flex: none; font: inherit; font-size: 12.5px; cursor: pointer;
+    color: var(--text-secondary); background: var(--page-plane);
+    border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px;
+    white-space: nowrap; }
+  nav.sources button:hover { border-color: var(--text-muted); }
+  nav.sources button.aktiv { background: var(--text-primary); color: var(--surface-1);
+    border-color: var(--text-primary); }
+  nav.sources button .n { opacity: 0.6; margin-left: 2px; }
+  /* .card traegt display:flex und wuerde das hidden-Attribut sonst uebergehen. */
+  .card[hidden], section.rubrik[hidden] { display: none; }
   .grid { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 16px; }
   @media (min-width: 680px) { .grid { grid-template-columns: 1fr 1fr; } }
   .card { background: var(--surface-1); border: 1px solid var(--border);
@@ -97,11 +109,18 @@
       <a href="#gesellschaft"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</a>
       <a href="#justiz"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</a>
     </nav>
+    <nav class="sources" aria-label="Nach Quelle filtern">
+      <button type="button" data-filter="alle" class="aktiv" aria-pressed="true">Alle Quellen</button>
+      <button type="button" data-filter="mdr" aria-pressed="false">📰 MDR <span class="n">22</span></button>
+      <button type="button" data-filter="regierung" aria-pressed="false">🏛️ Ministerien <span class="n">9</span></button>
+      <button type="button" data-filter="halle" aria-pressed="false">🔗 Halle lokal <span class="n">15</span></button>
+    </nav>
   </header>
 
+  <section class="rubrik">
   <div class="section-label" id="politik">🏛️ Landespolitik &amp; Personalien</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>Endgültiges Wahlergebnis: AfD 43,8 Prozent, CDU stürzt auf 17,2 Prozent</h3>
@@ -112,7 +131,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/auf-einen-blick-112,ergebnisse-landkreise-kreisfreie-staedte-100.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/news-aktuelles-wahltag-wahlbeteiligung-124,ergebnisse-wahlkreise-gemeinden-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>Konstituierung am 6. Oktober — Streit um die Größe der Ausschüsse</h3>
@@ -123,7 +142,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/neuer-landtag-ausschuesse-praesident-konstituierung-106,landtagswahl-erste-schritte-100.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtag-regeln-ausschuesse-100,vor-aeltestenrat-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>AfD soll den Landtagspräsidenten stellen, das BSW den Vize</h3>
@@ -133,7 +152,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/landtagspraesident-vizepraesident-verstaendigung-104,afd-bsw-gespraeche-102.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>CDU sagt Gespräche mit der SPD ab — welche Koalitionen bleiben</h3>
@@ -144,7 +163,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/ministerpraesident-einladung-cdu-absage-spd-106,regierungsbildung-spd-gespraeche-104.html">📰 MDR</a><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/koalitionen-regierung-landtag-108,ltw-news-fraktionen-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>Sachsen-Anhalt wird beim MPK-Vorsitz übersprungen</h3>
@@ -154,17 +173,17 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/mpk-vorsitz-ministerpraesidenten-100,ministerpraesidenten-konferenz-vorsitz-schulze-schnieder-siegmund-afd-cdu-landtagswahl-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>Kinder- und Jugendbeauftragter wirbt für das Wahlalter 16</h3>
         <div class="date">18.09.2026</div>
         <p class="zusammenfassung">Zum Weltkindertag am 20. September hat der Kinder- und Jugendbeauftragte des Landes, Holger Paech, die Absenkung des Landtagswahlalters auf 16 Jahre gefordert. Sieben der 16 Bundesländer räumen 16-Jährigen bereits das Wahlrecht bei Landtagswahlen ein. Kinderrechte stehen seit 2014 in der Landesverfassung Sachsen-Anhalts.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Ein Vorstoß, dessen Aussichten sich mit dem 6. September gedreht haben: Eine Änderung des Wahlalters berührt das Wahlrecht und damit Mehrheiten, die im neuen Landtag anders liegen als im alten. Die Forderung ist damit weniger Programm als Markierung.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/starke-kinder-starke-zukunft-beauftragter-wirbt-zum-weltkindertag-fuer-absenkung-des-wahlalters-auf-16-jahre">🏛 ️ Landesregierung Nr. 183/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/starke-kinder-starke-zukunft-beauftragter-wirbt-zum-weltkindertag-fuer-absenkung-des-wahlalters-auf-16-jahre">🏛️ Landesregierung Nr. 183/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>Halle: 129,8 Millionen Euro Defizit für 2027, Sparkurs über 299 Millionen bis 2035</h3>
@@ -175,7 +194,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/haushalts-desaster-in-halle-saale-geht-weiter-130-millionen-euro-fehlen-naechstes-jahr-in-der-kasse/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/neues-konsolidierungskonzept-gegen-haushaltskrise-in-halle-saale-20-prozent-der-freiwilligen-leistungen-werden-gekuerzt-hoehere-kita-gebuehren-sowie-gewerbesteuer-senkung-der-personalkosten/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/dreihundert-millionen-euro-sparkurs-mit-100-massnahmen-wie-die-stadt-halle-saale-bis-2035-aus-den-roten-zahlen-steuern-moechte/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/130-millionen-euro-im-minus-stadtpolitik-vor-mammutaufgabe-beim-halleschen-haushalt-so-reagieren-die-fraktionen-auf-die-zahlen/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-politik)"></span>Landespolitik</div>
         <h3>Halle: 163 Millionen Euro Investitionen trotz Defizit</h3>
@@ -186,10 +205,12 @@
         </div>
       </div>
   </div>
+  </section>
 
+  <section class="rubrik">
   <div class="section-label" id="wirtschaft">🏗️ Wirtschaft &amp; Strukturwandel</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
         <h3>Grube Teutschenthal: Insolvenzverfahren verschoben, 90 Arbeitsplätze vorerst sicher</h3>
@@ -199,7 +220,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/saalekreis/insolvenz-aufgeschoben-100,grube-teutschenthal-164.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
         <h3>UNESCO prüft den geplanten Industriepark bei Quedlinburg</h3>
@@ -209,7 +230,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/harz/status-wird-ueberprueft-102,quedlinburg-unesco-welterbe-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
         <h3>AfD will das Zukunftszentrum in Halle nun doch nicht stoppen</h3>
@@ -219,7 +240,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/angst-vor-schadensersatz-afd-will-bau-des-zukunftszentrums-in-halle-nicht-stoppen/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
         <h3>Richtfest in der Turmstraße: 73 Wohnungen auf dem früheren Mafa-Areal</h3>
@@ -229,7 +250,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/isihome-feiert-richtfest-fuer-neubau-in-der-turmstrasse/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-wirtschaft)"></span>Wirtschaft</div>
         <h3>Handwerkskammer Halle fordert niedrigere Kraftstoffsteuern</h3>
@@ -240,10 +261,12 @@
         </div>
       </div>
   </div>
+  </section>
 
+  <section class="rubrik">
   <div class="section-label" id="verkehr">🚆 Verkehr &amp; Mobilität</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
         <h3>Halle: Bürgerinitiativen fordern Stopp der TINA-Straßenbahnen, HAVAG sieht Fortschritte</h3>
@@ -254,7 +277,7 @@
         <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/nach-dem-zweiten-buergerdialog-havag-und-stadler-treiben-weitere-optimierungen-an-den-tina-bahnen-voran">🔗 Stadt Halle</a><a href="https://dubisthalle.de/keine-besserung-beim-tina-probebetrieb-hallesche-buergerinitiative-zieht-nach-einjaehriger-testphase-ein-klares-negatives-fazit-und-fordert-stopp/">🔗 Du bist Halle</a><a href="https://dubisthalle.de/weiterhin-kritik-an-stadlers-tina-strassenbahn-buergerinitiativen-aus-halle-und-darmstadt-fordern-zur-innotrans-echte-loesungen-gegen-spuerbare-erschuetterungen/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
         <h3>Halle: Stadtbahn-Programm wird wegen der Baupreise neu priorisiert</h3>
@@ -265,7 +288,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/strassenbahnumleitungen-wegen-gleisbauarbeiten-an-der-vogelweide-stadtbahn-programm-wird-derzeit-wegen-baupreisentwicklung-neu-priorisiert/">🔗 Du bist Halle</a><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/gleisbauarbeiten-an-der-vogelweide-strassenbahnlinien-1-2-8-und-95-fahren-nachts-abweichend">🔗 Stadt Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
         <h3>Halle: Südbrücken am Rennbahnkreuz fallen, Holzplatz-Brücke folgt</h3>
@@ -276,7 +299,7 @@
         <div class="linkrow"><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/abriss-der-oestlichen-suedbruecke-am-rennbahnkreuz-zufahrt-zum-gimritzer-damm-von-der-b-80-ist-gesperrt">🔗 Stadt Halle</a><a href="https://halle.de/verwaltung-stadtrat/presseportal/nachrichten/nachricht/arbeiten-auf-suedlicher-holzplatz-bruecke-verkehr-rollt-ueber-nordbruecke">🔗 Stadt Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
         <h3>Halle: Kidical Mass zum Weltkindertag — 40 Kinder für sicherere Straßen</h3>
@@ -286,7 +309,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/kidical-mass-in-halle-mit-dem-fahrrad-durch-den-regenguss-fuer-kinderfreundliche-strassen/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
         <h3>Halle: Bürgerinitiative zieht wegen der A 143 vor das Bundesverfassungsgericht</h3>
@@ -296,7 +319,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/verfassungsklage-gegen-die-autobahn-rechtsstreit-eskaliert-buergerinitiative-will-die-a-143-vor-dem-hoechsten-deutschen-gericht-stoppen/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
         <h3>Bahn verschiebt die Arbeiten zwischen Halle und Kassel um ein Jahr</h3>
@@ -306,7 +329,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/mansfeld/sperrung-verzoegerung-zeitplan-100,bahn-bauarbeiten-114.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-verkehr)"></span>Verkehr</div>
         <h3>ICE-Strecke Berlin–Hannover ab 2. Oktober für mindestens 14 Monate gesperrt</h3>
@@ -317,10 +340,12 @@
         </div>
       </div>
   </div>
+  </section>
 
+  <section class="rubrik">
   <div class="section-label" id="energie">💶 Energie &amp; Umwelt</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
         <h3>Unterirdischer Kohlebrand: siebte Luftmessung im Burgenlandkreis</h3>
@@ -330,7 +355,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/burgenland/luftscreening-dicke-luft-102,kohlebrand-104.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
         <h3>Eichenprozessionsspinner: Gift, Drohnen und Fadenwürmer reichen nicht</h3>
@@ -340,7 +365,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/bekaempfung-gift-fressfeind-102,eichenprozessionsspinner-264.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-energie)"></span>Energie</div>
         <h3>Großes Bruch: Vernässung des früheren Moors wird geprüft</h3>
@@ -351,10 +376,12 @@
         </div>
       </div>
   </div>
+  </section>
 
+  <section class="rubrik">
   <div class="section-label" id="digital">📡 Infrastruktur &amp; Digitales</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-digital)"></span>Infrastruktur &amp; Digitales</div>
         <h3>Digitaler Pflegeplatzfinder gestartet — mit der Uni Halle entwickelt</h3>
@@ -364,7 +391,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/pflege-platz-finder-digital-102,pflegeheim-finden-online-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-digital)"></span>Infrastruktur &amp; Digitales</div>
         <h3>Halle: Ideenwettbewerb „Digitale Brückenbauer&quot; in Neustadt</h3>
@@ -375,50 +402,52 @@
         </div>
       </div>
   </div>
+  </section>
 
+  <section class="rubrik">
   <div class="section-label" id="bildung">📚 Bildung, Jugend &amp; Soziales</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>9,2 Millionen Euro für zwei Linearbeschleuniger an der Universitätsmedizin Halle</h3>
         <div class="date">17.09.2026</div>
         <p class="zusammenfassung">Wissenschaftsminister Armin Willingmann hat der Universitätsmedizin Halle (Saale) Förderbescheide über insgesamt 9,2 Millionen Euro für zwei Linearbeschleuniger zur Strahlentherapie überreicht. Die Geräte bestrahlen im Sub-Millimeterbereich und ersetzen Anlagen aus den Jahren 2014 und 2015. Im Tandembetrieb sollen täglich etwa 100 Tumorpatientinnen und -patienten behandelt werden, ohne die Versorgung während des Austauschs zu unterbrechen.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Halle ist der Standort, an dem Krebspatienten aus dem gesamten Süden des Landes bestrahlt werden; zwei Geräte statt eines bedeuten, dass ein Ausfall die Behandlungsketten nicht unterbricht. Das ist der seltene Fall, in dem eine Fördersumme eine unmittelbar nachvollziehbare Versorgungswirkung hat.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-ueberreicht-foerderung-ueber-92-mio-euro-hightech-fuer-krebstherapie-in-halle">🏛 ️ Landesregierung Nr. 168/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-ueberreicht-foerderung-ueber-92-mio-euro-hightech-fuer-krebstherapie-in-halle">🏛️ Landesregierung Nr. 168/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>Zweiter ERC Starting Grant nach Halle: 1,5 Millionen Euro für Pflanzenforschung</h3>
         <div class="date">17.09.2026</div>
         <p class="zusammenfassung">Die Biologin Dr. Mariana Schuster vom Leibniz-Institut für Pflanzenbiochemie in Halle erhält einen Starting Grant des Europäischen Forschungsrats über 1,5 Millionen Euro für das Projekt FRONTERA zur Pflanzenimmunität, laufend über fünf Jahre. Von 4.807 Bewerbungen weltweit wurden 421 Projekte gefördert, davon 89 in Deutschland. Es ist der zweite Starting Grant für Halle in dieser Wettbewerbsrunde.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>ERC-Grants sind der belastbarste Vergleichsmaßstab für Forschungsstärke, den es in Europa gibt — sie werden europaweit im Wettbewerb vergeben, nicht vom Land verteilt. Zwei in einer Runde an einen Standort ist für Halle eine Aussage über die Qualität, nicht über die Fördermittelpolitik.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/zweiter-starting-grant-geht-nach-halle-willingmann-saalestadt-wird-zum-hotspot-der-europaeischen-forschungsfoerderung">🏛 ️ Landesregierung Nr. 170/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/zweiter-starting-grant-geht-nach-halle-willingmann-saalestadt-wird-zum-hotspot-der-europaeischen-forschungsfoerderung">🏛️ Landesregierung Nr. 170/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>Landesteilhabebericht: Telepräsenzroboter im Unterricht, Teilhabemanager vor Ort</h3>
         <div class="date">22.09.2026</div>
         <p class="zusammenfassung">Das Kabinett hat den Bericht zur Umsetzung des Landesaktionsplans 2.0 zur UN-Behindertenrechtskonvention vorgestellt. Genannte Beispiele: örtliche Teilhabemanagerinnen und -manager, ein Pilotprojekt mit AV1-Telepräsenzrobotern, die erkrankten Kindern die Teilnahme am Unterricht ermöglichen, und das Kompetenzzentrum Inklusive Bildung der Hochschule Magdeburg-Stendal. Sachsen-Anhalt setzt die Konvention seit 2009 um.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Bericht ist die einzige regelmäßige Bestandsaufnahme, an der sich Inklusionspolitik im Land überhaupt messen lässt — und er erscheint in dem Moment, in dem eine neue Mehrheit über die Fortschreibung des Aktionsplans entscheiden wird.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neuer-landesteilhabebericht-zeigt-fortschritte-und-herausforderungen-fuer-ein-inklusives-sachsenanhalt">🏛 ️ Landesregierung Nr. 551/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neuer-landesteilhabebericht-zeigt-fortschritte-und-herausforderungen-fuer-ein-inklusives-sachsenanhalt">🏛️ Landesregierung Nr. 551/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>Ferienpraktikum mit Prämie: bis zu 120 Euro pro Woche in den Herbstferien</h3>
         <div class="date">22.09.2026</div>
         <p class="zusammenfassung">Schülerinnen und Schüler ab 15 Jahren können in den Herbstferien vom 19. bis 30. Oktober ein Praktikum im Handwerk oder in einem Grünen Beruf absolvieren und dafür eine Prämie von bis zu 120 Euro je Woche erhalten, maximal 480 Euro im Jahr. 2026 wurden bereits über 1.000 Praktika gefördert. Im Handwerk schlossen nach Ministeriumsangaben rund 30 Prozent der Teilnehmenden anschließend einen Ausbildungsvertrag.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Die 30-Prozent-Quote ist die einzige belastbare Zahl in diesem Programm und erklärt, warum es weiterläuft — für Eltern von Jugendlichen ist die Frist relevanter: Anmeldung vor dem 19. Oktober.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/berufe-ausprobieren-und-bis-zu-120-euro-pro-woche-erhalten">🏛 ️ Landesregierung Nr. 39/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/berufe-ausprobieren-und-bis-zu-120-euro-pro-woche-erhalten">🏛️ Landesregierung Nr. 39/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>Neues Alzheimer-Medikament: Uniklinik Magdeburg behandelt erste Patienten</h3>
@@ -428,17 +457,17 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/magdeburg/magdeburg/uniklinik-therapie-spritze-leqembi-102,alzheimer-patient-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>Bettina Erzgräber bleibt Rektorin der Burg Giebichenstein</h3>
         <div class="date">16.09.2026 / 17.09.2026</div>
         <p class="zusammenfassung">Prof. Bettina Erzgräber (62) wurde für eine zweite vierjährige Amtszeit zur Rektorin der Kunsthochschule Burg Giebichenstein in Halle ernannt; sie beginnt am 1. Oktober 2026 und leitet die Hochschule seit 2022. Die Burg hat rund 1.100 Studierende in 20 Studiengängen. Als wichtiges Vorhaben der Amtszeit gilt der Neubau für den Campus Kunst.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Campus-Kunst-Neubau ist ein Bauvorhaben des Landes in Halle, das über die Amtszeit hinausreicht — Kontinuität in der Hochschulleitung ist hier die Voraussetzung dafür, dass es nicht wieder von vorn beginnt.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-ernennt-prof-bettina-erzgraeber-zur-rektorin-der-kunsthochschule-halle">🏛 ️ Landesregierung Nr. 169/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/willingmann-ernennt-prof-bettina-erzgraeber-zur-rektorin-der-kunsthochschule-halle">🏛️ Landesregierung Nr. 169/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>6,4 Millionen Euro vom Bund für drei Bäder, eines davon in Merseburg</h3>
@@ -448,7 +477,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/geld-schwimmbaeder-100,foerdergeld-fuer-schwimmbaeder-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>Halle: Bildungscampus Diemitz eröffnet — 12,5 Millionen Euro für Kita und Hort</h3>
@@ -458,7 +487,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/neuer-bildungscampus-in-diemitz-eroeffnet-kita-oekolino-und-hort-teilen-sich-modernes-gebaeude-fuer-125-millionen-euro/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-bildung)"></span>Bildung/Soziales</div>
         <h3>Halle: 130 Millionen Euro für Hilfen zur Erziehung — Gutachten angeordnet</h3>
@@ -469,10 +498,12 @@
         </div>
       </div>
   </div>
+  </section>
 
+  <section class="rubrik">
   <div class="section-label" id="gesellschaft">📊 Gesellschaft &amp; Demografie</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
         <h3>Halles Oberbürgermeister will Asylbewerber zu gemeinnütziger Arbeit verpflichten</h3>
@@ -482,7 +513,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/asylbewerber-buergerarbeit-arbeitspflicht--102,buergerarbeit-asylbewerber-sanktionen-verpflichtend-burgenlandkreis-salzlandkreis-mansfeld-suedharz-halle-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
         <h3>Radio Corax und Evangelische Akademie vor ungewisser Förderung</h3>
@@ -492,17 +523,17 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/landtagswahl/zuversicht-trotz-ungewisser-foerderung-104,afd-will-radio-corax-und-der-evangelischen-akademie-die-foerdermittel-streichen-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
         <h3>Puschkino Halle erhält den Hauptpreis für das beste Jahresfilmprogramm</h3>
         <div class="date">16.09.2026</div>
         <p class="zusammenfassung">Das Puschkino in Halle (Saale) wurde beim Kinoprogrammpreis Mitteldeutschland für das beste Jahresfilmprogramm 2025 ausgezeichnet und erhält 25.000 Euro. Der zweite Hauptpreis ging an den Moritzhof in Magdeburg. Vergeben wurden die Preise auf der 26. Filmkunstmesse Leipzig; insgesamt erhielten 30 Kinos in Sachsen, Sachsen-Anhalt und Thüringen zusammen 300.000 Euro.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Beide Hauptpreise in einem kleinen Land — das ist die Kehrseite der Kinoschließungen: Wo wenige Häuser bleiben, sind die verbliebenen erstaunlich gut. 25.000 Euro entscheiden bei einem Programmkino über die Spielplanung eines Jahres.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/beide-hauptpreise-an-kinos-in-sachsenanhalt-robra-lobt-die-arbeit-der-kinos">🏛 ️ Landesregierung Nr. 548/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/beide-hauptpreise-an-kinos-in-sachsenanhalt-robra-lobt-die-arbeit-der-kinos">🏛️ Landesregierung Nr. 548/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
         <h3>Kunststiftung zeigt die vergessene Bauhaus-Weberin Benita Koch-Otte</h3>
@@ -512,7 +543,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/textil-teppich-kunst-ausstellung-bauhaus-kunststiftung,meine-liebste-otte-kultur-news-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
         <h3>Halle: über 7.000 Menschen beim größten CSD in der Geschichte des Landes</h3>
@@ -522,7 +553,7 @@
         <div class="linkrow"><a href="https://dubisthalle.de/ueber-7-000-menschen-machen-den-csd-in-halle-zum-groessten-in-der-geschichte-von-sachsen-anhalt-ob-vogt-bin-stolz/">🔗 Du bist Halle</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="halle">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-gesellschaft)"></span>Gesellschaft</div>
         <h3>Halle: Streit um das Bundeswehr-Gelöbnis erreicht den Hauptausschuss</h3>
@@ -533,30 +564,32 @@
         </div>
       </div>
   </div>
+  </section>
 
+  <section class="rubrik">
   <div class="section-label" id="justiz">⚖️ Justiz, Inneres &amp; Sicherheit</div>
   <div class="grid">
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
         <h3>104 neue Volljuristinnen und Volljuristen — Zahl der Absolventen sinkt</h3>
         <div class="date">23.09.2026</div>
         <p class="zusammenfassung">Justizministerin Franziska Weidinger hat 104 Absolventinnen und Absolventen der Zweiten Juristischen Staatsprüfung verabschiedet; zehn erreichten ein Prädikat, die beste Einzelleistung lag bei 11,70 Punkten. 62 Prozent hatten ihre Erste Juristische Prüfung in Sachsen-Anhalt abgelegt. 2025 waren es 133 Absolventen, 2024 noch 126.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>Der Rückgang von 133 auf 104 innerhalb eines Jahres trifft ein Land, das Richter, Staatsanwälte und Verwaltungsjuristen in erheblicher Zahl in den Ruhestand verabschiedet. Die 62-Prozent-Quote zeigt zugleich, wie stark die Justiz von den eigenen Fakultäten abhängt — Dass Halle und Magdeburg ausbilden, ist hier kein Standortargument, sondern Personalpolitik.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/erfolgreiche-ausbildung-in-sachsenanhalt-ueber-100-neue-volljuristinnen-und-volljuristen">🏛 ️ Landesregierung Nr. 038/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/erfolgreiche-ausbildung-in-sachsenanhalt-ueber-100-neue-volljuristinnen-und-volljuristen">🏛️ Landesregierung Nr. 038/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="regierung">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
         <h3>Neue Leiterin der JVA Volkstedt — Umbau für 240 Millionen Euro</h3>
         <div class="date">16.09.2026</div>
         <p class="zusammenfassung">Oberregierungsrätin Claudia Boa Schulze (36) leitet seit dem 14. September die Justizvollzugsanstalt Volkstedt im Kreis Mansfeld-Südharz mit 191 Haftplätzen. Sie war zuvor Vollzugsleiterin in den Anstalten Burg und Volkstedt. In Volkstedt laufen Um- und Erweiterungsarbeiten mit einem Baukostenvolumen von 240 Millionen Euro; die ersten Neubauten sollen 2028 in Betrieb gehen.</p>
         <div class="warum"><span class="icon">💡</span><div><strong>Warum relevant</strong>240 Millionen Euro sind für den Justizhaushalt des Landes eine Größe, die andere Vorhaben verdrängt — und ein laufendes Bauprojekt bindet die kommende Regierung, unabhängig davon, wer sie stellt.</div></div>
-        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neue-leiterin-fuer-die-justizvollzugsanstalt-volkstedt">🏛 ️ Landesregierung Nr. 036/2026</a></div>
+        <div class="linkrow"><a href="https://sachsen-anhalt.de/pressemitteilung/neue-leiterin-fuer-die-justizvollzugsanstalt-volkstedt">🏛️ Landesregierung Nr. 036/2026</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
         <h3>Abschiebehaftanstalt wird später fertig als geplant</h3>
@@ -566,7 +599,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/mansfeld/bauarbeiten-verzoegerung-100,abschiebe-haftanstalt-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
         <h3>Externe Fachleute sollen der Polizei bei Cold Cases helfen</h3>
@@ -576,7 +609,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/halle/halle/bewerber-helfen-polizisten-100,true-crime-hackathon-100.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
         <h3>Weißer Ring wird 50 — Fälle häuslicher Gewalt haben sich verdoppelt</h3>
@@ -586,7 +619,7 @@
         <div class="linkrow"><a href="https://www.mdr.de/nachrichten/sachsen-anhalt/dessau/dessau-rosslau/50-jahre-opferschutz-100,weisser-ring-166.html">📰 MDR</a></div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-src="mdr">
         <div class="body">
         <div class="badge"><span class="dot" style="background:var(--cat-justiz)"></span>Justiz</div>
         <h3>Zwei Katastrophenschutzübungen an einem Wochenende</h3>
@@ -598,6 +631,7 @@
         </div>
       </div>
   </div>
+  </section>
 
   <footer class="fuss">
     Vollständige Filterentscheidungen: <a href=""></a>
@@ -609,6 +643,42 @@
     a.setAttribute('target', '_blank');
     a.setAttribute('rel', 'noopener noreferrer');
   });
+
+  // Quellenfilter: genau eine Quelle zur Zeit. Ein Eintrag bleibt sichtbar,
+  // sobald die gewaehlte Quelle unter seinen Quellen ist — auch wenn er
+  // mehrere hat. Erneuter Klick auf dieselbe Pille zeigt wieder alles.
+  (function () {
+    var nav = document.querySelector('nav.sources');
+    if (!nav) return;
+    var knoepfe = Array.prototype.slice.call(nav.querySelectorAll('button'));
+    var karten = Array.prototype.slice.call(
+      document.querySelectorAll('.card[data-src]')
+    );
+    var rubriken = Array.prototype.slice.call(
+      document.querySelectorAll('section.rubrik')
+    );
+    function anwenden(filter) {
+      knoepfe.forEach(function (b) {
+        var an = b.getAttribute('data-filter') === filter;
+        b.classList.toggle('aktiv', an);
+        b.setAttribute('aria-pressed', String(an));
+      });
+      karten.forEach(function (k) {
+        k.hidden = filter !== 'alle' &&
+          k.getAttribute('data-src').split(' ').indexOf(filter) === -1;
+      });
+      rubriken.forEach(function (r) {
+        r.hidden = r.querySelectorAll('.card:not([hidden])').length === 0;
+      });
+    }
+    knoepfe.forEach(function (b) {
+      b.addEventListener('click', function () {
+        anwenden(
+          b.classList.contains('aktiv') ? 'alle' : b.getAttribute('data-filter')
+        );
+      });
+    });
+  })();
 </script>
 </body>
 </html>
